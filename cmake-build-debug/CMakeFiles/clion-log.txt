@@ -14,5 +14,8 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
--- Generating done
--- Build files have been written to: /Users/roybakker/Desktop/ft_containers/cmake-build-debug
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: ft_containers
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

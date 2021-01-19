@@ -17,7 +17,7 @@
 #include <memory>
 #include <limits>
 
-#include "iterator.hpp"
+#include "Iterator.hpp"
 
 namespace ft {
 
@@ -30,8 +30,8 @@ namespace ft {
         T       _data;
 
         explicit Node() : _prev(NULL), _next(NULL), _data(0) {};
-        explicit Node(T data) : _prev(NULL), _next(NULL), _data(data){};
-        virtual ~Node(){};
+        explicit Node(const T& data) : _prev(NULL), _next(NULL), _data(data){};
+        ~Node(){};
 
         Node 		&operator=(Node const &rhs) {
             if (this != rhs)
@@ -64,7 +64,7 @@ namespace ft {
         //  typedef                         const_iterator;
         //  typedef                         reverse_iterator;
         //  typedef                         const_reverse_iterator;
-        typedef ptrdiff_t                   difference_type;
+        typedef std::ptrdiff_t              difference_type;
         typedef size_t                      size_type;
 
     private:
