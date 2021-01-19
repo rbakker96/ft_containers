@@ -13,7 +13,7 @@
 #ifndef ITERATOR_HPP
 #define ITERATOR_HPP
 
-#include "List.hpp"
+#include "node.hpp"
 
 namespace ft {
 
@@ -48,15 +48,19 @@ namespace ft {
 
         ~BidirectionalIterator() {};
 
+        // --------------------------------------------- * OPERATOR ---------------------------------------------------
+        reference operator*() {
+            return(_ptr->_data);
+        };
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
-        BidirectionalIterator& operator++() {
+        BidirectionalIterator& operator++() { //prefix
             _ptr = _ptr->_next;
             return (*this);
         };
 
-        BidirectionalIterator  operator++(int) {
-            iterator_type temp(*this);
+        BidirectionalIterator  operator++(int) { //postfix
+            BidirectionalIterator<T> temp(*this);
 
             _ptr = _ptr->_next;
             return (temp);
@@ -70,7 +74,7 @@ namespace ft {
         };
 
         BidirectionalIterator  operator--(int) {
-            iterator_type temp(*this);
+            BidirectionalIterator<T> temp(*this);
 
             _ptr = _ptr->_prev;
             return (temp);
@@ -86,6 +90,8 @@ namespace ft {
         bool operator!= (const BidirectionalIterator<value_type>& rhs) {
             return (_ptr != rhs._ptr);
         };
+
+
     };
 };
 

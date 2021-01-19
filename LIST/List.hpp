@@ -18,34 +18,35 @@
 #include <limits>
 
 #include "Iterator.hpp"
+#include "node.hpp"
 
 namespace ft {
 
-    template <typename T>
-    class Node {
-
-    public:
-        Node    *_prev;
-        Node    *_next;
-        T       _data;
-
-        explicit Node() : _prev(NULL), _next(NULL), _data(0) {};
-        explicit Node(const T& data) : _prev(NULL), _next(NULL), _data(data){};
-        ~Node(){};
-
-        Node 		&operator=(Node const &rhs) {
-            if (this != rhs)
-            {
-                this->_prev = rhs._prev;
-                this->_next = rhs._next;
-                this->_data = rhs._data;
-            }
-            return (*this);
-        };
-
-        Node* getNext() {return (this->_next);};
-        Node* getPrev() {return (this->_prev);};
-    };
+//    template <typename T>
+//    class Node {
+//
+//    public:
+//        Node    *_prev;
+//        Node    *_next;
+//        T       _data;
+//
+//        explicit Node() : _prev(NULL), _next(NULL), _data(0) {};
+//        explicit Node(const T& data) : _prev(NULL), _next(NULL), _data(data){};
+//        ~Node(){};
+//
+//        Node 		&operator=(Node const &rhs) {
+//            if (this != rhs)
+//            {
+//                this->_prev = rhs._prev;
+//                this->_next = rhs._next;
+//                this->_data = rhs._data;
+//            }
+//            return (*this);
+//        };
+//
+//        Node* getNext() {return (this->_next);};
+//        Node* getPrev() {return (this->_prev);};
+//    };
 
 
     template<class T, class Alloc = std::allocator<T> >
@@ -110,7 +111,7 @@ namespace ft {
             _tail = new Node<value_type>();
             _head->_next = _tail;
             _tail->_prev = _head;
-            assign(first, last);
+            //assign(first, last);
         }
 
         //-> This destroys all container elements, and deallocates all the storage capacity allocated by the list container using its allocator.
@@ -130,12 +131,12 @@ namespace ft {
 
 
         // ------------------------------------------------- ITERATORS -------------------------------------------------
-//        //-> Returns an iterator pointing to the first element in the list container.
-//        iterator begin(){};
+        //-> Returns an iterator pointing to the first element in the list container.
+        iterator begin(){return(iterator(_head->_next));};
 //        const_iterator begin() const {};
 //
 //        //-> Returns an iterator referring to the past-the-end element in the list container.
-//        iterator end(){};
+        iterator end(){return(iterator(_tail));};
 //        const_iterator end() const {};
 //
 //        //-> Returns a reverse iterator pointing to the last element in the container (i.e., its reverse beginning).
@@ -226,12 +227,12 @@ namespace ft {
         };
 
         //-> Adds a new element at the end of the list container, after its current last element.
-        void push_back (const value_type& val) {
+        void push_back (const value_type& val) { //checked
             node_pointer new_node = new Node<value_type>(val);
 
             new_node->_next = _tail;
-            new_node->_prev = _tail->_prev;
             _tail->_prev->_next = new_node;
+            new_node->_prev = _tail->_prev;
             _tail->_prev = new_node;
             _size += 1;
         };

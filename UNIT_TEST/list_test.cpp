@@ -6,22 +6,70 @@
 
 #include "../LIST/List.hpp"
 #include "../LIST/Iterator.hpp"
+#include "../LIST/node.hpp"
 
+//clang++ -std=c++14 list_test.cpp catch.cpp -g -fsanitize=address
 
-TEST_CASE( "Default constructor", "[list]" ) {
+TEST_CASE( "BASIC ITERATORS", "[list]" ) {
     ft::list<std::string> my_list;
     std::list<std::string> original_list;
 
-    std::string str = "Normal input string";
-    my_list.push_back(str);
-    original_list.push_back(str);
+    std::string str_one = "one";
+    std::string str_two = "two";
+    std::string str_three = "three";
 
-    ft::list<std::string>::iterator my_it;
-    std::list<std::string>::iterator original_it;
+    my_list.push_front(str_one);
+    original_list.push_front(str_one);
+    my_list.push_front(str_two);
+    original_list.push_front(str_two);
+    my_list.push_front(str_three);
+    original_list.push_front(str_three);
 
-    my_it++;
-    original_it++;
-    REQUIRE( *my_it == *original_it );
+    ft::list<std::string>::iterator my_begin = my_list.begin();
+    std::list<std::string>::iterator original_begin = original_list.begin();
+    SECTION( "first element" ) {
+        REQUIRE( *my_begin == *original_begin );
+    }
+    SECTION( "Prefix increment" ) {
+        ++my_begin;
+        ++original_begin;
+        REQUIRE( *my_begin == *original_begin );
+    }
+    SECTION( "Postfix increment" ) {
+        my_begin++;
+        original_begin++;
+        REQUIRE( *my_begin == *original_begin );
+    }
+
+    ft::list<std::string>::iterator my_end = my_list.end();
+    std::list<std::string>::iterator original_end = original_list.end();
+    SECTION( "last element" ) {
+        REQUIRE( *my_end == *my_end );
+    }
+    SECTION( "Prefix increment" ) {
+        --my_end;
+        --original_end;
+        REQUIRE( *my_end == *original_end );
+    }
+    SECTION( "Postfix increment" ) {
+        my_end--;
+        original_end--;
+        REQUIRE( *my_end == *original_end );
+    }
 }
 
-//clang++ -std=c++14 list_test.cpp catch.cpp
+TEST_CASE( "CONST ITERATORS", "[list]" ) {}
+
+TEST_CASE( "REVERSE ITERATORS", "[list]" ) {}
+
+TEST_CASE( "CONST REVERSE ITERATORS", "[list]" ) {}
+
+TEST_CASE( "CAPACITY", "[list]" ) {}
+
+TEST_CASE( "ELEMENT ACCESS", "[list]" ) {}
+
+TEST_CASE( "MODIFIERS", "[list]" ) {}
+
+TEST_CASE( "OPERATIONS", "[list]" ) {}
+
+TEST_CASE( "RELATION OPERATORS", "[list]" ) {}
