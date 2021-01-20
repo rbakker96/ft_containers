@@ -18,55 +18,28 @@
 #include <limits>
 
 #include "Iterator.hpp"
-#include "node.hpp"
+#include "Node.hpp"
 
 namespace ft {
-
-//    template <typename T>
-//    class Node {
-//
-//    public:
-//        Node    *_prev;
-//        Node    *_next;
-//        T       _data;
-//
-//        explicit Node() : _prev(NULL), _next(NULL), _data(0) {};
-//        explicit Node(const T& data) : _prev(NULL), _next(NULL), _data(data){};
-//        ~Node(){};
-//
-//        Node 		&operator=(Node const &rhs) {
-//            if (this != rhs)
-//            {
-//                this->_prev = rhs._prev;
-//                this->_next = rhs._next;
-//                this->_data = rhs._data;
-//            }
-//            return (*this);
-//        };
-//
-//        Node* getNext() {return (this->_next);};
-//        Node* getPrev() {return (this->_prev);};
-//    };
-
 
     template<class T, class Alloc = std::allocator<T> >
     class list {
 
     public:
         // MEMBER TYPES
-        typedef T                           value_type;
-        typedef Alloc                       allocator_type;
-        typedef T                           &reference;
-        typedef const T                     &const_reference;
-        typedef T                           *pointer;
-        typedef const T                     *const_pointer;
-        typedef Node<T>                     *node_pointer;
-        typedef BidirectionalIterator<T>    iterator;
-        //  typedef                         const_iterator;
-        //  typedef                         reverse_iterator;
-        //  typedef                         const_reverse_iterator;
-        typedef std::ptrdiff_t              difference_type;
-        typedef size_t                      size_type;
+        typedef T                               value_type;
+        typedef Alloc                           allocator_type;
+        typedef T                               &reference;
+        typedef const T                         &const_reference;
+        typedef T                               *pointer;
+        typedef const T                         *const_pointer;
+        typedef Node<T>                         *node_pointer;
+        typedef BidirectionalIterator<T>        iterator;
+        typedef ConstBidirectionalIterator<T>   const_iterator;
+        typedef RevBidirectionalIterator<T>     reverse_iterator;
+        typedef ConstBidirectionalIterator<T>   const_reverse_iterator;
+        typedef std::ptrdiff_t                  difference_type;
+        typedef size_t                          size_type;
 
     private:
         node_pointer    _head;
@@ -133,27 +106,27 @@ namespace ft {
         // ------------------------------------------------- ITERATORS -------------------------------------------------
         //-> Returns an iterator pointing to the first element in the list container.
         iterator begin(){return(iterator(_head->_next));};
-//        const_iterator begin() const {};
-//
-//        //-> Returns an iterator referring to the past-the-end element in the list container.
+        const_iterator begin() const {return(const_iterator(_head->_next));};
+
+        //-> Returns an iterator referring to the past-the-end element in the list container.
         iterator end(){return(iterator(_tail));};
-//        const_iterator end() const {};
-//
-//        //-> Returns a reverse iterator pointing to the last element in the container (i.e., its reverse beginning).
-//        reverse_iterator rbegin(){};
-//        const_reverse_iterator rbegin() const {};
-//
-//        //-> Returns a reverse iterator pointing to the theoretical element preceding the first element in the list container
-//        //   (which is considered its reverse end).
-//        reverse_iterator rend(){};
-//        const_reverse_iterator rend() const {};
-//
+        const_iterator end() const {return(const_iterator(_tail));};
+
+        //-> Returns a reverse iterator pointing to the last element in the container (i.e., its reverse beginning).
+        reverse_iterator rbegin(){return(reverse_iterator(_tail->_prev));};
+        const_reverse_iterator rbegin() const {return(const_reverse_iterator(_tail->_prev));};
+
+        //-> Returns a reverse iterator pointing to the theoretical element preceding the first element in the list container
+        //   (which is considered its reverse end).
+        reverse_iterator rend(){return(reverse_iterator(_head));};
+        const_reverse_iterator rend() const {return(const_reverse_iterator(_head));};
+
 //        //-> Returns a const_iterator pointing to the first element in the container.
 //        const_iterator cbegin() const noexcept {};
-//
+
 //        //-> Returns a const_iterator pointing to the past-the-end element in the container.
 //        const_iterator cend() const noexcept {};
-//
+
 //        //-> Returns a const_reverse_iterator pointing to the last element in the container (i.e., its reverse beginning).
 //        const_reverse_iterator crbegin() const noexcept {};
 //
@@ -169,17 +142,17 @@ namespace ft {
         size_type size() const {return(_size);};
 
         //-> Returns the maximum number of elements that the list container can hold.
-        size_type max_size() const {return(std::numeric_limits<T>::max());};
+        size_type max_size() const {return((std::numeric_limits<size_type>::max() / sizeof(Node<T>)));};
 
 
         // ----------------------------------------------- ELEMENT ACCESS ----------------------------------------------
         //-> Returns a reference to the first element in the list container.
-        reference front() {};
-        const_reference front() const {};
+        reference front() {return(reference(_head->_next->_data));};
+        const_reference front() const {return(const_reference(_head->_next->_data));};
 
         //-> Returns a reference to the last element in the list container.
-        reference back() {};
-        const_reference back() const {};
+        reference back() {return(reference(_tail->_prev->_data));};
+        const_reference back() const {return(const_reference(_tail->_prev->_data));};
 
 
         // ------------------------------------------------- MODIFIERS -------------------------------------------------

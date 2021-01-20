@@ -3,7 +3,7 @@
 //
 
 #include "List.hpp"
-#include "node.hpp"
+#include "Node.hpp"
 #include "Iterator.hpp"
 
 int main()
