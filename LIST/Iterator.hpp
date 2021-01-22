@@ -50,7 +50,7 @@ namespace ft {
         reference operator*() {return(_ptr->_data);};
 
         // --------------------------------------------- -> OPERATOR ---------------------------------------------------
-        pointer operator->() {return(_ptr->_data);};
+        pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
         BidirectionalIterator& operator++() { //prefix
@@ -129,7 +129,7 @@ namespace ft {
         const_reference operator*() {return(_ptr->_data);};
 
         // --------------------------------------------- -> OPERATOR ---------------------------------------------------
-        const_pointer operator->() {return(_ptr->_data);};
+        const_pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
         ConstBidirectionalIterator& operator++() { //prefix
@@ -162,7 +162,6 @@ namespace ft {
             return (_ptr == rhs._ptr);
         };
 
-        template <class Iterator>
         bool operator!= (const ConstBidirectionalIterator<value_type>& rhs) {
             return (_ptr != rhs._ptr);
         };
@@ -190,8 +189,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         RevBidirectionalIterator() : _ptr(NULL) {};
         explicit RevBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        template <class Iter>
-        RevBidirectionalIterator (const RevBidirectionalIterator<Iter>& it) {*this = it;};
+        RevBidirectionalIterator (const RevBidirectionalIterator<T>& it) {*this = it;};
         RevBidirectionalIterator & operator=(const RevBidirectionalIterator& rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -204,7 +202,7 @@ namespace ft {
         reference operator*() {return(_ptr->_data);};
 
         // --------------------------------------------- -> OPERATOR ---------------------------------------------------
-        pointer operator->() {return(_ptr->_data);};
+        pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
         RevBidirectionalIterator& operator++() { //prefix
@@ -243,7 +241,7 @@ namespace ft {
         };
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
-        const iterator_type&   get_ptr() const {return (_ptr);};
+        const iterator_type&   get_ptr() const {return(_ptr);};
     };
 
     template<typename T>
@@ -268,8 +266,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         ConstRevBidirectionalIterator() : _ptr(NULL) {};
         explicit ConstRevBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        template <class Iter>
-        ConstRevBidirectionalIterator (const ConstRevBidirectionalIterator<Iter>& it) {*this = it;};
+        ConstRevBidirectionalIterator (const ConstRevBidirectionalIterator<T>& it) {*this = it;};
         ConstRevBidirectionalIterator (const RevBidirectionalIterator<T>& it) {_ptr = it.get_ptr();};
         ConstRevBidirectionalIterator & operator=(const ConstRevBidirectionalIterator& rhs) {
             if (this != &rhs)
@@ -283,7 +280,7 @@ namespace ft {
         const_reference operator*() {return(_ptr->_data);};
 
         // --------------------------------------------- -> OPERATOR ---------------------------------------------------
-        const_pointer operator->() {return(_ptr->_data);};
+        const_pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
         ConstRevBidirectionalIterator& operator++() { //prefix

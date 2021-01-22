@@ -19,17 +19,15 @@ namespace ft {
     class Node {
 
     public:
-        Node *_prev;
-        Node *_next;
-        T _data;
+        Node*   _prev;
+        Node*   _next;
+        T       _data;
 
         explicit Node() : _prev(NULL), _next(NULL), _data() {};
-
         explicit Node(const T &data) : _prev(NULL), _next(NULL), _data(data) {};
-
         ~Node() {};
 
-        Node &operator=(Node const &rhs) {
+        Node& operator=(Node const &rhs) {
             if (this != rhs) {
                 this->_prev = rhs._prev;
                 this->_next = rhs._next;
@@ -39,7 +37,6 @@ namespace ft {
         };
 
         Node *getNext() { return (this->_next); };
-
         Node *getPrev() { return (this->_prev); };
     };
 };

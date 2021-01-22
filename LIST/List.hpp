@@ -27,19 +27,19 @@ namespace ft {
 
     public:
         // MEMBER TYPES
-        typedef T                               value_type;
-        typedef Alloc                           allocator_type;
-        typedef T                               &reference;
-        typedef const T                         &const_reference;
-        typedef T                               *pointer;
-        typedef const T                         *const_pointer;
-        typedef Node<T>                         *node_pointer;
-        typedef BidirectionalIterator<T>        iterator;
-        typedef ConstBidirectionalIterator<T>   const_iterator;
-        typedef RevBidirectionalIterator<T>     reverse_iterator;
-        typedef ConstBidirectionalIterator<T>   const_reverse_iterator;
-        typedef std::ptrdiff_t                  difference_type;
-        typedef size_t                          size_type;
+        typedef T                                   value_type;
+        typedef Alloc                               allocator_type;
+        typedef T&                                  reference;
+        typedef const T&                            const_reference;
+        typedef T*                                  pointer;
+        typedef const T*                            const_pointer;
+        typedef Node<T>*                            node_pointer;
+        typedef BidirectionalIterator<T>            iterator;
+        typedef ConstBidirectionalIterator<T>       const_iterator;
+        typedef RevBidirectionalIterator<T>         reverse_iterator;
+        typedef ConstRevBidirectionalIterator<T>    const_reverse_iterator;
+        typedef std::ptrdiff_t                      difference_type;
+        typedef size_t                              size_type;
 
     private:
         node_pointer    _head;
@@ -79,12 +79,12 @@ namespace ft {
         }
 
         //-> copy constructor - Constructs a container with a copy of each of the elements in x, in the same order.
-        list(const list &x) {
+        list(const list &x) : _size(0) {
             _head = new Node<value_type>();
             _tail = new Node<value_type>();
             _head->_next = _tail;
             _tail->_prev = _head;
-            //assign(first, last);
+            assign(x.begin(), x.end());
         }
 
         //-> This destroys all container elements, and deallocates all the storage capacity allocated by the list container using its allocator.
@@ -99,7 +99,8 @@ namespace ft {
             clear();
             _head->_next = _tail;
             _tail->_prev = _head;
-            //assign(x.begin(), x.end()) pass begin and end itterator
+            assign(x.begin(), x.end());
+            return(*this);
         };
 
 
@@ -120,18 +121,6 @@ namespace ft {
         //   (which is considered its reverse end).
         reverse_iterator rend(){return(reverse_iterator(_head));};
         const_reverse_iterator rend() const {return(const_reverse_iterator(_head));};
-
-//        //-> Returns a const_iterator pointing to the first element in the container.
-//        const_iterator cbegin() const noexcept {};
-
-//        //-> Returns a const_iterator pointing to the past-the-end element in the container.
-//        const_iterator cend() const noexcept {};
-
-//        //-> Returns a const_reverse_iterator pointing to the last element in the container (i.e., its reverse beginning).
-//        const_reverse_iterator crbegin() const noexcept {};
-//
-//        //-> Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container.
-//        const_reverse_iterator crend() const noexcept {};
 
 
         // -------------------------------------------------- CAPACITY -------------------------------------------------
@@ -222,13 +211,35 @@ namespace ft {
             }
         };
 
-//        //-> The container is extended by inserting new elements before the element at the specified position.
-//        iterator insert (iterator position, const value_type& val) {};
-//        void insert (iterator position, size_type n, const value_type& val) {};
+        //-> The container is extended by inserting new elements before the element at the specified position.
+        iterator insert (iterator position, const value_type& val) {
+            node_pointer new_node = new Node<value_type>(val);
+            node_pointer pos = position.get_ptr();
+
+            new_node->_next = pos;
+            new_node->_prev = pos->_prev;
+            pos->_prev->_next = new_node;
+            pos->_prev = new_node;
+
+            _size++;
+
+            position--;
+            return (position);
+        };
+
+        void insert (iterator position, size_type n, const value_type& val) {
+            while (n) {
+                insert(position, val);
+                n--;
+            }
+        };
+
 //        template <class InputIterator>
-//        void insert (iterator position, InputIterator first, InputIterator last) {};
+//        void insert (iterator position, InputIterator first, InputIterator last) {
 //
-//        //-> Removes from the list container either a single element (position) or a range of elements ([first,last)).
+//        };
+
+        //-> Removes from the list container either a single element (position) or a range of elements ([first,last)).
 //        iterator erase (iterator position) {};
 //        iterator erase (iterator first, iterator last) {};
 
@@ -248,10 +259,10 @@ namespace ft {
         // ------------------------------------------------- OPERATIONS ------------------------------------------------
 //        //-> Transfers all the elements of x into the container.
 //        void splice (iterator position, list& x) {};
-//
+
 //        //-> Transfers only the element pointed by i from x into the container.
 //        void splice (iterator position, list& x, iterator i) {};
-//
+
 //        //-> Transfers the range [first,last) from x into the container.
 //        void splice (iterator position, list& x, iterator first, iterator last) {};
 
@@ -288,19 +299,19 @@ namespace ft {
         // -------------------------------------------- RELATION OPERATORS  --------------------------------------------
 //        template <class T, class Alloc>
 //        bool operator== (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
-//
+
 //        template <class T, class Alloc>
 //        bool operator!= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
-//
+
 //        template <class T, class Alloc>
 //        bool operator<  (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
-//
+
 //        template <class T, class Alloc>
 //        bool operator<= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
-//
+
 //        template <class T, class Alloc>
 //        bool operator>  (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
-//
+
 //        template <class T, class Alloc>
 //        bool operator>= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
 
