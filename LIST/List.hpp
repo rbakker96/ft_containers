@@ -235,19 +235,17 @@ namespace ft {
         };
 
 //        template <class InputIterator>
-//        void insert (iterator position, InputIterator first, InputIterator last) {
-//
-//        };
+//        void insert (iterator position, InputIterator first, InputIterator last) {};
 
         //-> Removes from the list container either a single element (position) or a range of elements ([first,last)).
 //        iterator erase (iterator position) {};
 //        iterator erase (iterator first, iterator last) {};
 
         //-> Exchanges the content of the container by the content of x, which is another list of the same type. Sizes may differ.
-        void swap (list& x) {};
+//        void swap (list& x) {};
 
         //-> Resizes the container so that it contains n elements.
-        void resize (size_type n, value_type val = value_type()) {};
+//        void resize (size_type n, value_type val = value_type()) {};
 
         //-> Removes all elements from the list container (which are destroyed), and leaving the container with a size of 0.
         void clear() {
