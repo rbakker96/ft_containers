@@ -19,6 +19,7 @@
 
 #include "Iterator.hpp"
 #include "Node.hpp"
+#include "../Traits.hpp"
 
 namespace ft {
 
@@ -47,6 +48,19 @@ namespace ft {
         size_type       _size;
         allocator_type  _allocator;
 
+        void relocate(iterator it_one, iterator it_two) {
+            node_pointer list = it_one.get_ptr();
+            node_pointer addition = it_two.get_ptr();
+
+            addition->_prev->_next = addition->_next;
+            addition->_next->_prev = addition->_prev;
+            addition->_prev = list->_prev;
+            addition->_next = list;
+
+            list->_prev->_next = addition;
+            list->_prev = addition;
+        }
+
     public:
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR ------------------------------------------
         //-> default - Constructs an empty container, with no elements.
@@ -58,14 +72,14 @@ namespace ft {
         }
 
         //-> fill constructor - Constructs a container with n elements. Each element is a copy of val.
-        explicit list(size_type n, const value_type &val = value_type(),
-                      const allocator_type &alloc = allocator_type()) : _allocator(alloc), _size(0) {
-            _head = new Node<value_type>();
-            _tail = new Node<value_type>();
-            _head->_next = _tail;
-            _tail->_prev = _head;
-            assign(n, val);
-        }
+//        explicit list(size_type n, const value_type &val = value_type(),
+//                      const allocator_type &alloc = allocator_type()) : _allocator(alloc), _size(0) {
+//            _head = new Node<value_type>();
+//            _tail = new Node<value_type>();
+//            _head->_next = _tail;
+//            _tail->_prev = _head;
+//            assign(n, val);
+//        }
 
         //-> range constructor - Constructs a container with as many elements as the range [first,last),
         //   with each element constructed from its corresponding element in that range, in the same order.
@@ -238,14 +252,47 @@ namespace ft {
 //        void insert (iterator position, InputIterator first, InputIterator last) {};
 
         //-> Removes from the list container either a single element (position) or a range of elements ([first,last)).
-//        iterator erase (iterator position) {};
-//        iterator erase (iterator first, iterator last) {};
+        iterator erase (iterator position) {
+            node_pointer pos = position.get_ptr();
+
+            pos->_next->_prev = pos->_prev;
+            pos->_prev->_next = pos->_next;
+
+            _size--;
+            position++;
+
+            delete pos;
+            return (position);
+        };
+
+        iterator erase (iterator first, iterator last) {
+            while (*first != *last) {
+                first = erase(first);
+            }
+            return (first);
+        };
 
         //-> Exchanges the content of the container by the content of x, which is another list of the same type. Sizes may differ.
-//        void swap (list& x) {};
+        void swap (list& x) {
+            node_pointer temp_head = x._head;
+            node_pointer temp_tail = x._tail;
+            size_type temp_size = x._size;
+
+            x._head = _head;
+            x._tail = _tail;
+            x._size = _size;
+            _head = temp_head;
+            _tail = temp_tail;
+            _size = temp_size;
+        };
 
         //-> Resizes the container so that it contains n elements.
-//        void resize (size_type n, value_type val = value_type()) {};
+        void resize (size_type n, value_type val = value_type()) {
+            while (n > _size)
+                push_back(val);
+            while (n < _size)
+                pop_back();
+        };
 
         //-> Removes all elements from the list container (which are destroyed), and leaving the container with a size of 0.
         void clear() {
@@ -255,28 +302,89 @@ namespace ft {
         };
 
         // ------------------------------------------------- OPERATIONS ------------------------------------------------
-//        //-> Transfers all the elements of x into the container.
-//        void splice (iterator position, list& x) {};
+        //-> Transfers all the elements of x into the container.
+        void splice (iterator position, list& x) {
+            while (x.size()) {
+                relocate(position, x.begin());
+                _size++;
+                x._size--;
+            }
+        };
 
-//        //-> Transfers only the element pointed by i from x into the container.
-//        void splice (iterator position, list& x, iterator i) {};
+        //-> Transfers only the element pointed by i from x into the container.
+        void splice (iterator position, list& x, iterator i) {
+            relocate(position, i);
+            _size++;
+            x._size--;
+        };
 
-//        //-> Transfers the range [first,last) from x into the container.
-//        void splice (iterator position, list& x, iterator first, iterator last) {};
+        //-> Transfers the range [first,last) from x into the container.
+        void splice (iterator position, list& x, iterator first, iterator last) {
+            while (*first != *last) {
+                iterator temp = iterator(first.get_ptr()->_next);
+
+                relocate(position, first);
+
+                _size++;
+                x._size--;
+
+                first = temp;
+            }
+        };
 
         //-> Removes from the container all the elements that compare equal to val.
-        void remove (const value_type& val) {};
+        void remove (const value_type& val) {
+            iterator first = begin();
+
+            while (*first != *end())
+            {
+                if (first.get_ptr()->_data == val)
+                    first = erase(first);
+                else
+                    first++;
+            }
+        };
 
         //-> Removes from the container all the elements for which Predicate pred returns true.
         template <class Predicate>
-        void remove_if (Predicate pred) {};
+        void remove_if (Predicate pred) {
+            iterator first = begin();
+
+            while (*first != *end())
+            {
+                if (pred(*first) == true)
+                    first = erase(first);
+                else
+                    first++;
+            }
+        };
 
         //-> Removes all but the first element from every consecutive group of equal elements in the container.
-        void unique() {};
+        void unique() {
+            iterator first = begin();
+
+            while (*first != *end())
+            {
+                if (first.get_ptr()->_data == first.get_ptr()->_next->_data)
+                    first = erase(first);
+                else
+                    first++;
+            }
+        };
 
         //-> Takes as argument a specific comparison function that determine the "uniqueness" of an element.
         template <class BinaryPredicate>
-        void unique (BinaryPredicate binary_pred) {};
+        void unique (BinaryPredicate binary_pred) {
+            iterator first = begin();
+
+            while (*first != *end())
+            {
+                if (pred(*first) == true)
+                    first = erase(first);
+                else
+                    first++;
+            }
+        };
 
         //-> Merges x into the list by transferring all of its elements at their respective ordered positions
         //   into the container (both containers shall already be ordered).
