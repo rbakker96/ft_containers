@@ -565,27 +565,124 @@ TEST_CASE( "unique", "[list]" ) {
     REQUIRE(mylist.size() == 3);
 }
 
-TEST_CASE( "", "[list]" ) {
+// compare only integral part:
+bool mycomparison (double first, double second)
+{ return ( int(first)<int(second) ); }
 
-    REQUIRE();
+TEST_CASE( "merge", "[list]" ) {
+    ft::list<double> first, second;
+    ft::list<double>::iterator it;
+
+    first.push_back (3.1);
+    first.push_back (2.2);
+    first.push_back (2.9);
+
+    second.push_back (3.7);
+    second.push_back (7.1);
+    second.push_back (1.4);
+
+    first.sort();
+    REQUIRE(*first.begin() == 2.2);
+    second.sort();
+    REQUIRE(*second.begin() == 1.4);
+
+    first.merge(second);
+    it = first.begin();
+    REQUIRE(first.size() == 6);
+    REQUIRE(second.size() == 0);
+    REQUIRE(*it == 1.4);
+
+    // (second is now empty)
+    second.push_back (2.1);
+    first.merge(second,mycomparison);
+    it = first.begin();
+    std::advance(it, 3);
+    REQUIRE(*it == 2.1);
 }
 
-TEST_CASE( "", "[list]" ) {
-
-    REQUIRE();
+// comparison, not case sensitive.
+bool compare_nocase (const std::string& first, const std::string& second)
+{
+    unsigned int i=0;
+    while ( (i<first.length()) && (i<second.length()) )
+    {
+        if (tolower(first[i])<tolower(second[i])) return true;
+        else if (tolower(first[i])>tolower(second[i])) return false;
+        ++i;
+    }
+    return ( first.length() < second.length() );
 }
 
-TEST_CASE( "", "[list]" ) {
+TEST_CASE( "sort", "[list]" ) {
+    ft::list<std::string> mylist;
+    ft::list<std::string>::iterator it;
+    mylist.push_back ("Three");
+    mylist.push_back ("one");
+    mylist.push_back ("two");
+    mylist.push_back ("Three");
 
-    REQUIRE();
+    mylist.sort();
+//	mylist contains: Three Three one two
+    it = mylist.begin();
+    REQUIRE(*it == "Three");
+    std::advance(it, 2);
+    REQUIRE(*it == "one");
+    std::advance(it, 1);
+    REQUIRE(*it == "two");
+
+    mylist.sort(compare_nocase); // one Three Three two
+    it = mylist.begin();
+    REQUIRE(*it == "one");
+    std::advance(it, 2);
+    REQUIRE(*it == "Three");
+    std::advance(it, 1);
+    REQUIRE(*it == "two");
 }
 
-TEST_CASE( "", "[list]" ) {
+TEST_CASE( "reverse", "[list]" ) {
+    ft::list<int> mylist;
+    ft::list<int>::iterator it;
+    for (int i=1; i<10; ++i) mylist.push_back(i);
 
-    REQUIRE();
+    mylist.reverse();
+    it = mylist.begin();
+    REQUIRE(*it== 9);
+    it++;
+    REQUIRE(*it == 8);
+    it++;
+    REQUIRE(*it == 7);
+    it++;
+    REQUIRE(*it == 6);
+    it++;
+    REQUIRE(*it == 5);
 }
 
-TEST_CASE( "", "[list]" ) {
+TEST_CASE("List: Relational operator overloads", "[List]") {
+    ft::list<int> a;
+    a.push_back(10);
+    a.push_back(20);
+    a.push_back(30);
+    ft::list<int> b;
+    b.push_back(10);
+    b.push_back(20);
+    b.push_back(30);
+    ft::list<int> c;
+    c.push_back(30);
+    c.push_back(20);
+    c.push_back(10);
 
-    REQUIRE();
+    REQUIRE((a == b) == true);
+    REQUIRE((b != c) == true);
+    REQUIRE((b < c) == true);
+    REQUIRE((c > b) == true);
+    REQUIRE((a <= b) == true);
+    REQUIRE((a >= b) == true);
+
+    REQUIRE((a <= b) == true);
+    REQUIRE((a > b) == false);
+    REQUIRE((a < b) == false);
+    REQUIRE((a != b) == false);
+    REQUIRE((b > c) == false);
+    REQUIRE((b == c) == false);
+    REQUIRE((b != c) == true);
 }

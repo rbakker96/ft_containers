@@ -61,6 +61,20 @@ namespace ft {
             list->_prev = addition;
         }
 
+        void flip (node_pointer it) {
+            node_pointer zero = it->_prev->_prev;
+            node_pointer first = it->_prev;
+            node_pointer second = it;
+            node_pointer third = it->_next;
+
+            zero->_next = second;
+            first->_next = third;
+            first->_prev = second;
+            second->_next = first;
+            second->_prev = zero;
+            third->_prev = first;
+        }
+
     public:
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR ------------------------------------------
         //-> default - Constructs an empty container, with no elements.
@@ -248,8 +262,13 @@ namespace ft {
             }
         };
 
-//        template <class InputIterator>
-//        void insert (iterator position, InputIterator first, InputIterator last) {};
+        template <class InputIterator>
+        void insert (iterator position, InputIterator first, InputIterator last) {
+            while (*first != *last) {
+                insert(position, *first);
+                first++;
+            }
+        };
 
         //-> Removes from the list container either a single element (position) or a range of elements ([first,last)).
         iterator erase (iterator position) {
@@ -379,7 +398,7 @@ namespace ft {
 
             while (*first != *end())
             {
-                if (pred(*first) == true)
+                if (binary_pred(first.get_ptr()->_data, first.get_ptr()->_next->_data) == true)
                     first = erase(first);
                 else
                     first++;
@@ -388,39 +407,99 @@ namespace ft {
 
         //-> Merges x into the list by transferring all of its elements at their respective ordered positions
         //   into the container (both containers shall already be ordered).
-        void merge (list& x) {};
+        void merge (list& x) {
+            splice(begin(), x);
+            sort();
+        };
 
         //-> Have the same behavior, but take a specific predicate (comp) to perform the comparison operation between elements.
         template <class Compare>
-        void merge (list& x, Compare comp) {};
+        void merge (list& x, Compare comp) {
+            iterator it = end();
+            it--;
+
+            splice(it, x);
+            sort(comp);
+        };
 
         //-> Sorts the elements in the list, altering their position within the container.
-        void sort() {};
+        void sort() {
+            iterator it = begin();
+
+            while (*it != *end()) {
+                if (it.get_ptr()->_data < it.get_ptr()->_prev->_data) {
+                    flip(it.get_ptr());
+                    it = begin();
+                }
+                else
+                    it++;
+            }
+        };
+
         template <class Compare>
-        void sort (Compare comp) {};
+        void sort (Compare comp) {
+            iterator it = begin();
+
+            while (*it != *end()) {
+                if (comp(it.get_ptr()->_data, it.get_ptr()->_prev->_data) == true) {
+                    flip(it.get_ptr());
+                    it = begin();
+                }
+                else
+                    it++;
+            }
+        };
 
         //-> Reverses the order of the elements in the list container.
-        void reverse() {};
+        void reverse() {
+            node_pointer current = _head;
+            node_pointer temp;
+
+            while (current != NULL) {
+                temp = current->_next;
+                current->_next = current->_prev;
+                current->_prev = temp;
+
+                current = temp;
+            }
+            temp = _head;
+            _head = _tail;
+            _tail = temp;
+        };
+    };
 
         // -------------------------------------------- RELATION OPERATORS  --------------------------------------------
-//        template <class T, class Alloc>
-//        bool operator== (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
+    template <class value_type, class allocator_type>
+    bool operator== (const list<value_type,allocator_type>& lhs, const list<value_type,allocator_type>& rhs) {
+        typename ft::list<value_type>::const_iterator it_lhs = lhs.begin();
+        typename ft::list<value_type>::const_iterator it_rhs = rhs.begin();
 
-//        template <class T, class Alloc>
-//        bool operator!= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
+        if (lhs.size() != rhs.size())
+            return (false);
+        while (*it_lhs != *lhs.end()) {
+            if (*it_lhs != *it_rhs)
+                return (false);
+            it_lhs++;
+            it_rhs++;
+        }
+        return (true);
+    }
 
-//        template <class T, class Alloc>
-//        bool operator<  (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
+    template <class value_type, class allocator_type>
+    bool operator!= (const list<value_type,allocator_type>& lhs, const list<value_type,allocator_type>& rhs) {return !(lhs == rhs);}
 
-//        template <class T, class Alloc>
-//        bool operator<= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
+    template <class value_type, class allocator_type>
+    bool operator<  (const list<value_type,allocator_type>& lhs, const list<value_type,allocator_type>& rhs) {
+        return (std::lexicographical_compare(lhs.begin(), lhs.end(), rhs.begin(), rhs.end()));}
 
-//        template <class T, class Alloc>
-//        bool operator>  (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
+    template <class value_type, class allocator_type>
+    bool operator<= (const list<value_type,allocator_type>& lhs, const list<value_type,allocator_type>& rhs) {return !(rhs < lhs);}
 
-//        template <class T, class Alloc>
-//        bool operator>= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {};
+    template <class value_type, class allocator_type>
+    bool operator>  (const list<value_type,allocator_type>& lhs, const list<value_type,allocator_type>& rhs) {return (rhs<lhs);}
 
-    };
+    template <class value_type, class allocator_type>
+    bool operator>= (const list<value_type,allocator_type>& lhs, const list<value_type,allocator_type>& rhs) {return !(lhs < rhs);}
+
 };
 #endif //FT_CONTAINERS_LIST_HPP
