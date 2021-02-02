@@ -45,8 +45,8 @@ namespace ft {
     private:
         node_pointer    _head;
         node_pointer    _tail;
-        size_type       _size;
         allocator_type  _allocator;
+        size_type       _size;
 
         void relocate(iterator it_one, iterator it_two) {
             node_pointer list = it_one.get_ptr();
@@ -86,19 +86,19 @@ namespace ft {
         }
 
         //-> fill constructor - Constructs a container with n elements. Each element is a copy of val.
-//        explicit list(size_type n, const value_type &val = value_type(),
-//                      const allocator_type &alloc = allocator_type()) : _allocator(alloc), _size(0) {
-//            _head = new Node<value_type>();
-//            _tail = new Node<value_type>();
-//            _head->_next = _tail;
-//            _tail->_prev = _head;
-//            assign(n, val);
-//        }
+        explicit list(size_type n, const value_type &val = value_type(),
+                      const allocator_type &alloc = allocator_type()) : _allocator(alloc), _size(0) {
+            _head = new Node<value_type>();
+            _tail = new Node<value_type>();
+            _head->_next = _tail;
+            _tail->_prev = _head;
+            assign(n, val);
+        }
 
         //-> range constructor - Constructs a container with as many elements as the range [first,last),
         //   with each element constructed from its corresponding element in that range, in the same order.
         template <class InputIterator>
-        list (InputIterator first, InputIterator last, const allocator_type& alloc = allocator_type()) : _allocator(alloc), _size(0) {
+        list (typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last, const allocator_type& alloc = allocator_type()) : _allocator(alloc), _size(0) {
             _head = new Node<value_type>();
             _tail = new Node<value_type>();
             _head->_next = _tail;
@@ -175,9 +175,9 @@ namespace ft {
         // ------------------------------------------------- MODIFIERS -------------------------------------------------
         //-> The new contents are elements constructed from each of the elements in the range between first and last, in the same order.
         template <class InputIterator>
-        void assign (InputIterator first, InputIterator last) {
+        void assign (typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last) {
             clear();
-            while (first != last) {
+            while (*first != *last) {
                 push_back(*first);
                 first++;
             }
@@ -263,7 +263,8 @@ namespace ft {
         };
 
         template <class InputIterator>
-        void insert (iterator position, InputIterator first, InputIterator last) {
+        void insert (iterator position, typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first,
+                     InputIterator last) {
             while (*first != *last) {
                 insert(position, *first);
                 first++;

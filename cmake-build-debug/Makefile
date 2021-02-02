@@ -131,44 +131,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ft_containers
+# Target rules for targets named unit_test
 
 # Build rule for target.
-ft_containers: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ft_containers
-.PHONY : ft_containers
+unit_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unit_test
+.PHONY : unit_test
 
 # fast build rule for target.
-ft_containers/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/build
-.PHONY : ft_containers/fast
+unit_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/build
+.PHONY : unit_test/fast
 
-main.o: main.cpp.o
+UNIT_TEST/catch.o: UNIT_TEST/catch.cpp.o
 
-.PHONY : main.o
+.PHONY : UNIT_TEST/catch.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/main.cpp.o
-.PHONY : main.cpp.o
+UNIT_TEST/catch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o
+.PHONY : UNIT_TEST/catch.cpp.o
 
-main.i: main.cpp.i
+UNIT_TEST/catch.i: UNIT_TEST/catch.cpp.i
 
-.PHONY : main.i
+.PHONY : UNIT_TEST/catch.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/main.cpp.i
-.PHONY : main.cpp.i
+UNIT_TEST/catch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.i
+.PHONY : UNIT_TEST/catch.cpp.i
 
-main.s: main.cpp.s
+UNIT_TEST/catch.s: UNIT_TEST/catch.cpp.s
 
-.PHONY : main.s
+.PHONY : UNIT_TEST/catch.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/main.cpp.s
-.PHONY : main.cpp.s
+UNIT_TEST/catch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.s
+.PHONY : UNIT_TEST/catch.cpp.s
+
+UNIT_TEST/list_test.o: UNIT_TEST/list_test.cpp.o
+
+.PHONY : UNIT_TEST/list_test.o
+
+# target to build an object file
+UNIT_TEST/list_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o
+.PHONY : UNIT_TEST/list_test.cpp.o
+
+UNIT_TEST/list_test.i: UNIT_TEST/list_test.cpp.i
+
+.PHONY : UNIT_TEST/list_test.i
+
+# target to preprocess a source file
+UNIT_TEST/list_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.i
+.PHONY : UNIT_TEST/list_test.cpp.i
+
+UNIT_TEST/list_test.s: UNIT_TEST/list_test.cpp.s
+
+.PHONY : UNIT_TEST/list_test.s
+
+# target to generate assembly for a file
+UNIT_TEST/list_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.s
+.PHONY : UNIT_TEST/list_test.cpp.s
 
 # Help Target
 help:
@@ -178,10 +205,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ft_containers"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... unit_test"
+	@echo "... UNIT_TEST/catch.o"
+	@echo "... UNIT_TEST/catch.i"
+	@echo "... UNIT_TEST/catch.s"
+	@echo "... UNIT_TEST/list_test.o"
+	@echo "... UNIT_TEST/list_test.i"
+	@echo "... UNIT_TEST/list_test.s"
 .PHONY : help
 
 

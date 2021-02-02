@@ -28,6 +28,17 @@ namespace ft {
     struct enable_if<true, T>
     { typedef T type; };
 
+    template<typename T, typename C = typename T::iterator_category>
+    struct is_input_iterator {
+        typedef char yes[1];
+        typedef char no[2];
+
+        static yes& test(std::input_iterator_tag);
+        static no& test(...);
+
+        static const bool value = (sizeof(test(C())) == sizeof(yes));
+    };
+
 }
 
 #endif //FT_CONTAINERS_TRAITS_HPP
