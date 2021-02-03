@@ -33,9 +33,9 @@ namespace ft {
         typedef T*                                  pointer;
         typedef const T*                            const_pointer;
         typedef RandomAccesIterator<T>              iterator;
-//        typedef ConstBidirectionalIterator<T>       const_iterator;
-//        typedef RevBidirectionalIterator<T>         reverse_iterator;
-//        typedef ConstRevBidirectionalIterator<T>    const_reverse_iterator;
+        typedef ConstRandomAccesIterator<T>         const_iterator;
+        typedef RevRandomAccesIterator<T>           reverse_iterator;
+        typedef ConstRevRandomAccesIterator<T>      const_reverse_iterator;
         typedef std::ptrdiff_t                      difference_type;
         typedef size_t                              size_type;
 
@@ -83,19 +83,19 @@ namespace ft {
         // ------------------------------------------------- ITERATORS -------------------------------------------------
         //-> Returns an iterator pointing to the first element in the vector.
         iterator begin() {return iterator(_array);};
-//        const_iterator begin() const {};
+        const_iterator begin() const {return const_iterator(_array);};
 
         //-> Returns an iterator referring to the past-the-end element in the vector container.
         iterator end() {return iterator(&_array[_used]);};
-//        const_iterator end() const {};
+        const_iterator end() const {return const_iterator(&_array[_used]);};
 
         //-> Returns a reverse iterator pointing to the last element in the vector.
-//        reverse_iterator rbegin() {};
-//        const_reverse_iterator rbegin() const {};
+        reverse_iterator rbegin() {return reverse_iterator(&_array[_used - 1]);};
+        const_reverse_iterator rbegin() const {return const_reverse_iterator (&_array[_used - 1]);};
 
         //-> Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector.
-//        reverse_iterator rend() {};
-//        const_reverse_iterator rend() const {};
+        reverse_iterator rend() {return reverse_iterator(_array - 1);};
+        const_reverse_iterator rend() const {return const_reverse_iterator (_array - 1);};
 
 
         // -------------------------------------------------- CAPACITY -------------------------------------------------
@@ -109,7 +109,7 @@ namespace ft {
 //        void resize (size_type n, value_type val = value_type()) {};
 //
 //        //-> Returns the size of the storage space currently allocated for the vector, expressed in terms of elements.
-        size_type capacity() const { return (_array + _used);};
+        size_type capacity() const { return (_capacity);};
 
 //        //-> Returns whether the vector is empty
 //        bool empty() const {};

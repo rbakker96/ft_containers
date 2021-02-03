@@ -69,7 +69,6 @@ TEST_CASE( "BiDirectionalIterator", "[list]" ) {
     }
 }
 
-
 TEST_CASE( "Const BiDirectionalIterator", "[list]" ) {
     ft::list<std::string> ft_const_list;
     std::list<std::string> std_const_list;
@@ -134,7 +133,6 @@ TEST_CASE( "Const BiDirectionalIterator", "[list]" ) {
     }
 }
 
-
 TEST_CASE( "Rev BiDirectionalIterator", "[list]" ) {
     ft::list<std::string> ft_rev_list;
     std::list<std::string> std_rev_list;
@@ -198,7 +196,6 @@ TEST_CASE( "Rev BiDirectionalIterator", "[list]" ) {
         REQUIRE(unequal == true);
     }
 }
-
 
 TEST_CASE( "Const Rev BiDirectionalIterator", "[list]" ) {
     ft::list<std::string> ft_const_rev_list;

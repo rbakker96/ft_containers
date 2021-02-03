@@ -53,12 +53,9 @@ namespace ft {
         pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
-        BidirectionalIterator& operator++() { //prefix
-            _ptr = _ptr->_next;
-            return (*this);
-        };
+        BidirectionalIterator& operator++() {_ptr = _ptr->_next; return (*this);};
 
-        BidirectionalIterator  operator++(int) { //postfix
+        BidirectionalIterator  operator++(int) {
             BidirectionalIterator<T> temp(*this);
 
             _ptr = _ptr->_next;
@@ -66,10 +63,7 @@ namespace ft {
         };
 
         // --------------------------------------------- -- OPERATOR ---------------------------------------------------
-        BidirectionalIterator& operator--() {
-            _ptr = _ptr->_prev;
-            return (*this);
-        };
+        BidirectionalIterator& operator--() {_ptr = _ptr->_prev; return (*this);};
 
         BidirectionalIterator  operator--(int) {
             BidirectionalIterator<T> temp(*this);
@@ -79,14 +73,10 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const BidirectionalIterator<value_type>& rhs) {
-            return (_ptr == rhs._ptr);
-        };
+        bool operator== (const BidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
 
         template <class Iterator>
-        bool operator!= (const BidirectionalIterator<value_type>& rhs) {
-            return (_ptr != rhs._ptr);
-        };
+        bool operator!= (const BidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const iterator_type&   get_ptr() const {return (_ptr);};
@@ -132,12 +122,9 @@ namespace ft {
         const_pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
-        ConstBidirectionalIterator& operator++() { //prefix
-            _ptr = _ptr->_next;
-            return (*this);
-        };
+        ConstBidirectionalIterator& operator++() {_ptr = _ptr->_next; return (*this);};
 
-        ConstBidirectionalIterator  operator++(int) { //postfix
+        ConstBidirectionalIterator  operator++(int) {
             ConstBidirectionalIterator<T> temp(*this);
 
             _ptr = _ptr->_next;
@@ -145,10 +132,7 @@ namespace ft {
         };
 
         // --------------------------------------------- -- OPERATOR ---------------------------------------------------
-        ConstBidirectionalIterator& operator--() {
-            _ptr = _ptr->_prev;
-            return (*this);
-        };
+        ConstBidirectionalIterator& operator--() {_ptr = _ptr->_prev; return (*this);};
 
         ConstBidirectionalIterator  operator--(int) {
             ConstBidirectionalIterator<T> temp(*this);
@@ -158,13 +142,9 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const ConstBidirectionalIterator<value_type>& rhs) {
-            return (_ptr == rhs._ptr);
-        };
+        bool operator== (const ConstBidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
 
-        bool operator!= (const ConstBidirectionalIterator<value_type>& rhs) {
-            return (_ptr != rhs._ptr);
-        };
+        bool operator!= (const ConstBidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
 
     };
 
@@ -205,12 +185,9 @@ namespace ft {
         pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
-        RevBidirectionalIterator& operator++() { //prefix
-            _ptr = _ptr->_prev;
-            return (*this);
-        };
+        RevBidirectionalIterator& operator++() {_ptr = _ptr->_prev; return (*this);};
 
-        RevBidirectionalIterator  operator++(int) { //postfix
+        RevBidirectionalIterator  operator++(int) {
             RevBidirectionalIterator<T> temp(*this);
 
             _ptr = _ptr->_prev;
@@ -218,10 +195,7 @@ namespace ft {
         };
 
         // --------------------------------------------- -- OPERATOR ---------------------------------------------------
-        RevBidirectionalIterator& operator--() {
-            _ptr = _ptr->_next;
-            return (*this);
-        };
+        RevBidirectionalIterator& operator--() {_ptr = _ptr->_next; return (*this);};
 
         RevBidirectionalIterator  operator--(int) {
             RevBidirectionalIterator<T> temp(*this);
@@ -231,14 +205,10 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const RevBidirectionalIterator<value_type>& rhs) {
-            return (_ptr == rhs._ptr);
-        };
+        bool operator== (const RevBidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
 
         template <class Iterator>
-        bool operator!= (const RevBidirectionalIterator<value_type>& rhs) {
-            return (_ptr != rhs._ptr);
-        };
+        bool operator!= (const RevBidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const iterator_type&   get_ptr() const {return(_ptr);};
@@ -283,12 +253,9 @@ namespace ft {
         const_pointer operator->() {return(&_ptr->_data);};
 
         // --------------------------------------------- ++ OPERATOR ---------------------------------------------------
-        ConstRevBidirectionalIterator& operator++() { //prefix
-            _ptr = _ptr->_prev;
-            return (*this);
-        };
+        ConstRevBidirectionalIterator& operator++() {_ptr = _ptr->_prev; return (*this);};
 
-        ConstRevBidirectionalIterator  operator++(int) { //postfix
+        ConstRevBidirectionalIterator  operator++(int) {
             ConstRevBidirectionalIterator<T> temp(*this);
 
             _ptr = _ptr->_prev;
@@ -296,10 +263,7 @@ namespace ft {
         };
 
         // --------------------------------------------- -- OPERATOR ---------------------------------------------------
-        ConstRevBidirectionalIterator& operator--() {
-            _ptr = _ptr->_next;
-            return (*this);
-        };
+        ConstRevBidirectionalIterator& operator--() {_ptr = _ptr->_next; return (*this);};
 
         ConstRevBidirectionalIterator  operator--(int) {
             ConstRevBidirectionalIterator<T> temp(*this);
@@ -309,14 +273,10 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const ConstRevBidirectionalIterator<value_type>& rhs) {
-            return (_ptr == rhs._ptr);
-        };
+        bool operator== (const ConstRevBidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
 
         template <class Iterator>
-        bool operator!= (const ConstRevBidirectionalIterator<value_type>& rhs) {
-            return (_ptr != rhs._ptr);
-        };
+        bool operator!= (const ConstRevBidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
     };
 
 };
