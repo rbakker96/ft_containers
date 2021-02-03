@@ -5,11 +5,15 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCES UNIT_TEST/catch.cpp
             UNIT_TEST/catch.hpp
+            UNIT_TEST/RandomAccessIterator_test.cpp
+            UNIT_TEST/Bidirectionaliterator_test.cpp
             UNIT_TEST/list_test.cpp
-            Traits.hpp
-            LIST/Iterator.hpp
+            UNIT_TEST/vector_test.cpp
+            UTILS/Traits.hpp
+            UTILS/BiDirectionalIterator.hpp
+            UTILS/RandomAccesIterator.hpp
             LIST/List.hpp
-            LIST/Node.hpp)
+            LIST/Node.hpp )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
 

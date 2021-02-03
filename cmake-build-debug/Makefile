@@ -143,6 +143,60 @@ unit_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/build
 .PHONY : unit_test/fast
 
+UNIT_TEST/Bidirectionaliterator_test.o: UNIT_TEST/Bidirectionaliterator_test.cpp.o
+
+.PHONY : UNIT_TEST/Bidirectionaliterator_test.o
+
+# target to build an object file
+UNIT_TEST/Bidirectionaliterator_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.o
+.PHONY : UNIT_TEST/Bidirectionaliterator_test.cpp.o
+
+UNIT_TEST/Bidirectionaliterator_test.i: UNIT_TEST/Bidirectionaliterator_test.cpp.i
+
+.PHONY : UNIT_TEST/Bidirectionaliterator_test.i
+
+# target to preprocess a source file
+UNIT_TEST/Bidirectionaliterator_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.i
+.PHONY : UNIT_TEST/Bidirectionaliterator_test.cpp.i
+
+UNIT_TEST/Bidirectionaliterator_test.s: UNIT_TEST/Bidirectionaliterator_test.cpp.s
+
+.PHONY : UNIT_TEST/Bidirectionaliterator_test.s
+
+# target to generate assembly for a file
+UNIT_TEST/Bidirectionaliterator_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.s
+.PHONY : UNIT_TEST/Bidirectionaliterator_test.cpp.s
+
+UNIT_TEST/RandomAccessIterator_test.o: UNIT_TEST/RandomAccessIterator_test.cpp.o
+
+.PHONY : UNIT_TEST/RandomAccessIterator_test.o
+
+# target to build an object file
+UNIT_TEST/RandomAccessIterator_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.o
+.PHONY : UNIT_TEST/RandomAccessIterator_test.cpp.o
+
+UNIT_TEST/RandomAccessIterator_test.i: UNIT_TEST/RandomAccessIterator_test.cpp.i
+
+.PHONY : UNIT_TEST/RandomAccessIterator_test.i
+
+# target to preprocess a source file
+UNIT_TEST/RandomAccessIterator_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.i
+.PHONY : UNIT_TEST/RandomAccessIterator_test.cpp.i
+
+UNIT_TEST/RandomAccessIterator_test.s: UNIT_TEST/RandomAccessIterator_test.cpp.s
+
+.PHONY : UNIT_TEST/RandomAccessIterator_test.s
+
+# target to generate assembly for a file
+UNIT_TEST/RandomAccessIterator_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.s
+.PHONY : UNIT_TEST/RandomAccessIterator_test.cpp.s
+
 UNIT_TEST/catch.o: UNIT_TEST/catch.cpp.o
 
 .PHONY : UNIT_TEST/catch.o
@@ -197,6 +251,33 @@ UNIT_TEST/list_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.s
 .PHONY : UNIT_TEST/list_test.cpp.s
 
+UNIT_TEST/vector_test.o: UNIT_TEST/vector_test.cpp.o
+
+.PHONY : UNIT_TEST/vector_test.o
+
+# target to build an object file
+UNIT_TEST/vector_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.o
+.PHONY : UNIT_TEST/vector_test.cpp.o
+
+UNIT_TEST/vector_test.i: UNIT_TEST/vector_test.cpp.i
+
+.PHONY : UNIT_TEST/vector_test.i
+
+# target to preprocess a source file
+UNIT_TEST/vector_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.i
+.PHONY : UNIT_TEST/vector_test.cpp.i
+
+UNIT_TEST/vector_test.s: UNIT_TEST/vector_test.cpp.s
+
+.PHONY : UNIT_TEST/vector_test.s
+
+# target to generate assembly for a file
+UNIT_TEST/vector_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.s
+.PHONY : UNIT_TEST/vector_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -206,12 +287,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... unit_test"
+	@echo "... UNIT_TEST/Bidirectionaliterator_test.o"
+	@echo "... UNIT_TEST/Bidirectionaliterator_test.i"
+	@echo "... UNIT_TEST/Bidirectionaliterator_test.s"
+	@echo "... UNIT_TEST/RandomAccessIterator_test.o"
+	@echo "... UNIT_TEST/RandomAccessIterator_test.i"
+	@echo "... UNIT_TEST/RandomAccessIterator_test.s"
 	@echo "... UNIT_TEST/catch.o"
 	@echo "... UNIT_TEST/catch.i"
 	@echo "... UNIT_TEST/catch.s"
 	@echo "... UNIT_TEST/list_test.o"
 	@echo "... UNIT_TEST/list_test.i"
 	@echo "... UNIT_TEST/list_test.s"
+	@echo "... UNIT_TEST/vector_test.o"
+	@echo "... UNIT_TEST/vector_test.i"
+	@echo "... UNIT_TEST/vector_test.s"
 .PHONY : help
 
 

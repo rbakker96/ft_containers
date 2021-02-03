@@ -90,9 +90,35 @@ CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.s
 
+CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
+CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.o: ../UNIT_TEST/RandomAccessIterator_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/RandomAccessIterator_test.cpp
+
+CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/RandomAccessIterator_test.cpp > CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.i
+
+CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/RandomAccessIterator_test.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.s
+
+CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
+CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.o: ../UNIT_TEST/Bidirectionaliterator_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/Bidirectionaliterator_test.cpp
+
+CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/Bidirectionaliterator_test.cpp > CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.i
+
+CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/Bidirectionaliterator_test.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.s
+
 CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
 CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o: ../UNIT_TEST/list_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/list_test.cpp
 
 CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.i: cmake_force
@@ -103,19 +129,38 @@ CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/list_test.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.s
 
+CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
+CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.o: ../UNIT_TEST/vector_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/vector_test.cpp
+
+CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/vector_test.cpp > CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.i
+
+CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/vector_test.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.s
+
 # Object files for target unit_test
 unit_test_OBJECTS = \
 "CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o" \
-"CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o"
+"CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.o" \
+"CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.o" \
+"CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o" \
+"CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.o"
 
 # External object files for target unit_test
 unit_test_EXTERNAL_OBJECTS =
 
 unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o
+unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/RandomAccessIterator_test.cpp.o
+unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/Bidirectionaliterator_test.cpp.o
 unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/list_test.cpp.o
+unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/vector_test.cpp.o
 unit_test: CMakeFiles/unit_test.dir/build.make
 unit_test: CMakeFiles/unit_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable unit_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable unit_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

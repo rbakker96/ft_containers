@@ -80,16 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/LIST/Iterator.hpp">
-			<Option target="unit_test"/>
-		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/LIST/List.hpp">
 			<Option target="unit_test"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp">
 			<Option target="unit_test"/>
 		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/Traits.hpp">
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/Bidirectionaliterator_test.cpp">
+			<Option target="unit_test"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/RandomAccessIterator_test.cpp">
 			<Option target="unit_test"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp">
@@ -99,6 +99,18 @@
 			<Option target="unit_test"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/list_test.cpp">
+			<Option target="unit_test"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/vector_test.cpp">
+			<Option target="unit_test"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp">
+			<Option target="unit_test"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UTILS/RandomAccesIterator.hpp">
+			<Option target="unit_test"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp">
 			<Option target="unit_test"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/CMakeLists.txt">
