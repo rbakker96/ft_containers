@@ -5,10 +5,10 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCES UNIT_TEST/catch.cpp
             UNIT_TEST/catch.hpp
-            UNIT_TEST/RandomAccessIterator_test.cpp
-            UNIT_TEST/Bidirectionaliterator_test.cpp
-            UNIT_TEST/list_test.cpp
-            UNIT_TEST/vector_test.cpp
+            UNIT_TEST/1_Bidirectionaliterator_test.cpp
+            UNIT_TEST/2_RandomAccessIterator_test.cpp
+            UNIT_TEST/3_list_test.cpp
+            UNIT_TEST/4_vector_test.cpp
             UTILS/Traits.hpp
             UTILS/BiDirectionalIterator.hpp
             UTILS/RandomAccesIterator.hpp

@@ -86,22 +86,22 @@
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp">
 			<Option target="unit_test"/>
 		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/Bidirectionaliterator_test.cpp">
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp">
 			<Option target="unit_test"/>
 		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/RandomAccessIterator_test.cpp">
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp">
+			<Option target="unit_test"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/3_list_test.cpp">
+			<Option target="unit_test"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp">
 			<Option target="unit_test"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp">
 			<Option target="unit_test"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp">
-			<Option target="unit_test"/>
-		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/list_test.cpp">
-			<Option target="unit_test"/>
-		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/vector_test.cpp">
 			<Option target="unit_test"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp">
