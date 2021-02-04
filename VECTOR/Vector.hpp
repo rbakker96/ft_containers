@@ -18,6 +18,7 @@
 #include <limits>
 
 #include "../UTILS/RandomAccesIterator.hpp"
+#include "../UTILS/Traits.hpp"
 
 namespace ft {
 
@@ -45,6 +46,16 @@ namespace ft {
         size_type       _used;
         size_type       _capacity;
 
+        void reallocation(size_type size)
+        {
+            pointer temp = new value_type[size];
+            for (size_type i = 0; i < _used; i++)
+                temp[i] = _array[i];
+            _capacity = size;
+            delete[] _array;
+            _array = temp;
+        }
+
     public:
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR ------------------------------------------
         //-> Constructs an empty container, with no elements.
@@ -60,13 +71,13 @@ namespace ft {
         //-> Constructs a container with as many elements as the range [first,last), with each element
         //   constructed from its corresponding element in that range, in the same order.
         template <class InputIterator>
-        vector (InputIterator first, InputIterator last,
+        vector (typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last,
                 const allocator_type& alloc = allocator_type()) : _allocator(alloc), _used(0), _capacity(0) {
             assign(first, last);
         };
 
         //-> Constructs a container with a copy of each of the elements in x, in the same order.
-        vector (const vector& x) : _allocator(x._allocator), _used(x._used), _capacity(x._capacity) {
+        vector (const vector& x) : _allocator(x._allocator), _used(0), _capacity(x._capacity) {
             _array = new value_type[x._capacity];
             assign(x.begin(), x.end());
         };
@@ -78,10 +89,11 @@ namespace ft {
         vector& operator= (const vector& x) {
             clear();
             _array = new value_type[x._capacity];
-            _allocator= x._allocator;
-            _used = x._used;
+            _allocator = x._allocator;
+            _used = 0;
             _capacity = x._capacity;
             assign(x.begin(), x.end());
+            return (*this);
         };
 
         // ------------------------------------------------- ITERATORS -------------------------------------------------
@@ -90,6 +102,7 @@ namespace ft {
         const_iterator begin() const {return const_iterator(_array);};
 
         //-> Returns an iterator referring to the past-the-end element in the vector container.
+        //iterator end() {return iterator(&_array[_used]);};
         iterator end() {return iterator(&_array[_used]);};
         const_iterator end() const {return const_iterator(&_array[_used]);};
 
@@ -107,13 +120,13 @@ namespace ft {
         size_type size() const {return (_used);};
 
         //-> Returns the maximum number of elements that the vector can hold.
-        size_type max_size() const {return((std::numeric_limits<size_type>::max() / sizeof(pointer)));};
+        size_type max_size() const {return((std::numeric_limits<size_type>::max() / sizeof(value_type)));};
 
         //-> Resizes the container so that it contains n elements.
         void resize (size_type n, value_type val = value_type()) {
             if (n < _used)
                 _used -= (_used - n);
-            else if (n > _used)
+            while (n > _used)
                 push_back(val);
         };
 
@@ -124,35 +137,43 @@ namespace ft {
         bool empty() const {return (_used == 0);};
 
         //-> Requests that the vector capacity be at least enough to contain n elements.
-//        void reserve (size_type n) {};
+        void reserve (size_type n) {
+            if (n > _capacity)
+                reallocation(n);
+        };
 
         //-> Requests the container to reduce its capacity to fit its size.
-//        void shrink_to_fit() {};
+        void shrink_to_fit() {
+            if (_capacity > _used)
+                reallocation(_used);
+        };
 
 
         // ----------------------------------------------- ELEMENT ACCESS ----------------------------------------------
         //-> Returns a reference to the element at position n in the vector container.
-//        reference operator[] (size_type n) {};
-//        const_reference operator[] (size_type n) const {};
+        reference operator[] (size_type n) {return reference(_array[n]);};
+
+        const_reference operator[] (size_type n) const {return const_reference(_array[n]);};
 
         //-> Returns a reference to the element at position n in the vector.
-//        reference at (size_type n) {};
-//        const_reference at (size_type n) const {};
+        reference at (size_type n) {return reference(_array[n]);};
+        const_reference at (size_type n) const {return const_reference(_array[n]);};
 
         //-> Returns a reference to the first element in the vector.
-//        reference front() {};
-//        const_reference front() const {};
+        reference front() {return reference(_array[0]);};
+        const_reference front() const {return const_reference(_array[0]);};
 
         //-> Returns a reference to the last element in the vector.
-//        reference back() {};
-//        const_reference back() const {};
+        reference back() {return reference(_array[_used - 1]);};
+        const_reference back() const {return const_reference(_array[_used - 1]);};
 
 
         // ------------------------------------------------- MODIFIERS -------------------------------------------------
         //->  the new contents are elements constructed from each of the elements in the range between first and
         //    last, in the same order.
         template <class InputIterator>
-        void assign (InputIterator first, InputIterator last) {
+        void assign (typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last) {
+            clear();
             while (*first != *last) {
                 push_back(*first);
                 first++;
@@ -161,6 +182,7 @@ namespace ft {
 
         //-> the new contents are n elements, each initialized to a copy of val.
         void assign (size_type n, const value_type& val) {
+            clear();
             for (size_type i = 0; i < n; i++)
                 push_back(val);
         };
@@ -171,14 +193,8 @@ namespace ft {
                 _array = new value_type [1];
                 _capacity = 1;
             }
-            else if (_capacity == _used) {
-                pointer temp = new value_type[2 * _capacity];
-                for (size_type i = 0; i < _used; i++)
-                    temp[i] = _array[i];
-                _capacity *= 2;
-                delete[] _array;
-                _array = temp;
-            }
+            else if (_capacity == _used)
+                reallocation((2*_capacity));
             _array[_used] = val;
             _used += 1;
         };
@@ -189,7 +205,24 @@ namespace ft {
         };
 
         //->The vector is extended by inserting new elements before the element at the specified position.
-//        iterator insert (iterator position, const value_type& val) {};
+//        iterator insert (iterator position, const value_type& val) {
+//            size_type i = 0;
+//
+//            if (_capacity == _used)
+//                reallocation(_capacity + 1);
+//            pointer temp =  _array;
+//
+//            while(_array[i] != *position)
+//                i++;
+//
+//
+//
+//            for (size_type i = 0; i < _used; i++)
+//                temp[i] = _array[i];
+//            _capacity = size;
+//            delete[] _array;
+//            _array = temp;
+//        };
 
 //        void insert (iterator position, size_type n, const value_type& val) {};
 
@@ -207,8 +240,12 @@ namespace ft {
 
 //        //-> Removes all elements from the vector (which are destroyed), leaving the container with a size of 0.
         void clear() {
-            if(_capacity)
+            if(_capacity) {
                 delete[] _array;
+                _array = NULL;
+                _used = 0;
+                _capacity = 0;
+            }
         };
 
     };

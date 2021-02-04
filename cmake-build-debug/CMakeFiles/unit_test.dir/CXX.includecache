@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp
 catch.hpp
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
-string
--
 vector
 -
 ../VECTOR/Vector.hpp
@@ -384,6 +382,8 @@ cstring
 
 /Users/roybakker/Desktop/ft_containers/UTILS/RandomAccesIterator.hpp
 
+/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
+
 /Users/roybakker/Desktop/ft_containers/VECTOR/Vector.hpp
 cstddef
 -
@@ -393,4 +393,6 @@ limits
 -
 ../UTILS/RandomAccesIterator.hpp
 /Users/roybakker/Desktop/ft_containers/UTILS/RandomAccesIterator.hpp
+../UTILS/Traits.hpp
+/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
 

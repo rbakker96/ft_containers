@@ -11,6 +11,7 @@ CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o: ../UTILS/
 CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../UNIT_TEST/2_RandomAccessIterator_test.cpp
 CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../UNIT_TEST/catch.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../UTILS/RandomAccesIterator.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../UTILS/Traits.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../VECTOR/Vector.hpp
 
 CMakeFiles/unit_test.dir/UNIT_TEST/3_list_test.cpp.o: ../LIST/List.hpp
@@ -23,6 +24,7 @@ CMakeFiles/unit_test.dir/UNIT_TEST/3_list_test.cpp.o: ../UTILS/Traits.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o: ../UNIT_TEST/4_vector_test.cpp
 CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o: ../UNIT_TEST/catch.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o: ../UTILS/RandomAccesIterator.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o: ../UTILS/Traits.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o: ../VECTOR/Vector.hpp
 
 CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o: ../UNIT_TEST/catch.cpp

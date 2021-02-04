@@ -10,36 +10,42 @@
 
 //->Check test van sam voor die equal operator die niet werkt
 
-TEST_CASE( "empty container constructor (default constructor)", "[list]" ) {
+TEST_CASE( "list - empty container constructor (default constructor)", "[list]" ) {
     ft::list<int> first;                                // empty list of ints
     REQUIRE(first.size() == 0);
 }
 
-TEST_CASE( "fill constructor", "[list]" ) {
+TEST_CASE( "list - fill constructor", "[list]" ) {
     ft::list<int> second (4,100);                // four ints with value 100
     REQUIRE(second.size() == 4);
 }
 
-TEST_CASE( "range constructor", "[list]" ) {
+TEST_CASE( "list - range constructor", "[list]" ) {
     ft::list<int> second (4,100);
     ft::list<int> third (second.begin(),second.end());  // iterating through second
     REQUIRE(third.size() == 4);
 }
 
-TEST_CASE( "copy constructor", "[list]" ) {
+TEST_CASE( "list - copy constructor", "[list]" ) {
     ft::list<int> second (4,100);
     ft::list<int> fourth (second);                       // a copy of second
     REQUIRE(fourth.size() == second.size());
 }
 
-TEST_CASE( "empty", "[list]" ) {
+TEST_CASE( "list - assignment operator", "[list]" ) {
+    ft::list<int> second (4,100);
+    ft::list<int> fourth = second;                      // a copy of second
+    REQUIRE(fourth.size() == second.size());
+}
+
+TEST_CASE( "list - empty", "[list]" ) {
     ft::list<int> my_list;
     REQUIRE(my_list.empty() == true);
     my_list.push_front(1);
     REQUIRE(my_list.empty() == false);
 }
 
-TEST_CASE( "size", "[list]" ) {
+TEST_CASE( "list - size", "[list]" ) {
     ft::list<int> my_list;
     my_list.push_front(1);
     REQUIRE(my_list.size() == 1);
@@ -47,13 +53,13 @@ TEST_CASE( "size", "[list]" ) {
     REQUIRE(my_list.size() == 2);
 }
 
-TEST_CASE( "max_size", "[list]" ) {
+TEST_CASE( "list - max_size", "[list]" ) {
     ft::list<int> my_list;
     std::list<int> original_list;
     REQUIRE(my_list.max_size() == original_list.max_size());
 }
 
-TEST_CASE( "front", "[list]" ) {
+TEST_CASE( "list - front", "[list]" ) {
     ft::list<int> mylist;
 
     mylist.push_back(77);
@@ -63,7 +69,7 @@ TEST_CASE( "front", "[list]" ) {
     REQUIRE(mylist.front() == 77);
 }
 
-TEST_CASE( "back", "[list]" ) {
+TEST_CASE( "list - back", "[list]" ) {
     ft::list<int> mylist;
 
     mylist.push_back(77);
@@ -73,7 +79,7 @@ TEST_CASE( "back", "[list]" ) {
     REQUIRE(mylist.back() == 22);
 }
 
-TEST_CASE( "assign", "[list]" ) {
+TEST_CASE( "list - assign", "[list]" ) {
     ft::list<int> first;
     ft::list<int> second;
 
@@ -91,7 +97,7 @@ TEST_CASE( "assign", "[list]" ) {
 //    REQUIRE(first.front() == 1776);
 }
 
-TEST_CASE( "push_front", "[list]" ) {
+TEST_CASE( "list - push_front", "[list]" ) {
     std::list<int> mylist (2,100);         // two ints with a value of 100
     mylist.push_front (200);
     mylist.push_front (300);
@@ -101,7 +107,7 @@ TEST_CASE( "push_front", "[list]" ) {
     REQUIRE(*mylist.begin() == 300);
 }
 
-TEST_CASE( "pop_front", "[list]" ) {
+TEST_CASE( "list - pop_front", "[list]" ) {
     std::list<int> mylist;
     mylist.push_back (100);
     mylist.push_back (200);
@@ -115,7 +121,7 @@ TEST_CASE( "pop_front", "[list]" ) {
     REQUIRE(mylist.size() == 0);
 }
 
-TEST_CASE( "push_back", "[list]" ) {
+TEST_CASE( "list - push_back", "[list]" ) {
     std::list<int> mylist (2,100);         // two ints with a value of 100
     mylist.push_back(200);
     mylist.push_back(300);
@@ -125,7 +131,7 @@ TEST_CASE( "push_back", "[list]" ) {
     REQUIRE(*mylist.begin() == 100);
 }
 
-TEST_CASE( "pop_back", "[list]" ) {
+TEST_CASE( "list - pop_back", "[list]" ) {
     std::list<int> mylist;
     mylist.push_back (100);
     mylist.push_back (200);
@@ -139,7 +145,7 @@ TEST_CASE( "pop_back", "[list]" ) {
     REQUIRE(mylist.size() == 0);
 }
 
-TEST_CASE( "insert", "[list]" ) {
+TEST_CASE( "list - insert", "[list]" ) {
     ft::list<int> mylist;
     ft::list<int>::iterator it;
                                                           // set some initial values:
@@ -161,7 +167,7 @@ TEST_CASE( "insert", "[list]" ) {
     REQUIRE(mylist.size() == 10);
 }
 
-TEST_CASE( "erase", "[list]" ) {
+TEST_CASE( "list - erase", "[list]" ) {
     ft::list<int> mylist;
     ft::list<int>::iterator it1,it2;
 
@@ -185,7 +191,7 @@ TEST_CASE( "erase", "[list]" ) {
     REQUIRE(*it2 == 60);
 }
 
-TEST_CASE( "swap", "[list]" ) {
+TEST_CASE( "list - swap", "[list]" ) {
     ft::list<int> first (3,100);   // three ints with a value of 100
     ft::list<int> second (5,200);  // five ints with a value of 200
 
@@ -194,7 +200,7 @@ TEST_CASE( "swap", "[list]" ) {
     REQUIRE(second.size() == 3);
 }
 
-TEST_CASE( "resize", "[list]" ) {
+TEST_CASE( "list - resize", "[list]" ) {
     ft::list<int> mylist;
 
     // set some initial content:
@@ -210,7 +216,7 @@ TEST_CASE( "resize", "[list]" ) {
     REQUIRE(mylist.size() == 12);
 }
 
-TEST_CASE( "splice", "[list]" ) {
+TEST_CASE( "list - splice", "[list]" ) {
     ft::list<int> mylist1, mylist2;
     ft::list<int>::iterator it;
 
@@ -241,7 +247,7 @@ TEST_CASE( "splice", "[list]" ) {
     REQUIRE(mylist1.size() == 6);
 }
 
-//TEST_CASE( "remove", "[list]" ) {
+//TEST_CASE( "list - remove", "[list]" ) {
 //    int myints[]= {17,89,7,14};
 //    ft::list<int> mylist (myints,myints+4);
 //    ft::list<int>::iterator it = mylist.begin();
@@ -263,7 +269,7 @@ struct is_odd {
     bool operator() (const int& value) { return (value%2)==1; }
 };
 
-//TEST_CASE( "remove if", "[list]" ) {
+//TEST_CASE( "list - remove if", "[list]" ) {
 //    int myints[]= {15,36,7,17,20,39,4,1};
 //    ft::list<int> mylist (myints,myints+8);   // 15 36 7 17 20 39 4 1
 //
@@ -284,7 +290,7 @@ struct is_near {
     { return (fabs(first-second)<5.0); }
 };
 
-//TEST_CASE( "unique", "[list]" ) {
+//TEST_CASE( "list - unique", "[list]" ) {
 //    double mydoubles[]={ 12.15,  2.72, 73.0,  12.77,  3.14,
 //                         12.77, 73.35, 72.25, 15.3,  72.25 };
 //    ft::list<double> mylist (mydoubles,mydoubles+10);
@@ -306,7 +312,7 @@ struct is_near {
 bool mycomparison (double first, double second)
 { return ( int(first)<int(second) ); }
 
-TEST_CASE( "merge", "[list]" ) {
+TEST_CASE( "list - merge", "[list]" ) {
     ft::list<double> first, second;
     ft::list<double>::iterator it;
 
@@ -350,7 +356,7 @@ bool compare_nocase (const std::string& first, const std::string& second)
     return ( first.length() < second.length() );
 }
 
-TEST_CASE( "sort", "[list]" ) {
+TEST_CASE( "list - sort", "[list]" ) {
     ft::list<std::string> mylist;
     ft::list<std::string>::iterator it;
     mylist.push_back ("Three");
@@ -376,7 +382,7 @@ TEST_CASE( "sort", "[list]" ) {
     REQUIRE(*it == "two");
 }
 
-TEST_CASE( "reverse", "[list]" ) {
+TEST_CASE( "list - reverse", "[list]" ) {
     ft::list<int> mylist;
     ft::list<int>::iterator it;
     for (int i=1; i<10; ++i) mylist.push_back(i);
@@ -394,7 +400,7 @@ TEST_CASE( "reverse", "[list]" ) {
     REQUIRE(*it == 5);
 }
 
-TEST_CASE("relational operator overloads", "[List]") {
+TEST_CASE("list - relational operator overloads", "[List]") {
     ft::list<int> a;
     a.push_back(10);
     a.push_back(20);

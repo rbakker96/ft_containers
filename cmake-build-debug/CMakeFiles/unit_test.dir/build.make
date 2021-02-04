@@ -90,22 +90,9 @@ CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.s
 
-CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
-CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../UNIT_TEST/2_RandomAccessIterator_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp
-
-CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp > CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i
-
-CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s
-
 CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
 CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o: ../UNIT_TEST/1_Bidirectionaliterator_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp
 
 CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.i: cmake_force
@@ -115,6 +102,19 @@ CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.i: cmake_for
 CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.s
+
+CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
+CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../UNIT_TEST/2_RandomAccessIterator_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp
+
+CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp > CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i
+
+CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp -o CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s
 
 CMakeFiles/unit_test.dir/UNIT_TEST/3_list_test.cpp.o: CMakeFiles/unit_test.dir/flags.make
 CMakeFiles/unit_test.dir/UNIT_TEST/3_list_test.cpp.o: ../UNIT_TEST/3_list_test.cpp
@@ -145,8 +145,8 @@ CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.s: cmake_force
 # Object files for target unit_test
 unit_test_OBJECTS = \
 "CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o" \
-"CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o" \
 "CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o" \
+"CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o" \
 "CMakeFiles/unit_test.dir/UNIT_TEST/3_list_test.cpp.o" \
 "CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o"
 
@@ -154,8 +154,8 @@ unit_test_OBJECTS = \
 unit_test_EXTERNAL_OBJECTS =
 
 unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o
-unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o
 unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o
+unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o
 unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/3_list_test.cpp.o
 unit_test: CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o
 unit_test: CMakeFiles/unit_test.dir/build.make
