@@ -13,31 +13,70 @@
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
 
-class
-{
+#include "../LIST/List.hpp"
+#include "../LIST/Node.hpp"
+#include "../UTILS/BiDirectionalIterator.hpp"
+#include "../UTILS/Traits.hpp"
 
-protected:
+namespace ft {
 
+    template<class T, class Container = ft::list<T> >
+    class queue {
 
-public:
+    public:
     // MEMBER TYPES
+    typedef T               value_type;
+    typedef Container       container_type;
+    typedef size_t          size_type;
 
+    protected:
+        container_type      _ctnr;
 
-    // MEMBER FUNCTIONS
-    // ------ CONSTRUCTOR / DESTRUCTOR ------
+    public:
+    // ---------------------------------------------- MEMBER FUNCTIONS -------------------------------------------------
+    explicit queue (const container_type& ctnr = container_type()) : _ctnr(ctnr) {}
 
+    //-> Returns whether the queue is empty: i.e. whether its size is zero.
+    bool empty() const {return (_ctnr.empty()); }
 
-    // ------ ITERATORS ------
+    //-> Returns the number of elements in the queue.
+    size_type size() const {return (_ctnr.size());}
 
+    //-> Returns a reference to the next element in the queue.
+    value_type& front() {return (_ctnr.front());}
+    const value_type& front() const {return (_ctnr.front());}
 
-    // ------ CAPACITY ------
+    //-> Returns a reference to the last element in the queue.
+    value_type& back() {return (_ctnr.back());}
+    const value_type& back() const {return (_ctnr.back());}
 
-    // ------ ELEMENT ACCESS ------
+    //-> Inserts a new element at the end of the queue, after its current last element.
+    void push (const value_type& val) {return (_ctnr.push_back(val));}
 
-    // ------ MODIFIERS ------
+    //-> Removes the next element in the queue, effectively reducing its size by one.
+    void pop() {return (_ctnr.pop_front());}
 
-    // ------ OPERATIONS ------
+        // -------------------------------------------- RELATION OPERATORS  --------------------------------------------
+        template <class value_type, class ctnr>
+        friend bool operator== (const queue<value_type,ctnr>& lhs, const queue<value_type,ctnr>& rhs) {return (lhs._ctnr == rhs._ctnr);}
 
+        template <class value_type, class ctnr>
+        friend bool operator!= (const queue<value_type,ctnr>& lhs, const queue<value_type,ctnr>& rhs) {return (lhs._ctnr != rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator<  (const queue<value_type,ctnr>& lhs, const queue<value_type,ctnr>& rhs) {return (lhs._ctnr < rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator<= (const queue<value_type,ctnr>& lhs, const queue<value_type,ctnr>& rhs) {return (lhs._ctnr <= rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator>  (const queue<value_type,ctnr>& lhs, const queue<value_type,ctnr>& rhs) {return (lhs._ctnr > rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator>= (const queue<value_type,ctnr>& lhs, const queue<value_type,ctnr>& rhs) {return (lhs._ctnr >= rhs._ctnr);}
+
+    };
+    
 };
 
 #endif //FT_CONTAINERS_QUEUE_HPP

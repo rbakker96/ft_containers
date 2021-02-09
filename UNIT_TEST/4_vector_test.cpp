@@ -273,7 +273,7 @@ TEST_CASE( "vector - swap", "[vector]" ) {
     REQUIRE(*bar.begin() == 100);
 }
 
-TEST_CASE(" vector - Relational operator overloads", "[vector]") {
+TEST_CASE(" vector - relational operator overloads", "[vector]") {
     ft::vector<int> a;
     a.push_back(10);
     a.push_back(20);

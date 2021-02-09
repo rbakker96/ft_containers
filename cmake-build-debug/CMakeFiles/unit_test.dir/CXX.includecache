@@ -6,23 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp
-catch.hpp
-/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
-string
+/Users/roybakker/Desktop/ft_containers/LIST/List.hpp
+algorithm
 -
-vector
+cstddef
 -
-../VECTOR/Vector.hpp
-/Users/roybakker/Desktop/ft_containers/VECTOR/Vector.hpp
+memory
+-
+limits
+-
+Node.hpp
+/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
+../UTILS/BiDirectionalIterator.hpp
+/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp
+../UTILS/Traits.hpp
+/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
 
-/Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp
+/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
+
+/Users/roybakker/Desktop/ft_containers/QUEUE/Queue.hpp
+../LIST/List.hpp
+/Users/roybakker/Desktop/ft_containers/LIST/List.hpp
+../LIST/Node.hpp
+/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
+../UTILS/BiDirectionalIterator.hpp
+/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp
+../UTILS/Traits.hpp
+/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
+
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp
 catch.hpp
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
-vector
+queue
 -
-../VECTOR/Vector.hpp
-/Users/roybakker/Desktop/ft_containers/VECTOR/Vector.hpp
+list
+-
+../QUEUE/Queue.hpp
+/Users/roybakker/Desktop/ft_containers/QUEUE/Queue.hpp
+../LIST/List.hpp
+/Users/roybakker/Desktop/ft_containers/LIST/List.hpp
 
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
 chrono
@@ -390,21 +412,9 @@ vector
 cstring
 -
 
-/Users/roybakker/Desktop/ft_containers/UTILS/RandomAccesIterator.hpp
+/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp
+../LIST/Node.hpp
+/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
 
-/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
-
-/Users/roybakker/Desktop/ft_containers/VECTOR/Vector.hpp
-algorithm
--
-cstddef
--
-memory
--
-limits
--
-../UTILS/RandomAccesIterator.hpp
-/Users/roybakker/Desktop/ft_containers/UTILS/RandomAccesIterator.hpp
-../UTILS/Traits.hpp
 /Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
 

@@ -27,6 +27,14 @@ CMakeFiles/unit_test.dir/UNIT_TEST/4_vector_test.cpp.o
  /Users/roybakker/Desktop/ft_containers/UTILS/RandomAccesIterator.hpp
  /Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
  /Users/roybakker/Desktop/ft_containers/VECTOR/Vector.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/5_queue_test.cpp.o
+ /Users/roybakker/Desktop/ft_containers/LIST/List.hpp
+ /Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
+ /Users/roybakker/Desktop/ft_containers/QUEUE/Queue.hpp
+ /Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp
+ /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
+ /Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp
+ /Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o
  /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp
  /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp

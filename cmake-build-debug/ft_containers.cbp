@@ -98,6 +98,9 @@
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp">
 			<Option target="unit_test"/>
 		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp">
+			<Option target="unit_test"/>
+		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp">
 			<Option target="unit_test"/>
 		</Unit>
