@@ -13,6 +13,7 @@
 #ifndef LIST_HPP
 #define LIST_HPP
 
+#include <algorithm>
 #include <cstddef>
 #include <memory>
 #include <limits>
@@ -177,7 +178,7 @@ namespace ft {
         template <class InputIterator>
         void assign (typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last) {
             clear();
-            while (*first != *last) {
+            while (first != last) {
                 push_back(*first);
                 first++;
             }
@@ -265,7 +266,7 @@ namespace ft {
         template <class InputIterator>
         void insert (iterator position, typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first,
                      InputIterator last) {
-            while (*first != *last) {
+            while (first != last) {
                 insert(position, *first);
                 first++;
             }
@@ -286,7 +287,7 @@ namespace ft {
         };
 
         iterator erase (iterator first, iterator last) {
-            while (*first != *last) {
+            while (first != last) {
                 first = erase(first);
             }
             return (first);
@@ -340,7 +341,7 @@ namespace ft {
 
         //-> Transfers the range [first,last) from x into the container.
         void splice (iterator position, list& x, iterator first, iterator last) {
-            while (*first != *last) {
+            while (first != last) {
                 iterator temp = iterator(first.get_ptr()->_next);
 
                 relocate(position, first);
@@ -356,7 +357,7 @@ namespace ft {
         void remove (const value_type& val) {
             iterator first = begin();
 
-            while (*first != *end())
+            while (first != end())
             {
                 if (first.get_ptr()->_data == val)
                     first = erase(first);
@@ -370,7 +371,7 @@ namespace ft {
         void remove_if (Predicate pred) {
             iterator first = begin();
 
-            while (*first != *end())
+            while (first != end())
             {
                 if (pred(*first) == true)
                     first = erase(first);
@@ -383,7 +384,7 @@ namespace ft {
         void unique() {
             iterator first = begin();
 
-            while (*first != *end())
+            while (first != end())
             {
                 if (first.get_ptr()->_data == first.get_ptr()->_next->_data)
                     first = erase(first);
@@ -397,7 +398,7 @@ namespace ft {
         void unique (BinaryPredicate binary_pred) {
             iterator first = begin();
 
-            while (*first != *end())
+            while (first != end())
             {
                 if (binary_pred(first.get_ptr()->_data, first.get_ptr()->_next->_data) == true)
                     first = erase(first);
@@ -427,7 +428,7 @@ namespace ft {
         void sort() {
             iterator it = begin();
 
-            while (*it != *end()) {
+            while (it != end()) {
                 if (it.get_ptr()->_data < it.get_ptr()->_prev->_data) {
                     flip(it.get_ptr());
                     it = begin();
@@ -441,7 +442,7 @@ namespace ft {
         void sort (Compare comp) {
             iterator it = begin();
 
-            while (*it != *end()) {
+            while (it != end()) {
                 if (comp(it.get_ptr()->_data, it.get_ptr()->_prev->_data) == true) {
                     flip(it.get_ptr());
                     it = begin();

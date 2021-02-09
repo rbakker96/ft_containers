@@ -73,14 +73,16 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const BidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
+        template<typename T2>
+        friend bool operator== (const BidirectionalIterator<T2>& lhs, const BidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        template <class Iterator>
-        bool operator!= (const BidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
+        template<typename T2>
+        friend bool operator!= (const BidirectionalIterator<T2>& lhs, const BidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const iterator_type&   get_ptr() const {return (_ptr);};
     };
+
 
 
     template<typename T>
@@ -142,11 +144,16 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const ConstBidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
+        template<typename T2>
+        friend bool operator== (const ConstBidirectionalIterator<T2>& lhs,
+                                const ConstBidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        bool operator!= (const ConstBidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
+        template<typename T2>
+        friend bool operator!= (const ConstBidirectionalIterator<T2>& lhs,
+                                const ConstBidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
 
     };
+
 
 
     template<typename T>
@@ -205,14 +212,19 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const RevBidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
+        template<typename T2>
+        friend bool operator== (const RevBidirectionalIterator<T2>& lhs,
+                                const RevBidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        template <class Iterator>
-        bool operator!= (const RevBidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
+        template<typename T2>
+        friend bool operator!= (const RevBidirectionalIterator<T2>& lhs,
+                                const RevBidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const iterator_type&   get_ptr() const {return(_ptr);};
     };
+
+
 
     template<typename T>
     class ConstRevBidirectionalIterator {
@@ -273,10 +285,14 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator== (const ConstRevBidirectionalIterator<value_type>& rhs) {return (_ptr == rhs._ptr);};
+        template<typename T2>
+        friend bool operator== (const ConstRevBidirectionalIterator<T2>& lhs,
+                         const ConstRevBidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        template <class Iterator>
-        bool operator!= (const ConstRevBidirectionalIterator<value_type>& rhs) {return (_ptr != rhs._ptr);};
+        template<typename T2>
+        friend bool operator!= (const ConstRevBidirectionalIterator<T2>& lhs,
+                         const ConstRevBidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
+
     };
 
 };

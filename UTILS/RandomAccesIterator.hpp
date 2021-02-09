@@ -92,18 +92,29 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator<(const RandomAccesIterator<T> &rhs) { return (_ptr < rhs._ptr); };
+        template<typename T2>
+        friend bool operator<(const RandomAccesIterator<T2> &lhs,
+                              const RandomAccesIterator<T2> &rhs) { return (lhs._ptr < rhs._ptr); };
 
-        bool operator>(const RandomAccesIterator<T> &rhs) { return (_ptr > rhs._ptr); };
+        template<typename T2>
+        friend bool operator>(const RandomAccesIterator<T2> &lhs,
+                              const RandomAccesIterator<T2> &rhs) { return (rhs < lhs);};
 
-        bool operator<=(const RandomAccesIterator<T> &rhs) { return (_ptr <= rhs._ptr); };
+        template<typename T2>
+        friend bool operator<=(const RandomAccesIterator<T2> &lhs,
+                               const RandomAccesIterator<T2> &rhs) { return !(rhs < lhs); };
 
-        bool operator>=(const RandomAccesIterator<T> &rhs) { return (_ptr >= rhs._ptr); };
+        template<typename T2>
+        friend bool operator>=(const RandomAccesIterator<T2> &lhs,
+                               const RandomAccesIterator<T2> &rhs) { return !(lhs < rhs); };
 
-        bool operator==(const RandomAccesIterator<T> &rhs) { return (_ptr == rhs._ptr); };
+        template<typename T2>
+        friend bool operator==(const RandomAccesIterator<T2> &lhs,
+                               const RandomAccesIterator<T2> &rhs) { return (lhs._ptr == rhs._ptr); };
 
-        template<class Iterator>
-        bool operator!=(const RandomAccesIterator<T> &rhs) { return (_ptr != rhs._ptr); };
+        template<typename T2>
+        friend bool operator!=(const RandomAccesIterator<T2> &lhs,
+                               const RandomAccesIterator<T2> &rhs) { return !(lhs == rhs); };
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const pointer &get_ptr() const { return (_ptr); };
@@ -184,18 +195,29 @@ namespace ft {
         ConstRandomAccesIterator &operator-=(const difference_type &off) {_ptr -= off; return (*this);};
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator<(const ConstRandomAccesIterator<T> &rhs) {return (_ptr < rhs._ptr);};
+        template<typename T2>
+        friend bool operator<(const ConstRandomAccesIterator<T2> &lhs,
+                              const ConstRandomAccesIterator<T2> &rhs) { return (lhs._ptr < rhs._ptr); };
 
-        bool operator>(const ConstRandomAccesIterator<T> &rhs) {return (_ptr > rhs._ptr);};
+        template<typename T2>
+        friend bool operator>(const ConstRandomAccesIterator<T2> &lhs,
+                              const ConstRandomAccesIterator<T2> &rhs) { return (rhs < lhs);};
 
-        bool operator<=(const ConstRandomAccesIterator<T> &rhs) {return (_ptr <= rhs._ptr);};
+        template<typename T2>
+        friend bool operator<=(const ConstRandomAccesIterator<T2> &lhs,
+                               const ConstRandomAccesIterator<T2> &rhs) { return !(rhs < lhs); };
 
-        bool operator>=(const ConstRandomAccesIterator<T> &rhs) {return (_ptr >= rhs._ptr);};
+        template<typename T2>
+        friend bool operator>=(const ConstRandomAccesIterator<T2> &lhs,
+                               const ConstRandomAccesIterator<T2> &rhs) { return !(lhs < rhs); };
 
-        bool operator==(const ConstRandomAccesIterator<T> &rhs) {return (_ptr == rhs._ptr);};
+        template<typename T2>
+        friend bool operator==(const ConstRandomAccesIterator<T2> &lhs,
+                               const ConstRandomAccesIterator<T2> &rhs) { return (lhs._ptr == rhs._ptr); };
 
-        template<class Iterator>
-        bool operator!=(const ConstRandomAccesIterator<T> &rhs) {return (_ptr != rhs._ptr);};
+        template<typename T2>
+        friend bool operator!=(const ConstRandomAccesIterator<T2> &lhs,
+                               const ConstRandomAccesIterator<T2> &rhs) { return !(lhs == rhs); };
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const pointer &get_ptr() const { return (_ptr); };
@@ -279,18 +301,29 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator<(const RevRandomAccesIterator<T> &rhs) { return (_ptr < rhs._ptr); };
+        template<typename T2>
+        friend bool operator<(const RevRandomAccesIterator<T2> &lhs,
+                              const RevRandomAccesIterator<T2> &rhs) { return (lhs._ptr < rhs._ptr); };
 
-        bool operator>(const RevRandomAccesIterator<T> &rhs) { return (_ptr > rhs._ptr); };
+        template<typename T2>
+        friend bool operator>(const RevRandomAccesIterator<T2> &lhs,
+                              const RevRandomAccesIterator<T2> &rhs) { return (rhs < lhs);};
 
-        bool operator<=(const RevRandomAccesIterator<T> &rhs) { return (_ptr <= rhs._ptr); };
+        template<typename T2>
+        friend bool operator<=(const RevRandomAccesIterator<T2> &lhs,
+                               const RevRandomAccesIterator<T2> &rhs) { return !(rhs < lhs); };
 
-        bool operator>=(const RevRandomAccesIterator<T> &rhs) { return (_ptr >= rhs._ptr); };
+        template<typename T2>
+        friend bool operator>=(const RevRandomAccesIterator<T2> &lhs,
+                               const RevRandomAccesIterator<T2> &rhs) { return !(lhs < rhs); };
 
-        bool operator==(const RevRandomAccesIterator<T> &rhs) { return (_ptr == rhs._ptr); };
+        template<typename T2>
+        friend bool operator==(const RevRandomAccesIterator<T2> &lhs,
+                               const RevRandomAccesIterator<T2> &rhs) { return (lhs._ptr == rhs._ptr); };
 
-        template<class Iterator>
-        bool operator!=(const RevRandomAccesIterator<T> &rhs) { return (_ptr != rhs._ptr); };
+        template<typename T2>
+        friend bool operator!=(const RevRandomAccesIterator<T2> &lhs,
+                               const RevRandomAccesIterator<T2> &rhs) { return !(lhs == rhs); };
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const pointer &get_ptr() const { return (_ptr); };
@@ -377,18 +410,29 @@ namespace ft {
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        bool operator<(const ConstRevRandomAccesIterator<T> &rhs) { return (_ptr < rhs._ptr); };
+        template<typename T2>
+        friend bool operator<(const ConstRevRandomAccesIterator<T2> &lhs,
+                              const ConstRevRandomAccesIterator<T2> &rhs) { return (lhs._ptr < rhs._ptr); };
 
-        bool operator>(const ConstRevRandomAccesIterator<T> &rhs) { return (_ptr > rhs._ptr); };
+        template<typename T2>
+        friend bool operator>(const ConstRevRandomAccesIterator<T2> &lhs,
+                              const ConstRevRandomAccesIterator<T2> &rhs) { return (rhs < lhs);};
 
-        bool operator<=(const ConstRevRandomAccesIterator<T> &rhs) { return (_ptr <= rhs._ptr); };
+        template<typename T2>
+        friend bool operator<=(const ConstRevRandomAccesIterator<T2> &lhs,
+                               const ConstRevRandomAccesIterator<T2> &rhs) { return !(rhs < lhs); };
 
-        bool operator>=(const ConstRevRandomAccesIterator<T> &rhs) { return (_ptr >= rhs._ptr); };
+        template<typename T2>
+        friend bool operator>=(const ConstRevRandomAccesIterator<T2> &lhs,
+                               const ConstRevRandomAccesIterator<T2> &rhs) { return !(lhs < rhs); };
 
-        bool operator==(const ConstRevRandomAccesIterator<T> &rhs) { return (_ptr == rhs._ptr); };
+        template<typename T2>
+        friend bool operator==(const ConstRevRandomAccesIterator<T2> &lhs,
+                               const ConstRevRandomAccesIterator<T2> &rhs) { return (lhs._ptr == rhs._ptr); };
 
-        template<class Iterator>
-        bool operator!=(const ConstRevRandomAccesIterator<T> &rhs) { return (_ptr != rhs._ptr); };
+        template<typename T2>
+        friend bool operator!=(const ConstRevRandomAccesIterator<T2> &lhs,
+                               const ConstRevRandomAccesIterator<T2> &rhs) { return !(lhs == rhs); };
 
     };
 

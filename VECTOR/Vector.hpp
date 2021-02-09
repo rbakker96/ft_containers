@@ -13,6 +13,7 @@
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 
+#include <algorithm>
 #include <cstddef>
 #include <memory>
 #include <limits>
@@ -83,11 +84,14 @@ namespace ft {
         };
 
         //-> Destroys the container object.
-        ~vector() {clear();};
+        ~vector() {
+            if (_capacity)
+                delete[] _array;
+        };
 
         //-> Assigns new contents to the container, replacing its current contents, and modifying its size accordingly.
         vector& operator= (const vector& x) {
-            clear();
+            delete[] _array;
             _array = new value_type[x._capacity];
             _allocator = x._allocator;
             _used = 0;
@@ -174,7 +178,7 @@ namespace ft {
         template <class InputIterator>
         void assign (typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last) {
             clear();
-            while (*first != *last) {
+            while (first != last) {
                 push_back(*first);
                 first++;
             }
@@ -197,6 +201,8 @@ namespace ft {
                 reallocation((2*_capacity));
             _array[_used] = val;
             _used += 1;
+//            if (_capacity == _used)
+//                reallocation(_capacity + 1);
         };
 
         //-> Removes the last element in the vector, effectively reducing the container size by one.
@@ -205,70 +211,124 @@ namespace ft {
         };
 
         //->The vector is extended by inserting new elements before the element at the specified position.
-//        iterator insert (iterator position, const value_type& val) {
-//            size_type i = 0;
-//
-//            if (_capacity == _used)
-//                reallocation(_capacity + 1);
-//            pointer temp =  _array;
-//
-//            while(_array[i] != *position)
-//                i++;
-//
-//
-//
-//            for (size_type i = 0; i < _used; i++)
-//                temp[i] = _array[i];
-//            _capacity = size;
-//            delete[] _array;
-//            _array = temp;
-//        };
+        iterator insert (iterator position, const value_type& val) {
+            vector temp;
+            iterator ret;
 
-//        void insert (iterator position, size_type n, const value_type& val) {};
+            for (iterator it = begin(); it != end(); it++) {
+                if (it == position) {
+                    temp.push_back(val);
+                    ret = it;
+                }
+                temp.push_back(*it);
+            }
+            *this = temp;
+            return (ret);
+        };
 
-//        template <class InputIterator>
-//        void insert (iterator position, InputIterator first, InputIterator last) {};
+        void insert (iterator position, size_type n, const value_type& val) {
+            vector temp;
+
+            for (iterator it = begin(); it != end(); it++) {
+                if (it == position) {
+                    for (size_t i = 0; i < n; i++)
+                        temp.push_back(val);
+                }
+                temp.push_back(*it);
+            }
+            *this = temp;
+        };
+
+        template <class InputIterator>
+        void insert (iterator position, typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last) {
+            vector temp;
+
+            for (iterator it = begin(); it != end(); it++) {
+                if (it == position) {
+                    while(first != last) {
+                        temp.push_back(*first);
+                        first++;
+                    }
+                }
+                temp.push_back(*it);
+            }
+            *this = temp;
+        };
 
         //-> Removes from the vector either a single element (position) or a range of elements ([first,last)).
-//        iterator erase (iterator position) {};
+        iterator erase (iterator position) {
+            iterator ret = position;
+            while (position != end()-1) {
+                *position = *(position + 1);
+                position++;
+            }
+            pop_back();
+            return (ret);
+        };
 
-//        iterator erase (iterator first, iterator last) {};
+        iterator erase (iterator first, iterator last) {
+            iterator ret = first;
+            for (;ret != last; ret++)
+                _used--;
+
+            ret = last;
+            while (last != end()) {
+                *first = *last;
+                first++;
+                last++;
+            }
+            return (ret);
+        };
 
         //-> Exchanges the content of the container by the content of x, which is another vector object of the same type.
         //   Sizes may differ.
-//        void swap (vector& x) {};
+        void swap (vector& x) {
+            vector temp(*this);
 
-//        //-> Removes all elements from the vector (which are destroyed), leaving the container with a size of 0.
+            *this = x;
+            x = temp;
+        };
+
+        //-> Removes all elements from the vector (which are destroyed), leaving the container with a size of 0.
         void clear() {
-            if(_capacity) {
-                delete[] _array;
-                _array = NULL;
-                _used = 0;
-                _capacity = 0;
-            }
+            _used = 0;
         };
 
     };
 
 
     // -------------------------------------------- RELATION OPERATORS  --------------------------------------------
-//    template <class T, class Alloc>
-//    bool operator== (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs);
+    template <class value_type, class allocator_type>
+    bool operator== (const vector<value_type,allocator_type>& lhs, const vector<value_type,allocator_type>& rhs) {
+        typename ft::vector<value_type>::const_iterator it_lhs = lhs.begin();
+        typename ft::vector<value_type>::const_iterator it_rhs = rhs.begin();
 
-//    template <class T, class Alloc>
-//    bool operator!= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs);
+        if (lhs.size() != rhs.size())
+            return (false);
+        while (*it_lhs != *lhs.end()) {
+            if (*it_lhs != *it_rhs)
+                return (false);
+            it_lhs++;
+            it_rhs++;
+        }
+        return (true);
+    }
 
-//    template <class T, class Alloc>
-//    bool operator<  (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs);
+    template <class value_type, class allocator_type>
+    bool operator!= (const vector<value_type,allocator_type>& lhs, const vector<value_type,allocator_type>& rhs) {return !(lhs == rhs);}
 
-//    template <class T, class Alloc>
-//    bool operator<= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs);
+    template <class value_type, class allocator_type>
+    bool operator< (const vector<value_type,allocator_type>& lhs, const vector<value_type,allocator_type>& rhs) {
+        return (std::lexicographical_compare(lhs.begin(), lhs.end(), rhs.begin(), rhs.end()));}
 
-//    template <class T, class Alloc>
-//    bool operator>  (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs);
+    template <class value_type, class allocator_type>
+    bool operator<= (const vector<value_type,allocator_type>& lhs, const vector<value_type,allocator_type>& rhs) {return !(rhs < lhs);}
 
-//    template <class T, class Alloc>
-//    bool operator>= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs);
+    template <class value_type, class allocator_type>
+    bool operator>  (const vector<value_type,allocator_type>& lhs, const vector<value_type,allocator_type>& rhs) {return (rhs<lhs);}
+
+    template <class value_type, class allocator_type>
+    bool operator>= (const vector<value_type,allocator_type>& lhs, const vector<value_type,allocator_type>& rhs) {return !(lhs < rhs);}
 
 };
 
