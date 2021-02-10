@@ -35,6 +35,14 @@ CMakeFiles/unit_test.dir/UNIT_TEST/5_queue_test.cpp.o: ../UNIT_TEST/catch.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/5_queue_test.cpp.o: ../UTILS/BiDirectionalIterator.hpp
 CMakeFiles/unit_test.dir/UNIT_TEST/5_queue_test.cpp.o: ../UTILS/Traits.hpp
 
+CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o: ../LIST/List.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o: ../LIST/Node.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o: ../STACK/Stack.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o: ../UNIT_TEST/6_stack_test.cpp
+CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o: ../UNIT_TEST/catch.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o: ../UTILS/BiDirectionalIterator.hpp
+CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o: ../UTILS/Traits.hpp
+
 CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o: ../UNIT_TEST/catch.cpp
 CMakeFiles/unit_test.dir/UNIT_TEST/catch.cpp.o: ../UNIT_TEST/catch.hpp
 

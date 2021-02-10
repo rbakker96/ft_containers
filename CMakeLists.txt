@@ -9,11 +9,13 @@ set(SOURCES UNIT_TEST/catch.cpp
             UNIT_TEST/2_RandomAccessIterator_test.cpp
             UNIT_TEST/3_list_test.cpp
             UNIT_TEST/4_vector_test.cpp
+            UNIT_TEST/5_queue_test.cpp
+            UNIT_TEST/6_stack_test.cpp
             UTILS/Traits.hpp
             UTILS/BiDirectionalIterator.hpp
             UTILS/RandomAccesIterator.hpp
             LIST/List.hpp
-            LIST/Node.hpp UNIT_TEST/5_queue_test.cpp)
+            LIST/Node.hpp )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
 

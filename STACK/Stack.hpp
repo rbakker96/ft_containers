@@ -13,30 +13,72 @@
 #ifndef STACK_HPP
 #define STACK_HPP
 
-class
-{
+#include "../LIST/List.hpp"
+#include "../LIST/Node.hpp"
+#include "../UTILS/BiDirectionalIterator.hpp"
+#include "../UTILS/Traits.hpp"
 
-protected:
+namespace ft {
 
+    template<class T, class Container = ft::list<T> >
+    class stack {
 
-public:
-    // MEMBER TYPES
+    public:
+        // MEMBER TYPES
+        typedef T value_type;
+        typedef Container container_type;
+        typedef size_t size_type;
 
+    protected:
+        container_type _ctnr;
 
-    // MEMBER FUNCTIONS
-    // ------ CONSTRUCTOR / DESTRUCTOR ------
+    public:
+        // ---------------------------------------------- MEMBER FUNCTIONS -------------------------------------------------
+        //-> Constructs a stack container adaptor object.
+        explicit stack (const container_type& ctnr = container_type()) : _ctnr(ctnr) {}
 
+        //-> Returns whether the stack is empty
+        bool empty() const {return (_ctnr.empty());}
 
-    // ------ ITERATORS ------
+        //-> Returns the number of elements in the stack.
+        size_type size() const {return (_ctnr.size());}
 
+        //-> Returns a reference to the top element in the stack.
+        value_type& top() {return (_ctnr.back());}
+        const value_type& top() const {return (_ctnr.back());}
 
-    // ------ CAPACITY ------
+        //-> Inserts a new element at the top of the stack, above its current top element.
+        void push (const value_type& val) {return (_ctnr.push_back(val));}
 
-    // ------ ELEMENT ACCESS ------
+        //-> Removes the element on top of the stack, effectively reducing its size by one.
+        void pop() {return (_ctnr.pop_back());}
 
-    // ------ MODIFIERS ------
+        // -------------------------------------------- RELATION OPERATORS  --------------------------------------------
+        template <class value_type, class ctnr>
+        friend bool operator== (const stack<value_type,ctnr>& lhs, const stack<value_type,ctnr>& rhs)
+        {return (lhs._ctnr == rhs._ctnr);}
 
-    // ------ OPERATIONS ------
+        template <class value_type, class ctnr>
+        friend bool operator!= (const stack<value_type,ctnr>& lhs, const stack<value_type,ctnr>& rhs)
+        {return (lhs._ctnr != rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator<  (const stack<value_type,ctnr>& lhs, const stack<value_type,ctnr>& rhs)
+        {return (lhs._ctnr < rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator<= (const stack<value_type,ctnr>& lhs, const stack<value_type,ctnr>& rhs)
+        {return (lhs._ctnr <= rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator>  (const stack<value_type,ctnr>& lhs, const stack<value_type,ctnr>& rhs)
+        {return (lhs._ctnr > rhs._ctnr);}
+
+        template <class value_type, class ctnr>
+        friend bool operator>= (const stack<value_type,ctnr>& lhs, const stack<value_type,ctnr>& rhs)
+        {return (lhs._ctnr >= rhs._ctnr);}
+
+    };
 
 };
 

@@ -278,6 +278,33 @@ UNIT_TEST/5_queue_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/5_queue_test.cpp.s
 .PHONY : UNIT_TEST/5_queue_test.cpp.s
 
+UNIT_TEST/6_stack_test.o: UNIT_TEST/6_stack_test.cpp.o
+
+.PHONY : UNIT_TEST/6_stack_test.o
+
+# target to build an object file
+UNIT_TEST/6_stack_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.o
+.PHONY : UNIT_TEST/6_stack_test.cpp.o
+
+UNIT_TEST/6_stack_test.i: UNIT_TEST/6_stack_test.cpp.i
+
+.PHONY : UNIT_TEST/6_stack_test.i
+
+# target to preprocess a source file
+UNIT_TEST/6_stack_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.i
+.PHONY : UNIT_TEST/6_stack_test.cpp.i
+
+UNIT_TEST/6_stack_test.s: UNIT_TEST/6_stack_test.cpp.s
+
+.PHONY : UNIT_TEST/6_stack_test.s
+
+# target to generate assembly for a file
+UNIT_TEST/6_stack_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/UNIT_TEST/6_stack_test.cpp.s
+.PHONY : UNIT_TEST/6_stack_test.cpp.s
+
 UNIT_TEST/catch.o: UNIT_TEST/catch.cpp.o
 
 .PHONY : UNIT_TEST/catch.o
@@ -329,6 +356,9 @@ help:
 	@echo "... UNIT_TEST/5_queue_test.o"
 	@echo "... UNIT_TEST/5_queue_test.i"
 	@echo "... UNIT_TEST/5_queue_test.s"
+	@echo "... UNIT_TEST/6_stack_test.o"
+	@echo "... UNIT_TEST/6_stack_test.i"
+	@echo "... UNIT_TEST/6_stack_test.s"
 	@echo "... UNIT_TEST/catch.o"
 	@echo "... UNIT_TEST/catch.i"
 	@echo "... UNIT_TEST/catch.s"

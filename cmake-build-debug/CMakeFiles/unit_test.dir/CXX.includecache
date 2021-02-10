@@ -24,7 +24,7 @@ Node.hpp
 
 /Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
 
-/Users/roybakker/Desktop/ft_containers/QUEUE/Queue.hpp
+/Users/roybakker/Desktop/ft_containers/STACK/Stack.hpp
 ../LIST/List.hpp
 /Users/roybakker/Desktop/ft_containers/LIST/List.hpp
 ../LIST/Node.hpp
@@ -34,15 +34,15 @@ Node.hpp
 ../UTILS/Traits.hpp
 /Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
 
-/Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/6_stack_test.cpp
 catch.hpp
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
-queue
+stack
 -
 list
 -
-../QUEUE/Queue.hpp
-/Users/roybakker/Desktop/ft_containers/QUEUE/Queue.hpp
+../STACK/Stack.hpp
+/Users/roybakker/Desktop/ft_containers/STACK/Stack.hpp
 ../LIST/List.hpp
 /Users/roybakker/Desktop/ft_containers/LIST/List.hpp
 
