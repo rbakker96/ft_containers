@@ -201,8 +201,6 @@ namespace ft {
                 reallocation((2*_capacity));
             _array[_used] = val;
             _used += 1;
-//            if (_capacity == _used)
-//                reallocation(_capacity + 1);
         };
 
         //-> Removes the last element in the vector, effectively reducing the container size by one.

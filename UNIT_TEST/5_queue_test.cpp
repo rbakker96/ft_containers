@@ -34,10 +34,6 @@ TEST_CASE( "queue - size", "[queue]" ) {
     REQUIRE(myints.size() == 5);
 }
 
-//TEST_CASE( "queue - front", "[queue]" ) {
-//
-//}
-
 TEST_CASE( "queue - front", "[queue]" ) {
     ft::queue<int> myqueue;
 
