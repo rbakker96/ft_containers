@@ -29,19 +29,19 @@ namespace ft {
 
     public:
         // MEMBER TYPES
-        typedef T                                   value_type;
-        typedef Alloc                               allocator_type;
-        typedef T&                                  reference;
-        typedef const T&                            const_reference;
-        typedef T*                                  pointer;
-        typedef const T*                            const_pointer;
-        typedef listNode<T>*                        node_pointer;
-        typedef BidirectionalIterator<T>            iterator;
-        typedef ConstBidirectionalIterator<T>       const_iterator;
-        typedef RevBidirectionalIterator<T>         reverse_iterator;
-        typedef ConstRevBidirectionalIterator<T>    const_reverse_iterator;
-        typedef std::ptrdiff_t                      difference_type;
-        typedef size_t                              size_type;
+        typedef T                                               value_type;
+        typedef Alloc                                           allocator_type;
+        typedef T&                                              reference;
+        typedef const T&                                        const_reference;
+        typedef T*                                              pointer;
+        typedef const T*                                        const_pointer;
+        typedef listNode<T>*                                    node_pointer;
+        typedef BidirectionalIterator<T, listNode<T>>           iterator;
+        typedef ConstBidirectionalIterator<T, listNode<T>>      const_iterator;
+        typedef RevBidirectionalIterator<T, listNode<T>>        reverse_iterator;
+        typedef ConstRevBidirectionalIterator<T, listNode<T>>   const_reverse_iterator;
+        typedef std::ptrdiff_t                                  difference_type;
+        typedef size_t                                          size_type;
 
     private:
         node_pointer    _head;

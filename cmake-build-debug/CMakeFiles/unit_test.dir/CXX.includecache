@@ -50,6 +50,26 @@ listNode.hpp
 
 /Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
 
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp
+catch.hpp
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
+string
+-
+list
+-
+../HEADER_FILES/List.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
+
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/3_list_test.cpp
+catch.hpp
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
+string
+-
+list
+-
+../HEADER_FILES/List.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
+
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp
 catch.hpp
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp

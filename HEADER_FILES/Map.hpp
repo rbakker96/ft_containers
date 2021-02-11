@@ -13,6 +13,14 @@
 #ifndef MAP_HPP
 #define MAP_HPP
 
+#include <algorithm>
+#include <cstddef>
+#include <memory>
+#include <limits>
+
+#include "UTILS/mapNode.hpp"
+#include "UTILS/BiDirectionalIterator.hpp"
+#include "UTILS/Traits.hpp"
 
 
 namespace ft {
@@ -22,22 +30,23 @@ namespace ft {
 
     public:
         // MEMBER TYPES
-        typedef Key                     key_type;
-        typedef T                       mapped_type;
-        typedef pair<const Key, T>      value_type;
-        typedef Compare                 key_compare;
-        typedef                         value_compare;
-        typedef Alloc                   allocator_type;
-        typedef T&                      reference;
-        typedef const T&                const_reference;
-        typedef T*                      pointer;
-        typedef const T*                const_pointer;
-//        typedef                         iterator;
-//        typedef                         const_iterator;
-//        typedef                         reverse_iterator;
-//        typedef                         const_reverse_iterator;
-        typedef std::ptrdiff_t          difference_type;
-        typedef size_t                  size_type;
+        typedef Key                                             key_type;
+        typedef T                                               mapped_type;
+        typedef pair<const Key, T>                              value_type;
+        typedef Compare                                         key_compare;
+        typedef                                                 value_compare;
+        typedef Alloc                                           allocator_type;
+        typedef T&                                              reference;
+        typedef const T&                                        const_reference;
+        typedef T*                                              pointer;
+        typedef const T*                                        const_pointer;
+        typedef mapNode<T>*                                     node_pointer;
+        typedef BidirectionalIterator<T, map<T>>           iterator;
+        typedef ConstBidirectionalIterator<T, listNode<T>>      const_iterator;
+        typedef RevBidirectionalIterator<T, listNode<T>>        reverse_iterator;
+        typedef ConstRevBidirectionalIterator<T, listNode<T>>   const_reverse_iterator;
+        typedef std::ptrdiff_t                                  difference_type;
+        typedef size_t                                          size_type;
 
     protected:
         key_type        _key;

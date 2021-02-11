@@ -17,13 +17,13 @@
 
 namespace ft {
 
-    template<typename T>
+    template<typename T, typename Node>
     class BidirectionalIterator {
 
     public:
         // MEMBER TYPES
         typedef std::bidirectional_iterator_tag         iterator_category;
-        typedef listNode<T>                             *iterator_type;
+        typedef Node                                    *iterator_type;
         typedef T                                       value_type;
         typedef std::ptrdiff_t                          difference_type;
         typedef T                                       *pointer;
@@ -37,7 +37,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         BidirectionalIterator() : _ptr(NULL) {};
         explicit BidirectionalIterator (iterator_type it) : _ptr(it) {};
-        BidirectionalIterator (const BidirectionalIterator<T>& it) {*this = it;};
+        BidirectionalIterator (const BidirectionalIterator<T, Node>& it) {*this = it;};
         BidirectionalIterator & operator=(const BidirectionalIterator& rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -56,7 +56,7 @@ namespace ft {
         BidirectionalIterator& operator++() {_ptr = _ptr->_next; return (*this);};
 
         BidirectionalIterator  operator++(int) {
-            BidirectionalIterator<T> temp(*this);
+            BidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_next;
             return (temp);
@@ -66,18 +66,18 @@ namespace ft {
         BidirectionalIterator& operator--() {_ptr = _ptr->_prev; return (*this);};
 
         BidirectionalIterator  operator--(int) {
-            BidirectionalIterator<T> temp(*this);
+            BidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_prev;
             return (temp);
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        template<typename T2>
-        friend bool operator== (const BidirectionalIterator<T2>& lhs, const BidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
+        template<typename T2, typename Node2>
+        friend bool operator== (const BidirectionalIterator<T2, Node2>& lhs, const BidirectionalIterator<T2, Node2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        template<typename T2>
-        friend bool operator!= (const BidirectionalIterator<T2>& lhs, const BidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
+        template<typename T2, typename Node2>
+        friend bool operator!= (const BidirectionalIterator<T2, Node2>& lhs, const BidirectionalIterator<T2, Node2>& rhs) {return !(lhs == rhs);;};
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const iterator_type&   get_ptr() const {return (_ptr);};
@@ -85,13 +85,13 @@ namespace ft {
 
 
 
-    template<typename T>
+    template<typename T, typename Node>
     class ConstBidirectionalIterator {
 
     public:
         // MEMBER TYPES
         typedef std::bidirectional_iterator_tag     iterator_category;
-        typedef listNode<T>                             *iterator_type;
+        typedef Node                                *iterator_type;
         typedef T                                   value_type;
         typedef std::ptrdiff_t                      difference_type;
         typedef  T                                  *pointer;
@@ -107,8 +107,8 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         ConstBidirectionalIterator() : _ptr(NULL) {};
         explicit ConstBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        ConstBidirectionalIterator (const ConstBidirectionalIterator<T>& it) {*this = it;};
-        ConstBidirectionalIterator (const BidirectionalIterator<T>& it) {_ptr = it.get_ptr();};
+        ConstBidirectionalIterator (const ConstBidirectionalIterator<T, Node>& it) {*this = it;};
+        ConstBidirectionalIterator (const BidirectionalIterator<T, Node>& it) {_ptr = it.get_ptr();};
         const ConstBidirectionalIterator& operator=(const ConstBidirectionalIterator& rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -127,7 +127,7 @@ namespace ft {
         ConstBidirectionalIterator& operator++() {_ptr = _ptr->_next; return (*this);};
 
         ConstBidirectionalIterator  operator++(int) {
-            ConstBidirectionalIterator<T> temp(*this);
+            ConstBidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_next;
             return (temp);
@@ -137,32 +137,32 @@ namespace ft {
         ConstBidirectionalIterator& operator--() {_ptr = _ptr->_prev; return (*this);};
 
         ConstBidirectionalIterator  operator--(int) {
-            ConstBidirectionalIterator<T> temp(*this);
+            ConstBidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_prev;
             return (temp);
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        template<typename T2>
-        friend bool operator== (const ConstBidirectionalIterator<T2>& lhs,
-                                const ConstBidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
+        template<typename T2, typename Node2>
+        friend bool operator== (const ConstBidirectionalIterator<T2, Node2>& lhs,
+                                const ConstBidirectionalIterator<T2, Node2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        template<typename T2>
-        friend bool operator!= (const ConstBidirectionalIterator<T2>& lhs,
-                                const ConstBidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
+        template<typename T2, typename Node2>
+        friend bool operator!= (const ConstBidirectionalIterator<T2, Node2>& lhs,
+                                const ConstBidirectionalIterator<T2, Node2>& rhs) {return !(lhs == rhs);;};
 
     };
 
 
 
-    template<typename T>
+    template<typename T, typename Node>
     class RevBidirectionalIterator {
 
     public:
         // MEMBER TYPES
         typedef std::bidirectional_iterator_tag     iterator_category;
-        typedef listNode<T>                             *iterator_type;
+        typedef Node                                *iterator_type;
         typedef T                                   value_type;
         typedef std::ptrdiff_t                      difference_type;
         typedef T                                   *pointer;
@@ -176,7 +176,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         RevBidirectionalIterator() : _ptr(NULL) {};
         explicit RevBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        RevBidirectionalIterator (const RevBidirectionalIterator<T>& it) {*this = it;};
+        RevBidirectionalIterator (const RevBidirectionalIterator<T, Node>& it) {*this = it;};
         RevBidirectionalIterator & operator=(const RevBidirectionalIterator& rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -195,7 +195,7 @@ namespace ft {
         RevBidirectionalIterator& operator++() {_ptr = _ptr->_prev; return (*this);};
 
         RevBidirectionalIterator  operator++(int) {
-            RevBidirectionalIterator<T> temp(*this);
+            RevBidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_prev;
             return (temp);
@@ -205,20 +205,20 @@ namespace ft {
         RevBidirectionalIterator& operator--() {_ptr = _ptr->_next; return (*this);};
 
         RevBidirectionalIterator  operator--(int) {
-            RevBidirectionalIterator<T> temp(*this);
+            RevBidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_next;
             return (temp);
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        template<typename T2>
-        friend bool operator== (const RevBidirectionalIterator<T2>& lhs,
-                                const RevBidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
+        template<typename T2, typename Node2>
+        friend bool operator== (const RevBidirectionalIterator<T2, Node2>& lhs,
+                                const RevBidirectionalIterator<T2, Node2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        template<typename T2>
-        friend bool operator!= (const RevBidirectionalIterator<T2>& lhs,
-                                const RevBidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
+        template<typename T2, typename Node2>
+        friend bool operator!= (const RevBidirectionalIterator<T2, Node2>& lhs,
+                                const RevBidirectionalIterator<T2, Node2>& rhs) {return !(lhs == rhs);;};
 
         // -----------------------------------------------  GETTER  ---------------------------------------------------
         const iterator_type&   get_ptr() const {return(_ptr);};
@@ -226,13 +226,13 @@ namespace ft {
 
 
 
-    template<typename T>
+    template<typename T, typename Node>
     class ConstRevBidirectionalIterator {
 
     public:
         // MEMBER TYPES
         typedef std::bidirectional_iterator_tag     iterator_category;
-        typedef listNode<T>                             *iterator_type;
+        typedef Node                                *iterator_type;
         typedef T                                   value_type;
         typedef std::ptrdiff_t                      difference_type;
         typedef T                                   *pointer;
@@ -248,8 +248,8 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         ConstRevBidirectionalIterator() : _ptr(NULL) {};
         explicit ConstRevBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        ConstRevBidirectionalIterator (const ConstRevBidirectionalIterator<T>& it) {*this = it;};
-        ConstRevBidirectionalIterator (const RevBidirectionalIterator<T>& it) {_ptr = it.get_ptr();};
+        ConstRevBidirectionalIterator (const ConstRevBidirectionalIterator<T, Node>& it) {*this = it;};
+        ConstRevBidirectionalIterator (const RevBidirectionalIterator<T, Node>& it) {_ptr = it.get_ptr();};
         ConstRevBidirectionalIterator & operator=(const ConstRevBidirectionalIterator& rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -268,7 +268,7 @@ namespace ft {
         ConstRevBidirectionalIterator& operator++() {_ptr = _ptr->_prev; return (*this);};
 
         ConstRevBidirectionalIterator  operator++(int) {
-            ConstRevBidirectionalIterator<T> temp(*this);
+            ConstRevBidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_prev;
             return (temp);
@@ -278,20 +278,20 @@ namespace ft {
         ConstRevBidirectionalIterator& operator--() {_ptr = _ptr->_next; return (*this);};
 
         ConstRevBidirectionalIterator  operator--(int) {
-            ConstRevBidirectionalIterator<T> temp(*this);
+            ConstRevBidirectionalIterator<T, Node> temp(*this);
 
             _ptr = _ptr->_next;
             return (temp);
         };
 
         // ----------------------------------------- RELATIONAL OPERATORS  ---------------------------------------------
-        template<typename T2>
-        friend bool operator== (const ConstRevBidirectionalIterator<T2>& lhs,
-                         const ConstRevBidirectionalIterator<T2>& rhs) {return (lhs._ptr == rhs._ptr);};
+        template<typename T2, typename Node2>
+        friend bool operator== (const ConstRevBidirectionalIterator<T2, Node2>& lhs,
+                         const ConstRevBidirectionalIterator<T2, Node2>& rhs) {return (lhs._ptr == rhs._ptr);};
 
-        template<typename T2>
-        friend bool operator!= (const ConstRevBidirectionalIterator<T2>& lhs,
-                         const ConstRevBidirectionalIterator<T2>& rhs) {return !(lhs == rhs);;};
+        template<typename T2, typename Node2>
+        friend bool operator!= (const ConstRevBidirectionalIterator<T2, Node2>& lhs,
+                         const ConstRevBidirectionalIterator<T2, Node2>& rhs) {return !(lhs == rhs);;};
 
     };
 
