@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="unit_test">
-				<Option output="/Users/roybakker/Desktop/ft_containers/cmake-build-debug/unit_test" prefix_auto="0" extension_auto="0"/>
+			<Target title="UNIT_TEST">
+				<Option output="/Users/roybakker/Desktop/ft_containers/cmake-build-debug/UNIT_TEST" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/roybakker/Desktop/ft_containers/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -52,14 +52,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_test"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 UNIT_TEST"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="unit_test/fast">
-				<Option output="/Users/roybakker/Desktop/ft_containers/cmake-build-debug/unit_test" prefix_auto="0" extension_auto="0"/>
+			<Target title="UNIT_TEST/fast">
+				<Option output="/Users/roybakker/Desktop/ft_containers/cmake-build-debug/UNIT_TEST" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/roybakker/Desktop/ft_containers/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,51 +73,54 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_test/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 UNIT_TEST/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/roybakker/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/LIST/List.hpp">
-			<Option target="unit_test"/>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp">
+			<Option target="UNIT_TEST"/>
 		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp">
-			<Option target="unit_test"/>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp">
+			<Option target="UNIT_TEST"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/RandomAccessIterator.hpp">
+			<Option target="UNIT_TEST"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Traits.hpp">
+			<Option target="UNIT_TEST"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp">
+			<Option target="UNIT_TEST"/>
+		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/mapNode.hpp">
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/3_list_test.cpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/6_stack_test.cpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp">
-			<Option target="unit_test"/>
-		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp">
-			<Option target="unit_test"/>
-		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/UTILS/RandomAccesIterator.hpp">
-			<Option target="unit_test"/>
-		</Unit>
-		<Unit filename="/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp">
-			<Option target="unit_test"/>
+			<Option target="UNIT_TEST"/>
 		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

@@ -2,8 +2,8 @@
 
 #include <queue>
 #include <list>
-#include "../QUEUE/Queue.hpp"
-#include "../LIST/List.hpp"
+#include "../HEADER_FILES/Queue.hpp"
+#include "../HEADER_FILES/List.hpp"
 
 TEST_CASE( "queue - empty container constructor (default constructor)", "[queue]" ) {
     ft::list<int> mylist (2,200);         // list with 2 elements

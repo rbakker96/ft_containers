@@ -4,7 +4,7 @@
 #include <string>
 #include <list>
 
-#include "../LIST/List.hpp"
+#include "../HEADER_FILES/List.hpp"
 
 //clang++ -std=c++14 list_test.cpp catch.cpp -g -fsanitize=address
 

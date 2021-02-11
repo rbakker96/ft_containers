@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = /Users/roybakker/Desktop/ft_containers/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/unit_test.dir/all
+all: CMakeFiles/UNIT_TEST.dir/all
 
 .PHONY : all
 
@@ -83,36 +83,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/unit_test.dir/clean
+clean: CMakeFiles/UNIT_TEST.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/unit_test.dir
+# Target rules for target CMakeFiles/UNIT_TEST.dir
 
 # All Build rule for target.
-CMakeFiles/unit_test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target unit_test"
-.PHONY : CMakeFiles/unit_test.dir/all
+CMakeFiles/UNIT_TEST.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNIT_TEST.dir/build.make CMakeFiles/UNIT_TEST.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNIT_TEST.dir/build.make CMakeFiles/UNIT_TEST.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target UNIT_TEST"
+.PHONY : CMakeFiles/UNIT_TEST.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/unit_test.dir/rule: cmake_check_build_system
+CMakeFiles/UNIT_TEST.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/unit_test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/UNIT_TEST.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/unit_test.dir/rule
+.PHONY : CMakeFiles/UNIT_TEST.dir/rule
 
 # Convenience name for target.
-unit_test: CMakeFiles/unit_test.dir/rule
+UNIT_TEST: CMakeFiles/UNIT_TEST.dir/rule
 
-.PHONY : unit_test
+.PHONY : UNIT_TEST
 
 # clean rule for target.
-CMakeFiles/unit_test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_test.dir/build.make CMakeFiles/unit_test.dir/clean
-.PHONY : CMakeFiles/unit_test.dir/clean
+CMakeFiles/UNIT_TEST.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNIT_TEST.dir/build.make CMakeFiles/UNIT_TEST.dir/clean
+.PHONY : CMakeFiles/UNIT_TEST.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

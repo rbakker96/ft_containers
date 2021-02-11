@@ -1,0 +1,8 @@
+//
+// Created by Roy Bakker on 11/02/2021.
+//
+
+#ifndef FT_CONTAINERS_MAPNODE_HPP
+#define FT_CONTAINERS_MAPNODE_HPP
+
+#endif //FT_CONTAINERS_MAPNODE_HPP

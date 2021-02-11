@@ -2,8 +2,8 @@
 
 #include <stack>
 #include <list>
-#include "../STACK/Stack.hpp"
-#include "../LIST/List.hpp"
+#include "../HEADER_FILES/Stack.hpp"
+#include "../HEADER_FILES/List.hpp"
 
 TEST_CASE( "stack - empty container constructor (default constructor)", "[stack]" ) {
     ft::list<int> mylist (2,200);         // list with 2 elements

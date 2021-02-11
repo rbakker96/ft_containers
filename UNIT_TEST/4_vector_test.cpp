@@ -1,7 +1,7 @@
 #include "catch.hpp"
 
 #include <vector>
-#include "../VECTOR/Vector.hpp"
+#include "../HEADER_FILES/Vector.hpp"
 
 //clang++ -std=c++14 list_test.cpp catch.cpp -g -fsanitize=address
 

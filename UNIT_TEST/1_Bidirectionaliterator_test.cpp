@@ -3,7 +3,7 @@
 #include <string>
 #include <list>
 
-#include "../LIST/List.hpp"
+#include "../HEADER_FILES/List.hpp"
 
 TEST_CASE( "BiDirectionalIterator", "[list]" ) {
     ft::list<std::string> ft_basic_list;

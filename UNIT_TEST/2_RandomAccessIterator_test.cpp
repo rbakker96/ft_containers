@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "../VECTOR/Vector.hpp"
+#include "../HEADER_FILES/Vector.hpp"
 
 TEST_CASE( "RandomAccesIterator", "[vector]") {
     ft::vector<std::string> ft_vector;

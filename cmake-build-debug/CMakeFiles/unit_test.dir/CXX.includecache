@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/roybakker/Desktop/ft_containers/LIST/List.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
 algorithm
 -
 cstddef
@@ -15,24 +15,52 @@ memory
 -
 limits
 -
-Node.hpp
-/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
-../UTILS/BiDirectionalIterator.hpp
-/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp
-../UTILS/Traits.hpp
-/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
+UTILS/listNode.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
+UTILS/BiDirectionalIterator.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp
+UTILS/Traits.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Traits.hpp
 
-/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/Queue.hpp
+List.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
+UTILS/listNode.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
+UTILS/BiDirectionalIterator.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp
+UTILS/Traits.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Traits.hpp
 
-/Users/roybakker/Desktop/ft_containers/STACK/Stack.hpp
-../LIST/List.hpp
-/Users/roybakker/Desktop/ft_containers/LIST/List.hpp
-../LIST/Node.hpp
-/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
-../UTILS/BiDirectionalIterator.hpp
-/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp
-../UTILS/Traits.hpp
-/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/Stack.hpp
+List.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
+UTILS/listNode.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
+UTILS/BiDirectionalIterator.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp
+UTILS/Traits.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Traits.hpp
+
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp
+listNode.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
+
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Traits.hpp
+
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
+
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp
+catch.hpp
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
+queue
+-
+list
+-
+../HEADER_FILES/Queue.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/Queue.hpp
+../HEADER_FILES/List.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
 
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/6_stack_test.cpp
 catch.hpp
@@ -41,10 +69,10 @@ stack
 -
 list
 -
-../STACK/Stack.hpp
-/Users/roybakker/Desktop/ft_containers/STACK/Stack.hpp
-../LIST/List.hpp
-/Users/roybakker/Desktop/ft_containers/LIST/List.hpp
+../HEADER_FILES/Stack.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/Stack.hpp
+../HEADER_FILES/List.hpp
+/Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
 
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
 chrono
@@ -411,10 +439,4 @@ vector
 -
 cstring
 -
-
-/Users/roybakker/Desktop/ft_containers/UTILS/BiDirectionalIterator.hpp
-../LIST/Node.hpp
-/Users/roybakker/Desktop/ft_containers/LIST/Node.hpp
-
-/Users/roybakker/Desktop/ft_containers/UTILS/Traits.hpp
 
