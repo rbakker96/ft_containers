@@ -29,7 +29,7 @@ namespace ft {
         typedef Container container_type;
         typedef size_t size_type;
 
-    protected:
+    private:
         container_type _ctnr;
 
     public:
