@@ -5,25 +5,21 @@
 #include <map>
 
 int     main() {
-    ft::map<char,int> mymap;
+    int i = 1;
+    ft::map<char,int> map;
+    map.insert ( std::pair<char,int>('a',1) );
+    map.insert ( std::pair<char,int>('a',2) );
+    map.insert ( std::pair<char,int>('z',3) );
+    ft::map<char, int>::iterator it;
 
-    // first insert function version (single parameter):
-    mymap.insert ( std::pair<char,int>('a',100) );
-    mymap.insert ( std::pair<char,int>('z',200) );
+    // show content:
+    for (it=map.begin(); it!=map.end(); ++it)
+        std::cout << it->first << " => " << it->second << '\n';
 
-    std::pair<ft::map<char,int>::iterator,bool> ret;
-    ret = mymap.insert ( std::pair<char,int>('z',500) );
-
-    // second insert function version (with hint position):
-    ft::map<char,int>::iterator it = mymap.begin();
-    mymap.insert (it, std::pair<char,int>('b',300));  // max efficiency inserting
-    mymap.insert (it, std::pair<char,int>('c',400));  // no max efficiency inserting
-
-
-    // third insert function version (range insertion):
-    ft::map<char,int> anothermap;
-    anothermap.insert(mymap.begin(),mymap.end());
-    ft::map<char, int>::iterator secondit = anothermap.begin();
-
-
+    return 0;
 }
+
+//cant yet erase first element;
+
+
+

@@ -188,6 +188,43 @@ TEST_CASE("map - insert", "[map]") {
     }
 }
 
+TEST_CASE("map - erase", "[map]") {
+    ft::map<char,int> mymap;
+
+    // insert some values:
+    mymap['a']=10;
+    mymap['b']=20;
+    mymap['c']=30;
+    mymap['d']=40;
+    mymap['e']=50;
+    mymap['f']=60;
+
+    ft::map<char,int>::iterator it = mymap.begin();
+
+    it++;
+    mymap.erase (it);                   // erasing by iterator
+
+    it = mymap.begin();
+    it++;
+    it++;
+
+    mymap.erase ('c');                  // erasing by key
+    REQUIRE(mymap.size() == 4);
+    mymap.erase ('c');                  // erasing by key
+    REQUIRE(mymap.size() == 4);
+
+    it = mymap.begin();
+    it++;
+    it++;
+    mymap.erase ( it, mymap.end() );    // erasing by range
+    it = mymap.begin();
+    REQUIRE(mymap.size() == 2);
+    REQUIRE(it->second == 10);
+    it++;
+    REQUIRE(it->second == 40);
+}
+
+
 //TEST_CASE("stack - relational operator overloads", "[stack]") {
 //    ft::stack<int> a;
 //    a.push(10);

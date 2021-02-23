@@ -215,17 +215,83 @@ namespace ft {
         }
 
         //-> Removes from the map container either a single element or a range of elements ([first,last)).
-//        void erase (iterator position) {}
+        void erase (typename enable_if<is_input_iterator<iterator>::value, iterator>::type position) {
+            unset_limits();
+            node_pointer pos = position.get_ptr();
+            if (pos->_left && pos->_right)  {
+                node_pointer temp = pos->_right;
+                while (temp->_right)
+                    temp = temp->_right;
 
-//        size_type erase (const key_type& k){}
+                swap_nodes(pos, temp->_data);
 
-//        void erase (iterator first, iterator last) {}
+//                node_pointer replace = new node(temp->_data);
+//                replace->_parent = pos->_parent;
+//                replace->_left = pos->_left;
+//                replace->_right = pos->_right;
+//                pos->_left->_parent = replace;
+//                pos->_right->_parent = replace;
+
+                delete pos;
+                pos = temp;
+
+                if (!pos->_left && !pos->_right)
+                    pos->_parent = NULL;
+                else if (!pos->_left && pos->_right) {
+                    pos->_parent->_right = pos->_right;
+                    pos->_right->_parent = pos->_parent;
+                }
+                else if (pos->_left && !pos->_right) {
+                    pos->_parent->_left = pos->_left;
+                    pos->_left->_parent = pos->_parent;
+                }
+            }
+            else if (!pos->_left && !pos->_right)
+                pos->_parent = NULL;
+            else if (!pos->_left && pos->_right) {
+                pos->_parent->_right = pos->_right;
+                pos->_right->_parent = pos->_parent;
+            }
+            else if (pos->_left && !pos->_right) {
+                pos->_parent->_left = pos->_left;
+                pos->_left->_parent = pos->_parent;
+            }
+            delete pos;
+            _size--;
+            set_limits();
+        }
+
+        size_type erase (const key_type& k){
+            size_type count = _size;
+            iterator traverser = begin();
+            for (; traverser != end(); traverser++) {
+                if (traverser->first == k)
+                    erase(traverser);
+            }
+            return (count - _size);
+        }
+
+        void erase (iterator first, iterator last) {
+            while (first != last) {
+                erase(first);
+                first++;
+            }
+        }
 
         //-> Exchanges the content of the container by the content of x, which is another map of the same type.
-//        void swap (map& x) {}
+        void swap (map& x) {
+            map temp(x);
+            x = *this;
+            *this = temp;
+        }
 
         //-> Removes all elements from the map container (which are destroyed), leaving the container with a size of 0.
-        void clear() {}
+        void clear() {
+//            iterator endd = end();
+//            endd--;
+//            erase(begin());
+//            erase(begin(), end());
+        }
 
         // ------------------------------------------------- OBSERVERS -------------------------------------------------
         //-> Returns a copy of the comparison object used by the container to compare keys.
@@ -310,6 +376,16 @@ namespace ft {
             return (new_leaf);
         }
 
+        void    swap_nodes(node_pointer position, const value_type& val) {
+            node_pointer new_node = new node(val);
+
+            new_node->_parent = position->_parent;
+            new_node->_left = position->_left;
+            new_node->_right = position->_right;
+
+            new_node->_left->_parent = new_node;
+            new_node->_right->_parent = new_node;
+        }
 
     };
 
