@@ -170,23 +170,27 @@ namespace ft {
             }
             node_pointer traverser = _root;
             while (traverser->_left || traverser->_right) {
-                if (traverser->_data.first == val.first)
+                if (traverser->_data.first == val.first) {
+                    set_limits();
                     return (std::make_pair(iterator(traverser), false));
+                }
                 if (value_compare(_comp)(val, traverser->_data)) {
                     if (traverser->_left != NULL)
                         traverser = traverser->_left;
                     else
-                        break ;
+                        break;
                 }
                 else {
                     if (traverser->_right != NULL)
                         traverser = traverser->_right;
                     else
-                        break ;
+                        break;
                 }
             }
-            if (traverser->_data.first == val.first)
+            if (traverser->_data.first == val.first) {
+                set_limits();
                 return (std::make_pair(iterator(traverser), false));
+            }
             if (value_compare(_comp)( val, traverser->_data))
                 traverser = insert_left(val, traverser);
             else
@@ -218,46 +222,16 @@ namespace ft {
         void erase (typename enable_if<is_input_iterator<iterator>::value, iterator>::type position) {
             unset_limits();
             node_pointer pos = position.get_ptr();
-            if (pos->_left && pos->_right)  {
-                node_pointer temp = pos->_right;
-                while (temp->_right)
-                    temp = temp->_right;
-
-                swap_nodes(pos, temp->_data);
-
-//                node_pointer replace = new node(temp->_data);
-//                replace->_parent = pos->_parent;
-//                replace->_left = pos->_left;
-//                replace->_right = pos->_right;
-//                pos->_left->_parent = replace;
-//                pos->_right->_parent = replace;
-
-                delete pos;
-                pos = temp;
-
-                if (!pos->_left && !pos->_right)
-                    pos->_parent = NULL;
-                else if (!pos->_left && pos->_right) {
-                    pos->_parent->_right = pos->_right;
-                    pos->_right->_parent = pos->_parent;
-                }
-                else if (pos->_left && !pos->_right) {
-                    pos->_parent->_left = pos->_left;
-                    pos->_left->_parent = pos->_parent;
-                }
-            }
+            if (pos == _root)
+                erase_root(pos);
+            else if (pos->_left && pos->_right)
+                erase_parent_node(pos);
             else if (!pos->_left && !pos->_right)
-                pos->_parent = NULL;
-            else if (!pos->_left && pos->_right) {
-                pos->_parent->_right = pos->_right;
-                pos->_right->_parent = pos->_parent;
-            }
-            else if (pos->_left && !pos->_right) {
-                pos->_parent->_left = pos->_left;
-                pos->_left->_parent = pos->_parent;
-            }
-            delete pos;
-            _size--;
+                erase_leaf_node(pos);
+            else if (!pos->_left && pos->_right)
+                erase_right(pos);
+            else
+                erase_left(pos);
             set_limits();
         }
 
@@ -273,8 +247,10 @@ namespace ft {
 
         void erase (iterator first, iterator last) {
             while (first != last) {
+                iterator temp(first);
+                temp++;
                 erase(first);
-                first++;
+                first = temp;
             }
         }
 
@@ -287,10 +263,7 @@ namespace ft {
 
         //-> Removes all elements from the map container (which are destroyed), leaving the container with a size of 0.
         void clear() {
-//            iterator endd = end();
-//            endd--;
-//            erase(begin());
-//            erase(begin(), end());
+            erase(begin(), end());
         }
 
         // ------------------------------------------------- OBSERVERS -------------------------------------------------
@@ -345,8 +318,8 @@ namespace ft {
         }
 
         void    unset_limits() {
-            _first->_parent->_left = nullptr;
-            _last->_parent->_right = nullptr;
+            _first->_parent->_left = NULL;
+            _last->_parent->_right = NULL;
         }
 
         void    insert_root(const value_type& val) {
@@ -376,15 +349,111 @@ namespace ft {
             return (new_leaf);
         }
 
-        void    swap_nodes(node_pointer position, const value_type& val) {
-            node_pointer new_node = new node(val);
+        void    erase_root(node_pointer &pos) {
+            if (!pos->_left && !pos->_right) {
+                delete _root;
+                _root = new node;
+                return ;
+            }
+            if (pos->_left && pos->_right) {
+                pos = pos->_right;
+                while (pos->_left)
+                    pos = pos->_left;
 
-            new_node->_parent = position->_parent;
-            new_node->_left = position->_left;
-            new_node->_right = position->_right;
+                node_pointer new_node = new node(pos->_data);
+                new_node->_left = _root->_left;
+                new_node->_right = _root->_right;
 
-            new_node->_left->_parent = new_node;
-            new_node->_right->_parent = new_node;
+                new_node->_left->_parent = new_node;
+                new_node->_right->_parent = new_node;
+
+                delete _root;
+                _root = new_node;
+
+                if (!pos->_left && !pos->_right)
+                    erase_leaf_node(pos);
+                if (!pos->_left && pos->_right)
+                    erase_right(pos);
+                else
+                    erase_left(pos);
+            }
+            else {
+                if (pos->_right)
+                    pos = pos->_right;
+                else
+                    pos = pos->_left;
+
+                delete _root;
+                _root = pos;
+
+                _size--;
+            }
+        }
+
+        void    erase_parent_node (node_pointer &pos) {
+            node_pointer temp = pos;
+            pos = pos->_right;
+            while (pos->_left)
+                pos = pos->_left;
+
+            node_pointer new_node = new node(pos->_data);
+
+            if (temp->_parent->_left == temp)
+                temp->_parent->_left = new_node;
+            else
+                temp->_parent->_right = new_node;
+
+            new_node->_parent = temp->_parent;
+            new_node->_left = temp->_left;
+            new_node->_right = temp->_right;
+
+            temp->_left->_parent = new_node;
+            temp->_right->_parent = new_node;
+
+            delete temp;
+
+            pos = new_node->_right;
+            while (pos->_left)
+                pos = pos->_left;
+
+            if (!pos->_left && !pos->_right)
+                erase_leaf_node(pos);
+            if (!pos->_left && pos->_right)
+                erase_right(pos);
+            else
+                erase_left(pos);
+        }
+
+        void    erase_leaf_node(node_pointer &pos) {
+            if (pos->_parent->_left == pos)
+                pos->_parent->_left = NULL;
+            else
+                pos->_parent->_right = NULL;
+
+            delete pos;
+            _size--;
+        }
+
+        void    erase_right(node_pointer &pos) {
+            if (pos->_parent->_left == pos)
+                pos->_parent->_left = pos->_right;
+            else
+                pos->_parent->_right = pos->_right;
+
+            pos->_right->_parent = pos->_parent;
+            delete pos;
+            _size--;
+        }
+
+        void    erase_left(node_pointer &pos) {
+            if (pos->_parent->_left == pos)
+                pos->_parent->_left = pos->_left;
+            else
+                pos->_parent->_right = pos->_left;
+
+            pos->_left->_parent = pos->_parent;
+            delete pos;
+            _size--;
         }
 
     };
