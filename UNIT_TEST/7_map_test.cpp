@@ -195,63 +195,156 @@ TEST_CASE("map - erase", "[map]") {
     mymap.insert ( std::pair<char,int>('g',1) );
     mymap.insert ( std::pair<char,int>('b',2) );
     mymap.insert ( std::pair<char,int>('c',3) );
-    mymap.insert ( std::pair<char,int>('a',2) );
+    mymap.insert ( std::pair<char,int>('a',12) );
     mymap.insert ( std::pair<char,int>('z',3) );
-    mymap.insert ( std::pair<char,int>('f',2) );
+    mymap.insert ( std::pair<char,int>('f',22) );
     mymap.insert ( std::pair<char,int>('z',3) );
 
     ft::map<char,int>::iterator it = mymap.begin();
 
     it++;
     mymap.erase(it);                   // erasing by iterator
-//    REQUIRE(mymap.size() == 5);
-//    it = mymap.begin();
-//    it++;
-//    it++;
+    REQUIRE(mymap.size() == 5);
+    it = mymap.begin();
+    it++;
+    it++;
 
-//    mymap.erase ('c');                  // erasing by key
-//    REQUIRE(mymap.size() == 4);
-//    mymap.erase ('c');                  // erasing by key
-//    REQUIRE(mymap.size() == 4);
+    mymap.erase ('c');                  // erasing by key
+    REQUIRE(mymap.size() == 4);
+    mymap.erase ('c');                  // erasing by key
+    REQUIRE(mymap.size() == 4);
 
-//    it = mymap.begin();
-//    it++;
-//    it++;
-//    mymap.erase ( it, mymap.end() );    // erasing by range
-//    it = mymap.begin();
-//    REQUIRE(mymap.size() == 2);
-//    REQUIRE(it->second == 10);
-//    it++;
-//    REQUIRE(it->second == 40);
+    it = mymap.begin();
+    it++;
+    it++;
+    mymap.erase ( it, mymap.end() );    // erasing by range
+    it = mymap.begin();
+    REQUIRE(mymap.size() == 2);
+    REQUIRE(it->second == 12);
+    it++;
+    REQUIRE(it->second == 22);
 }
 
+TEST_CASE("map - swap", "[map]") {
+    ft::map<char,int> foo;
+    ft::map<char,int> bar;
 
-//TEST_CASE("stack - relational operator overloads", "[stack]") {
-//    ft::stack<int> a;
-//    a.push(10);
-//    a.push(20);
-//    a.push(30);
-//    ft::stack<int> b;
-//    b.push(10);
-//    b.push(20);
-//    b.push(30);
-//    ft::stack<int> c;
-//    c.push(30);
-//    c.push(20);
-//    c.push(10);
-//
-//    REQUIRE((a == b) == true);
-//    REQUIRE((b != c) == true);
-//    REQUIRE((b < c) == true);
-//    REQUIRE((c > b) == true);
-//    REQUIRE((a <= b) == true);
-//    REQUIRE((a >= b) == true);
-//
-//    REQUIRE((a <= b) == true);
-//    REQUIRE((a > b) == false);
-//    REQUIRE((a < b) == false);
-//    REQUIRE((a != b) == false);
-//    REQUIRE((b > c) == false);
-//    REQUIRE((b == c) == false);
-//    REQUIRE((b != c) == true);
-//}
+    foo['x']=100;
+    foo['y']=200;
+
+    bar['a']=11;
+    bar['b']=22;
+    bar['c']=33;
+
+    foo.swap(bar);
+
+    REQUIRE(bar.size() == 2);
+    REQUIRE(bar.begin()->first == 'x');
+
+    REQUIRE(foo.size() == 3);
+    REQUIRE(foo.begin()->first == 'a');
+}
+
+TEST_CASE("map - key compare", "[map]") {
+    ft::map<char,int> mymap;
+
+    ft::map<char,int>::key_compare mycomp = mymap.key_comp();
+
+    mymap['a']=100;
+    mymap['b']=200;
+    mymap['c']=300;
+
+    char highest = mymap.rbegin()->first;     // key value of last element
+
+    REQUIRE(mycomp(mymap.begin()->first, highest) == true );
+}
+
+TEST_CASE("map - value compare", "[map]") {
+    ft::map<char,int> mymap;
+
+    mymap['x']=1001;
+    mymap['y']=2002;
+    mymap['z']=3003;
+
+    std::pair<char,int> highest = *mymap.rbegin();          // last element
+
+    ft::map<char,int>::iterator it = mymap.begin();
+
+    REQUIRE(mymap.value_comp()(*it, highest) == true);
+}
+
+TEST_CASE("map - find", "[map]") {
+    std::map<char,int> mymap;
+    std::map<char,int>::iterator it;
+
+    mymap['a']=50;
+    mymap['b']=100;
+    mymap['c']=150;
+    mymap['d']=200;
+
+    it = mymap.find('b');
+    REQUIRE(it->second == 100);
+    it = mymap.find('z');
+    REQUIRE(it->second == mymap.end()->second);
+}
+
+TEST_CASE("map - count", "[map]") {
+    ft::map<char,int> mymap;
+    char a = 'a';
+    char b = 'z';
+
+    mymap ['a']=101;
+    mymap ['c']=202;
+    mymap ['f']=303;
+
+    REQUIRE(mymap.count(a) == 1);
+    REQUIRE(mymap.count(b) == 0);
+}
+
+TEST_CASE("map - lower bound", "[map]") {
+    ft::map<char,int> mymap;
+    ft::map<char,int>::iterator itlow,itup;
+
+    mymap['a']=20;
+    mymap['b']=40;
+    mymap['c']=60;
+    mymap['d']=80;
+    mymap['e']=100;
+
+    itlow=mymap.lower_bound ('b');  // itlow points to b
+    REQUIRE(itlow->second == 40);
+    mymap.erase(itlow);
+    itlow=mymap.lower_bound ('b');  // itlow points to c
+    REQUIRE(itlow->second == 60);
+}
+
+TEST_CASE("map - uper bound", "[map]") {
+    ft::map<char,int> mymap;
+    ft::map<char,int>::iterator itlow,itup;
+
+    mymap['a']=20;
+    mymap['b']=40;
+    mymap['c']=60;
+    mymap['d']=80;
+    mymap['e']=100;
+
+    itup=mymap.upper_bound('c');  // itup points to d
+    REQUIRE(itup->second == 80);
+    mymap.erase(itup);
+    itup=mymap.upper_bound('d');  // itlow points to e
+    REQUIRE(itup->second == 100);
+}
+
+TEST_CASE("map - equal range", "[map]") {
+    ft::map<char,int> mymap;
+
+    mymap['a']=10;
+    mymap['b']=20;
+    mymap['c']=30;
+
+    std::pair<ft::map<char,int>::iterator,ft::map<char,int>::iterator> ret;
+    ret = mymap.equal_range('b');
+
+    REQUIRE(ret.first->first == 'b');
+    REQUIRE(ret.second->first == 'c');
+}

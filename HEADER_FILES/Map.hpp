@@ -112,16 +112,9 @@ namespace ft {
         //->also need to clear first
         map& operator= (const map& x) {
             clear();
-            delete _root;
-            delete _first;
-            delete _last;
-
-            _root = new node;
-            _first = new node;
-            _last = new node;
-            _size = 0;
             _comp = x._comp;
             _alloc = x._alloc;
+            _size = 0;
             insert(x.begin(), x.end());
             return (*this);
         }
@@ -236,21 +229,22 @@ namespace ft {
         }
 
         size_type erase (const key_type& k){
-            size_type count = _size;
             iterator traverser = begin();
             for (; traverser != end(); traverser++) {
-                if (traverser->first == k)
+                if (traverser->first == k) {
                     erase(traverser);
+                    return (1);
+                }
             }
-            return (count - _size);
+            return (0);
         }
 
         void erase (iterator first, iterator last) {
-            while (first != last) {
+            while (first->first != last->first) {
                 iterator temp(first);
                 temp++;
                 erase(first);
-                first = temp;
+                first = find(temp->first);
             }
         }
 
@@ -271,27 +265,65 @@ namespace ft {
         key_compare key_comp() const {return (key_compare());}
 
         //-> Returns a comparison object that can be used to compare two elements to get whether the key of the first one goes before the second.
-        value_compare value_comp() const {return (value_compare(this->comp));}
+        value_compare value_comp() const {return (value_compare(_comp));}
 
         // ------------------------------------------------- OPERATIONS -------------------------------------------------
         //-> Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end.
-//        iterator find (const key_type& k) {}
-//        const_iterator find (const key_type& k) const {}
+        iterator find (const key_type& k) {
+            for (iterator traverser = begin(); traverser!=end(); traverser++)
+                if(traverser->first == k)
+                    return (traverser);
+            return (end());
+        }
+
+        const_iterator find (const key_type& k) const {
+            for (const_iterator traverser = begin(); traverser!=end(); traverser++)
+                if(traverser->first == k)
+                    return (traverser);
+            return (end());
+        }
 
         //-> Searches the container for elements with a key equivalent to k and returns the number of matches.
-//        size_type count (const key_type& k) const {}
+        size_type count (const key_type& k) const {
+            if (find(k) != end())
+                return (1);
+            return (0);
+        }
 
         //-> Returns an iterator pointing to the first element in the container whose key is not considered to go before k (i.e., either it is equivalent or goes after).
-//        iterator lower_bound (const key_type& k) {}
-//        const_iterator lower_bound (const key_type& k) const {}
+        iterator lower_bound (const key_type& k) {
+            for (iterator traverser = begin(); traverser!=end(); traverser++)
+                if(key_compare()(traverser->first, k) == false)
+                    return (traverser);
+            return (end());
+        }
+
+        const_iterator lower_bound (const key_type& k) const {
+            for (const_iterator traverser = begin(); traverser!=end(); traverser++)
+                if(key_compare()(traverser->first, k) == false)
+                    return (traverser);
+            return (end());
+        }
 
         //-> Returns an iterator pointing to the first element in the container whose key is considered to go after k.
-//        iterator upper_bound (const key_type& k) {}
-//        const_iterator upper_bound (const key_type& k) const {}
+        iterator upper_bound (const key_type& k) {
+            for (iterator traverser = begin(); traverser!=end(); traverser++)
+                if(key_compare()(k, traverser->first) == true)
+                    return (traverser);
+            return (end());
+        }
+
+        const_iterator upper_bound (const key_type& k) const {
+            for (const_iterator traverser = begin(); traverser!=end(); traverser++)
+                if(key_compare()(k, traverser->first) == true)
+                    return (traverser);
+            return (end());
+        }
 
         //-> Returns the bounds of a range that includes all the elements in the container which have a key equivalent to k.
-//        std::pair<const_iterator,const_iterator> equal_range (const key_type& k) const {}
-//        std::pair<iterator,iterator>             equal_range (const key_type& k) {}
+        std::pair<iterator,iterator>             equal_range (const key_type& k) {return (std::make_pair(lower_bound(k), upper_bound(k)));}
+
+        std::pair<const_iterator,const_iterator> equal_range (const key_type& k) const {return (std::make_pair(lower_bound(k), upper_bound(k)));}
 
     private:
 
@@ -364,15 +396,19 @@ namespace ft {
                 new_node->_left = _root->_left;
                 new_node->_right = _root->_right;
 
-                new_node->_left->_parent = new_node;
-                new_node->_right->_parent = new_node;
+                _root->_left->_parent = new_node;
+                _root->_right->_parent = new_node;
 
                 delete _root;
                 _root = new_node;
 
+                pos = new_node->_right;
+                while (pos->_left)
+                    pos = pos->_left;
+
                 if (!pos->_left && !pos->_right)
                     erase_leaf_node(pos);
-                if (!pos->_left && pos->_right)
+                else if (!pos->_left && pos->_right)
                     erase_right(pos);
                 else
                     erase_left(pos);
@@ -418,7 +454,7 @@ namespace ft {
 
             if (!pos->_left && !pos->_right)
                 erase_leaf_node(pos);
-            if (!pos->_left && pos->_right)
+            else if (!pos->_left && pos->_right)
                 erase_right(pos);
             else
                 erase_left(pos);
