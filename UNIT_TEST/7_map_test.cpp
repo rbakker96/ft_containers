@@ -148,12 +148,6 @@ TEST_CASE("map - size", "[map]") {
     REQUIRE(map.size() == 1);
 }
 
-//TEST_CASE("map - max_size", "[map]") { //->nog even naar kijken
-//    ft::map<char,int> map;
-//    std::map<char,int> stdmap;
-//    REQUIRE(map.max_size() == stdmap.max_size());
-//}
-
 TEST_CASE("map - [] operator", "[map]") {
     ft::map<char, std::string> mymap;
 
