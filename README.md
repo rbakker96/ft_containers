@@ -27,7 +27,7 @@ In this project you will implement the various container types of the C++ standa
 
 ---
 
-### file structure
+### File structure
     ft_containers/
     │
     ├── HEADER_FILES/
