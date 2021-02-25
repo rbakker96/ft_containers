@@ -6,10 +6,6 @@
 
 #include "../HEADER_FILES/List.hpp"
 
-//clang++ -std=c++14 list_test.cpp catch.cpp -g -fsanitize=address
-
-//->Check test van sam voor die equal operator die niet werkt
-
 TEST_CASE( "list - empty container constructor (default constructor)", "[list]" ) {
     ft::list<int> first;                                // empty list of ints
     REQUIRE(first.size() == 0);

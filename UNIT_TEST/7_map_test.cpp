@@ -3,11 +3,6 @@
 #include <map>
 #include <list>
 #include "../HEADER_FILES/Map.hpp"
-#include "../HEADER_FILES/List.hpp"
-
-//TEST_CASE("map - ", "[map]") {
-//
-//}
 
 TEST_CASE( "map - empty container constructor (default constructor)", "[map]" ) {
     ft::map<char,int> mymap;
@@ -57,10 +52,6 @@ TEST_CASE("map - copy constructor", "[map]") {
         mapit++;
     }
 }
-
-//TEST_CASE("map - assignment operator", "[map]") {
-//
-//}
 
 TEST_CASE("map - begin", "[map]") {
     int i = 1;

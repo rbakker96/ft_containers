@@ -3,8 +3,6 @@
 #include <vector>
 #include "../HEADER_FILES/Vector.hpp"
 
-//clang++ -std=c++14 list_test.cpp catch.cpp -g -fsanitize=address
-
 TEST_CASE( "vector - empty container constructor (default constructor)", "[vector]" ) {
     ft::vector<int> first;                                // empty list of ints
     REQUIRE(first.size() == 0);
