@@ -67,7 +67,8 @@ $ https://github.com/rbakker96/ft_containers.git ft_containers
 $ cd ft_containers
 
 -> Using CMakeList.txt
--> Use 'Run' button to test all testcases at once or edit debug configurations to specify on label ([list], [map], ect.)
+-> Use 'Run' button to test all testcases at once or edit 
+   debug configurations to specify on label ([list], [map], ect.)
 
 -> Using Makefile
 $ make
