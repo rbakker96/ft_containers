@@ -294,6 +294,13 @@ namespace ft {
 
     };
 
+    template <typename T>
+    void swap(vector<T> &x, vector<T> &y)
+    {
+        vector<T> temp(y);
+        y = x;
+        x = temp;
+    }
 
     // -------------------------------------------- RELATION OPERATORS  --------------------------------------------
     template <class value_type, class allocator_type>

@@ -22,26 +22,6 @@ UTILS/BiDirectionalIterator.hpp
 UTILS/Traits.hpp
 /Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Traits.hpp
 
-/Users/roybakker/Desktop/ft_containers/HEADER_FILES/Map.hpp
-stdio.h
--
-algorithm
--
-utility
--
-cstddef
--
-memory
--
-limits
--
-UTILS/mapNode.hpp
-/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/mapNode.hpp
-UTILS/BiDirectionalIterator.hpp
-/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp
-UTILS/Traits.hpp
-/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Traits.hpp
-
 /Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp
 listNode.hpp
 /Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
@@ -50,21 +30,13 @@ listNode.hpp
 
 /Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/listNode.hpp
 
-/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/mapNode.hpp
-algorithm
--
-cstddef
--
-
-/Users/roybakker/Desktop/ft_containers/UNIT_TEST/7_map_test.cpp
+/Users/roybakker/Desktop/ft_containers/UNIT_TEST/3_list_test.cpp
 catch.hpp
 /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.hpp
-map
+string
 -
 list
 -
-../HEADER_FILES/Map.hpp
-/Users/roybakker/Desktop/ft_containers/HEADER_FILES/Map.hpp
 ../HEADER_FILES/List.hpp
 /Users/roybakker/Desktop/ft_containers/HEADER_FILES/List.hpp
 

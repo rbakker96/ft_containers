@@ -470,6 +470,14 @@ namespace ft {
         };
     };
 
+    template <class T>
+    void swap(list<T> &x, list<T> &y)
+    {
+        list<T> temp(y);
+        y = x;
+        x = temp;
+    }
+
         // -------------------------------------------- RELATION OPERATORS  --------------------------------------------
     template <class value_type, class allocator_type>
     bool operator== (const list<value_type,allocator_type>& lhs, const list<value_type,allocator_type>& rhs) {

@@ -90,11 +90,6 @@ TEST_CASE( "list - assign", "[list]" ) {
     second.assign (first.begin(),first.end());          // a copy of first
     REQUIRE(second.size() == 7);
     REQUIRE(second.front() == 100);
-
-//    int myints[]={1776,7,4};
-//    first.assign (myints, myints+3);                 // assigning from array
-//    REQUIRE(first.size() == 3);
-//    REQUIRE(first.front() == 1776);
 }
 
 TEST_CASE( "list - push_front", "[list]" ) {
@@ -247,19 +242,23 @@ TEST_CASE( "list - splice", "[list]" ) {
     REQUIRE(mylist1.size() == 6);
 }
 
-//TEST_CASE( "list - remove", "[list]" ) {
-//    int myints[]= {17,89,7,14};
-//    ft::list<int> mylist (myints,myints+4);
-//    ft::list<int>::iterator it = mylist.begin();
-//
-//    mylist.remove(89);
-//    REQUIRE(mylist.size() == 3);
-//    REQUIRE(*it == 17);
-//    it++;
-//    REQUIRE(*it == 7);
-//    it++;
-//    REQUIRE(*it == 14);
-//}
+TEST_CASE( "list - remove", "[list]" ) {
+    ft::list<int> mylist ;
+    mylist.push_back(17);
+    mylist.push_back(89);
+    mylist.push_back(7);
+    mylist.push_back(14);
+
+    ft::list<int>::iterator it = mylist.begin();
+
+    mylist.remove(89);
+    REQUIRE(mylist.size() == 3);
+    REQUIRE(*it == 17);
+    it++;
+    REQUIRE(*it == 7);
+    it++;
+    REQUIRE(*it == 14);
+}
 
 // a predicate implemented as a function:
 bool single_digit (const int& value) { return (value<10); }
@@ -269,16 +268,23 @@ struct is_odd {
     bool operator() (const int& value) { return (value%2)==1; }
 };
 
-//TEST_CASE( "list - remove if", "[list]" ) {
-//    int myints[]= {15,36,7,17,20,39,4,1};
-//    ft::list<int> mylist (myints,myints+8);   // 15 36 7 17 20 39 4 1
-//
-//    mylist.remove_if (single_digit);           // 15 36 17 20 39
-//    REQUIRE(mylist.size() == 5);
-//
-//    mylist.remove_if (is_odd());               // 36 20
-//    REQUIRE(mylist.size() == 2);
-//}
+TEST_CASE( "list - remove if", "[list]" ) {
+    ft::list<int> mylist;
+    mylist.push_back(15);
+    mylist.push_back(36);
+    mylist.push_back(7);
+    mylist.push_back(17);
+    mylist.push_back(20);
+    mylist.push_back(39);
+    mylist.push_back(4);
+    mylist.push_back(1);
+
+    mylist.remove_if (single_digit);           // 15 36 17 20 39
+    REQUIRE(mylist.size() == 5);
+
+    mylist.remove_if (is_odd());               // 36 20
+    REQUIRE(mylist.size() == 2);
+}
 
 // a binary predicate implemented as a function:
 bool same_integral_part (double first, double second)
@@ -290,23 +296,31 @@ struct is_near {
     { return (fabs(first-second)<5.0); }
 };
 
-//TEST_CASE( "list - unique", "[list]" ) {
-//    double mydoubles[]={ 12.15,  2.72, 73.0,  12.77,  3.14,
-//                         12.77, 73.35, 72.25, 15.3,  72.25 };
-//    ft::list<double> mylist (mydoubles,mydoubles+10);
-//
-//    mylist.sort();              //  2.72, 3.14, 12.15, 12.77, 12.77, 15.3, 72.25, 72.25, 73.0, 73.35
-//    REQUIRE(mylist.size() == 10);
-//
-//    mylist.unique();           //  2.72, 3.14, 12.15, 12.77, 15.3, 72.25, 73.0, 73.35
-//    REQUIRE(mylist.size() == 8);
-//
-//    mylist.unique (same_integral_part);  //  2.72, 3.14, 12.15, 15.3, 72.25, 73.0
-//    REQUIRE(mylist.size() == 6);
-//
-//    mylist.unique (is_near());           //  2.72, 12.15, 72.25
-//    REQUIRE(mylist.size() == 3);
-//}
+TEST_CASE( "list - unique", "[list]" ) {
+    ft::list<double> mylist;
+    mylist.push_back(12.15);
+    mylist.push_back(2.72);
+    mylist.push_back(73.0);
+    mylist.push_back(12.77);
+    mylist.push_back(3.14);
+    mylist.push_back(12.77);
+    mylist.push_back(73.35);
+    mylist.push_back(72.25);
+    mylist.push_back(15.3);
+    mylist.push_back(72.25);
+
+    mylist.sort();              //  2.72, 3.14, 12.15, 12.77, 12.77, 15.3, 72.25, 72.25, 73.0, 73.35
+    REQUIRE(mylist.size() == 10);
+
+    mylist.unique();           //  2.72, 3.14, 12.15, 12.77, 15.3, 72.25, 73.0, 73.35
+    REQUIRE(mylist.size() == 8);
+
+    mylist.unique (same_integral_part);  //  2.72, 3.14, 12.15, 15.3, 72.25, 73.0
+    REQUIRE(mylist.size() == 6);
+
+    mylist.unique (is_near());           //  2.72, 12.15, 72.25
+    REQUIRE(mylist.size() == 3);
+}
 
 // compare only integral part:
 bool mycomparison (double first, double second)
