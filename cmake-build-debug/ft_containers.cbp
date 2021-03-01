@@ -98,6 +98,9 @@
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/mapNode.hpp">
 			<Option target="UNIT_TEST"/>
 		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/0_main.cpp">
+			<Option target="UNIT_TEST"/>
+		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp">
 			<Option target="UNIT_TEST"/>
 		</Unit>

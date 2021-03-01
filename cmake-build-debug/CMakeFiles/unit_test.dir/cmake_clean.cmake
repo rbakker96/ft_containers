@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o"
   "CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o"
   "CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o"
   "CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.o"

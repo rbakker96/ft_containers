@@ -143,6 +143,33 @@ UNIT_TEST/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNIT_TEST.dir/build.make CMakeFiles/UNIT_TEST.dir/build
 .PHONY : UNIT_TEST/fast
 
+UNIT_TEST/0_main.o: UNIT_TEST/0_main.cpp.o
+
+.PHONY : UNIT_TEST/0_main.o
+
+# target to build an object file
+UNIT_TEST/0_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNIT_TEST.dir/build.make CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o
+.PHONY : UNIT_TEST/0_main.cpp.o
+
+UNIT_TEST/0_main.i: UNIT_TEST/0_main.cpp.i
+
+.PHONY : UNIT_TEST/0_main.i
+
+# target to preprocess a source file
+UNIT_TEST/0_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNIT_TEST.dir/build.make CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.i
+.PHONY : UNIT_TEST/0_main.cpp.i
+
+UNIT_TEST/0_main.s: UNIT_TEST/0_main.cpp.s
+
+.PHONY : UNIT_TEST/0_main.s
+
+# target to generate assembly for a file
+UNIT_TEST/0_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNIT_TEST.dir/build.make CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.s
+.PHONY : UNIT_TEST/0_main.cpp.s
+
 UNIT_TEST/1_Bidirectionaliterator_test.o: UNIT_TEST/1_Bidirectionaliterator_test.cpp.o
 
 .PHONY : UNIT_TEST/1_Bidirectionaliterator_test.o
@@ -368,6 +395,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... UNIT_TEST"
+	@echo "... UNIT_TEST/0_main.o"
+	@echo "... UNIT_TEST/0_main.i"
+	@echo "... UNIT_TEST/0_main.s"
 	@echo "... UNIT_TEST/1_Bidirectionaliterator_test.o"
 	@echo "... UNIT_TEST/1_Bidirectionaliterator_test.i"
 	@echo "... UNIT_TEST/1_Bidirectionaliterator_test.s"

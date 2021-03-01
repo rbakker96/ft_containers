@@ -12,7 +12,8 @@
 
 NAME			=	ft_containers
 
-SOURCES			= 	UNIT_TEST/1_Bidirectionaliterator_test.cpp \
+SOURCES			= 	UNIT_TEST/0_main.cpp \
+					UNIT_TEST/1_Bidirectionaliterator_test.cpp \
 					UNIT_TEST/2_RandomAccessIterator_test.cpp \
 					UNIT_TEST/3_list_test.cpp \
 					UNIT_TEST/4_vector_test.cpp \

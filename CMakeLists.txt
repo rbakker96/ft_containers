@@ -17,7 +17,7 @@ set(SOURCES UNIT_TEST/catch.cpp
             HEADER_FILES/UTILS/RandomAccessIterator.hpp
             HEADER_FILES/List.hpp
             HEADER_FILES/UTILS/listNode.hpp
-            HEADER_FILES/UTILS/mapNode.hpp)
+            HEADER_FILES/UTILS/mapNode.hpp UNIT_TEST/0_main.cpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
 
