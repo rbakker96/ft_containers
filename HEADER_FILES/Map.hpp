@@ -24,7 +24,7 @@
 #include "UTILS/mapNode.hpp"
 #include "UTILS/BiDirectionalIterator.hpp"
 #include "UTILS/Traits.hpp"
-
+#include "UTILS/Pair.hpp"
 
 namespace ft {
 
@@ -35,7 +35,7 @@ namespace ft {
         // MEMBER TYPES
         typedef Key                                                 key_type;
         typedef T                                                   mapped_type;
-        typedef std::pair<const Key, T>                             value_type;
+        typedef ft::pair<const Key, T>                              value_type;
         typedef Compare                                             key_compare;
         typedef Alloc                                               allocator_type;
         typedef T&                                                  reference;
@@ -150,22 +150,22 @@ namespace ft {
         // ----------------------------------------------- ELEMENT ACCESS ----------------------------------------------
         //-> If k matches the key of an element in the container, the function returns a reference to its mapped value.
         mapped_type& operator[] (const key_type& k) {
-           return ((*((this->insert(std::make_pair(k,mapped_type()))).first)).second);
+           return ((*((this->insert(ft::make_pair(k,mapped_type()))).first)).second);
         }
 
         // ------------------------------------------------- MODIFIERS -------------------------------------------------
         //-> Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted.
-        std::pair<iterator,bool> insert (const value_type& val) {
+        ft::pair<iterator,bool> insert (const value_type& val) {
             unset_limits();
             if (_size == 0) {
                 insert_root(val);
-                return (std::make_pair(iterator(_root), true));
+                return (ft::make_pair(iterator(_root), true));
             }
             node_pointer traverser = _root;
             while (traverser->_left || traverser->_right) {
                 if (traverser->_data.first == val.first) {
                     set_limits();
-                    return (std::make_pair(iterator(traverser), false));
+                    return (ft::make_pair(iterator(traverser), false));
                 }
                 if (value_compare(_comp)(val, traverser->_data)) {
                     if (traverser->_left != NULL)
@@ -182,13 +182,13 @@ namespace ft {
             }
             if (traverser->_data.first == val.first) {
                 set_limits();
-                return (std::make_pair(iterator(traverser), false));
+                return (ft::make_pair(iterator(traverser), false));
             }
             if (value_compare(_comp)( val, traverser->_data))
                 traverser = insert_left(val, traverser);
             else
                 traverser = insert_right(val, traverser);
-            return (std::make_pair(iterator(traverser), true));
+            return (ft::make_pair(iterator(traverser), true));
         }
 
         iterator insert (iterator position, const value_type& val) {
@@ -321,9 +321,9 @@ namespace ft {
         }
 
         //-> Returns the bounds of a range that includes all the elements in the container which have a key equivalent to k.
-        std::pair<iterator,iterator>             equal_range (const key_type& k) {return (std::make_pair(lower_bound(k), upper_bound(k)));}
+        ft::pair<iterator,iterator>             equal_range (const key_type& k) {return (ft::make_pair(lower_bound(k), upper_bound(k)));}
 
-        std::pair<const_iterator,const_iterator> equal_range (const key_type& k) const {return (std::make_pair(lower_bound(k), upper_bound(k)));}
+        ft::pair<const_iterator,const_iterator> equal_range (const key_type& k) const {return (ft::make_pair(lower_bound(k), upper_bound(k)));}
 
     private:
 

@@ -13,6 +13,7 @@ set(SOURCES UNIT_TEST/catch.cpp
             UNIT_TEST/6_stack_test.cpp
             UNIT_TEST/7_map_test.cpp
             HEADER_FILES/UTILS/Traits.hpp
+            HEADER_FILES/UTILS/Pair.hpp
             HEADER_FILES/UTILS/BiDirectionalIterator.hpp
             HEADER_FILES/UTILS/RandomAccessIterator.hpp
             HEADER_FILES/List.hpp

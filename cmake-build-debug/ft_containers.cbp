@@ -86,6 +86,9 @@
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/BiDirectionalIterator.hpp">
 			<Option target="UNIT_TEST"/>
 		</Unit>
+		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/Pair.hpp">
+			<Option target="UNIT_TEST"/>
+		</Unit>
 		<Unit filename="/Users/roybakker/Desktop/ft_containers/HEADER_FILES/UTILS/RandomAccessIterator.hpp">
 			<Option target="UNIT_TEST"/>
 		</Unit>

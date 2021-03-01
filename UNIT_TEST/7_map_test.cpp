@@ -8,8 +8,8 @@ TEST_CASE( "map - empty container constructor (default constructor)", "[map]" ) 
     ft::map<char,int> mymap;
 
     // first insert function version (single parameter):
-    mymap.insert ( std::pair<char,int>('a',100) );
-    mymap.insert ( std::pair<char,int>('z',200) );
+    mymap.insert ( ft::pair<char,int>('a',100) );
+    mymap.insert ( ft::pair<char,int>('z',200) );
     REQUIRE(mymap.size() == 2);
 
     ft::map<char, int>::iterator it = mymap.begin();
@@ -19,10 +19,10 @@ TEST_CASE( "map - empty container constructor (default constructor)", "[map]" ) 
 
 TEST_CASE("map - range constructor", "[map]") {
     ft::map<char,int> map;
-    map.insert ( std::pair<char,int>('a',100) );
-    map.insert ( std::pair<char,int>('z',200) );
-    map.insert ( std::pair<char,int>('c',300) );
-    map.insert ( std::pair<char,int>('q',400) );
+    map.insert ( ft::pair<char,int>('a',100) );
+    map.insert ( ft::pair<char,int>('z',200) );
+    map.insert ( ft::pair<char,int>('c',300) );
+    map.insert ( ft::pair<char,int>('q',400) );
     ft::map<char, int>::iterator mapit = map.begin();
 
     ft::map<char, int> rangemap(map.begin(), map.end());
@@ -37,10 +37,10 @@ TEST_CASE("map - range constructor", "[map]") {
 
 TEST_CASE("map - copy constructor", "[map]") {
     ft::map<char,int> map;
-    map.insert ( std::pair<char,int>('a',100) );
-    map.insert ( std::pair<char,int>('z',200) );
-    map.insert ( std::pair<char,int>('c',300) );
-    map.insert ( std::pair<char,int>('q',400) );
+    map.insert ( ft::pair<char,int>('a',100) );
+    map.insert ( ft::pair<char,int>('z',200) );
+    map.insert ( ft::pair<char,int>('c',300) );
+    map.insert ( ft::pair<char,int>('q',400) );
     ft::map<char, int>::iterator mapit = map.begin();
 
     ft::map<char, int> rangemap(map);
@@ -56,9 +56,9 @@ TEST_CASE("map - copy constructor", "[map]") {
 TEST_CASE("map - begin", "[map]") {
     int i = 1;
     ft::map<char,int> map;
-    map.insert ( std::pair<char,int>('a',1) );
-    map.insert ( std::pair<char,int>('b',2) );
-    map.insert ( std::pair<char,int>('z',3) );
+    map.insert ( ft::pair<char,int>('a',1) );
+    map.insert ( ft::pair<char,int>('b',2) );
+    map.insert ( ft::pair<char,int>('z',3) );
     ft::map<char, int>::iterator it;
 
     for (it=map.begin(); it!=map.end(); it++) {
@@ -75,9 +75,9 @@ TEST_CASE("map - end", "[map]") {
     std::map<char, int>::iterator stdit = stdmap.end();
 
     ft::map<char,int> mymap;
-    mymap.insert ( std::pair<char,int>('b',100) );
-    mymap.insert ( std::pair<char,int>('a',200) );
-    mymap.insert ( std::pair<char,int>('c',300) );
+    mymap.insert ( ft::pair<char,int>('b',100) );
+    mymap.insert ( ft::pair<char,int>('a',200) );
+    mymap.insert ( ft::pair<char,int>('c',300) );
     ft::map<char, int>::iterator myit = mymap.end();
 
     stdit--;
@@ -88,9 +88,9 @@ TEST_CASE("map - end", "[map]") {
 TEST_CASE("map - rbegin", "[map]") {
     int i = 3;
     ft::map<char,int> map;
-    map.insert ( std::pair<char,int>('a',1) );
-    map.insert ( std::pair<char,int>('b',2) );
-    map.insert ( std::pair<char,int>('z',3) );
+    map.insert ( ft::pair<char,int>('a',1) );
+    map.insert ( ft::pair<char,int>('b',2) );
+    map.insert ( ft::pair<char,int>('z',3) );
     ft::map<char, int>::reverse_iterator it=map.rbegin();
 
     std::map<char,int> stdmap;
@@ -115,9 +115,9 @@ TEST_CASE("map - rend", "[map]") {
     std::map<char, int>::reverse_iterator stdit = stdmap.rend();
 
     ft::map<char,int> mymap;
-    mymap.insert ( std::pair<char,int>('b',100) );
-    mymap.insert ( std::pair<char,int>('a',200) );
-    mymap.insert ( std::pair<char,int>('c',300) );
+    mymap.insert ( ft::pair<char,int>('b',100) );
+    mymap.insert ( ft::pair<char,int>('a',200) );
+    mymap.insert ( ft::pair<char,int>('c',300) );
     ft::map<char, int>::reverse_iterator myit = mymap.rend();
 
     stdit--;
@@ -128,14 +128,14 @@ TEST_CASE("map - rend", "[map]") {
 TEST_CASE("map - empty", "[map]") {
     ft::map<char,int> map;
     REQUIRE(map.empty() == true);
-    map.insert ( std::pair<char,int>('b',100) );
+    map.insert ( ft::pair<char,int>('b',100) );
     REQUIRE(map.empty() == false);
 }
 
 TEST_CASE("map - size", "[map]") {
     ft::map<char,int> map;
     REQUIRE(map.size() == 0);
-    map.insert ( std::pair<char,int>('b',100) );
+    map.insert ( ft::pair<char,int>('b',100) );
     REQUIRE(map.size() == 1);
 }
 
@@ -155,19 +155,19 @@ TEST_CASE("map - insert", "[map]") {
     ft::map<char,int> mymap;
 
     // first insert function version (single parameter):
-    mymap.insert ( std::pair<char,int>('a',100) );
-    mymap.insert ( std::pair<char,int>('z',200) );
+    mymap.insert ( ft::pair<char,int>('a',100) );
+    mymap.insert ( ft::pair<char,int>('z',200) );
     REQUIRE(mymap.size() == 2);
 
-    std::pair<ft::map<char,int>::iterator,bool> ret;
-    ret = mymap.insert ( std::pair<char,int>('z',500) );
+    ft::pair<ft::map<char,int>::iterator,bool> ret;
+    ret = mymap.insert ( ft::pair<char,int>('z',500) );
     REQUIRE(mymap.size() == 2);
     REQUIRE(ret.second == false);
 
     // second insert function version (with hint position):
     ft::map<char,int>::iterator it = mymap.begin();
-    mymap.insert (it, std::pair<char,int>('b',300));  // max efficiency inserting
-    mymap.insert (it, std::pair<char,int>('c',400));  // no max efficiency inserting
+    mymap.insert (it, ft::pair<char,int>('b',300));  // max efficiency inserting
+    mymap.insert (it, ft::pair<char,int>('c',400));  // no max efficiency inserting
     REQUIRE(mymap.size() == 4);
 
     // third insert function version (range insertion):
@@ -185,13 +185,13 @@ TEST_CASE("map - erase", "[map]") {
     ft::map<char,int> mymap;
 
     // insert some values:
-    mymap.insert ( std::pair<char,int>('g',1) );
-    mymap.insert ( std::pair<char,int>('b',2) );
-    mymap.insert ( std::pair<char,int>('c',3) );
-    mymap.insert ( std::pair<char,int>('a',12) );
-    mymap.insert ( std::pair<char,int>('z',3) );
-    mymap.insert ( std::pair<char,int>('f',22) );
-    mymap.insert ( std::pair<char,int>('z',3) );
+    mymap.insert ( ft::pair<char,int>('g',1) );
+    mymap.insert ( ft::pair<char,int>('b',2) );
+    mymap.insert ( ft::pair<char,int>('c',3) );
+    mymap.insert ( ft::pair<char,int>('a',12) );
+    mymap.insert ( ft::pair<char,int>('z',3) );
+    mymap.insert ( ft::pair<char,int>('f',22) );
+    mymap.insert ( ft::pair<char,int>('z',3) );
 
     ft::map<char,int>::iterator it = mymap.begin();
 
@@ -259,7 +259,7 @@ TEST_CASE("map - value compare", "[map]") {
     mymap['y']=2002;
     mymap['z']=3003;
 
-    std::pair<char,int> highest = *mymap.rbegin();          // last element
+    ft::pair<char,int> highest = *mymap.rbegin();          // last element
 
     ft::map<char,int>::iterator it = mymap.begin();
 
@@ -267,8 +267,8 @@ TEST_CASE("map - value compare", "[map]") {
 }
 
 TEST_CASE("map - find", "[map]") {
-    std::map<char,int> mymap;
-    std::map<char,int>::iterator it;
+    ft::map<char,int> mymap;
+    ft::map<char,int>::iterator it;
 
     mymap['a']=50;
     mymap['b']=100;
@@ -335,7 +335,7 @@ TEST_CASE("map - equal range", "[map]") {
     mymap['b']=20;
     mymap['c']=30;
 
-    std::pair<ft::map<char,int>::iterator,ft::map<char,int>::iterator> ret;
+    ft::pair<ft::map<char,int>::iterator,ft::map<char,int>::iterator> ret;
     ret = mymap.equal_range('b');
 
     REQUIRE(ret.first->first == 'b');
