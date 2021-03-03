@@ -13,6 +13,8 @@
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 
+#include <stdio.h> //REMOVE
+
 #include <algorithm>
 #include <cstddef>
 #include <memory>
@@ -57,6 +59,13 @@ namespace ft {
             _array = temp;
         }
 
+        size_t distance(iterator first, iterator second) {
+            size_t n = 0;
+            for (iterator it = first; it != second; it++)
+                n++;
+            return (n);
+        }
+
     public:
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR ------------------------------------------
         //-> Constructs an empty container, with no elements.
@@ -75,6 +84,7 @@ namespace ft {
         vector (typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last,
                 const allocator_type& alloc = allocator_type()) : _allocator(alloc), _used(0), _capacity(0) {
             assign(first, last);
+            shrink_to_fit();
         };
 
         //-> Constructs a container with a copy of each of the elements in x, in the same order.
@@ -160,8 +170,17 @@ namespace ft {
         const_reference operator[] (size_type n) const {return const_reference(_array[n]);};
 
         //-> Returns a reference to the element at position n in the vector.
-        reference at (size_type n) {return reference(_array[n]);};
-        const_reference at (size_type n) const {return const_reference(_array[n]);};
+        reference at (size_type n) {
+            if (n < _used)
+                return reference(_array[n]);
+            throw (std::out_of_range("Index out of range"));
+        };
+
+        const_reference at (size_type n) const {
+            if (n < _used)
+                return const_reference(_array[n]);
+            throw (std::out_of_range("Index out of range"));
+        };
 
         //-> Returns a reference to the first element in the vector.
         reference front() {return reference(_array[0]);};
@@ -197,8 +216,8 @@ namespace ft {
                 _array = new value_type [1];
                 _capacity = 1;
             }
-            else if (_capacity == _used)
-                reallocation((2*_capacity));
+            if (_capacity == _used)
+                reallocation((2 * _capacity));
             _array[_used] = val;
             _used += 1;
         };
@@ -210,71 +229,53 @@ namespace ft {
 
         //->The vector is extended by inserting new elements before the element at the specified position.
         iterator insert (iterator position, const value_type& val) {
-            vector temp;
-            iterator ret;
-
-            for (iterator it = begin(); it != end(); it++) {
-                if (it == position) {
-                    temp.push_back(val);
-                    ret = it;
-                }
-                temp.push_back(*it);
-            }
-            *this = temp;
-            return (ret);
+            size_t n = distance(begin(), position);
+            insert(position, 1, val);
+            return (iterator(&_array[n]));
         };
 
         void insert (iterator position, size_type n, const value_type& val) {
-            vector temp;
+            vector temp(position, end());
+            _used = distance(begin(), position);
 
-            for (iterator it = begin(); it != end(); it++) {
-                if (it == position) {
-                    for (size_t i = 0; i < n; i++)
-                        temp.push_back(val);
-                }
-                temp.push_back(*it);
-            }
-            *this = temp;
+            for (size_t i = 0; i < n; i++)
+                push_back(val);
+            for (iterator it = temp.begin(); it != temp.end(); it++)
+                push_back(*it);
         };
 
         template <class InputIterator>
         void insert (iterator position, typename enable_if<is_input_iterator<InputIterator>::value, InputIterator>::type first, InputIterator last) {
-            vector temp;
+            vector temp(position, end());
+            _used = distance(begin(), position);
 
-            for (iterator it = begin(); it != end(); it++) {
-                if (it == position) {
-                    while(first != last) {
-                        temp.push_back(*first);
-                        first++;
-                    }
-                }
-                temp.push_back(*it);
-            }
-            *this = temp;
+            for (iterator it = first; it < last; it++)
+                push_back(*it);
+            for (iterator it = temp.begin(); it != temp.end(); it++)
+                push_back(*it);
         };
 
         //-> Removes from the vector either a single element (position) or a range of elements ([first,last)).
         iterator erase (iterator position) {
-            iterator ret = position;
+            iterator ret(position);
+
             while (position != end()-1) {
                 *position = *(position + 1);
                 position++;
             }
-            pop_back();
+            _used -= 1;
             return (ret);
         };
 
         iterator erase (iterator first, iterator last) {
-            iterator ret = first;
-            for (;ret != last; ret++)
-                _used--;
+            iterator ret(first);
 
-            ret = last;
             while (last != end()) {
                 *first = *last;
                 first++;
                 last++;
             }
+            _used -= distance(first, last);
             return (ret);
         };
 

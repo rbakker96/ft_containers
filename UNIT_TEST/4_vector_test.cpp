@@ -3,6 +3,7 @@
 #include <vector>
 #include "../HEADER_FILES/Vector.hpp"
 
+
 TEST_CASE( "vector - empty container constructor (default constructor)", "[vector]" ) {
     ft::vector<int> first;                                // empty list of ints
     REQUIRE(first.size() == 0);
@@ -17,6 +18,7 @@ TEST_CASE( "vector - range constructor", "[vector]" ) {
     ft::vector<int> second (5,100);
     ft::vector<int> third (second.begin(),second.end());  // iterating through second
     REQUIRE(third.size() == 5);
+    REQUIRE(third.capacity() == 5);
 }
 
 TEST_CASE( "vector - copy constructor", "[vector]" ) {
@@ -256,6 +258,7 @@ TEST_CASE( "vector - erase", "[vector]" ) {
     std_it = realvector.erase (realvector.begin(),realvector.begin()+3);
 
     REQUIRE(myvector.size() == realvector.size());
+    REQUIRE(myvector.at(0) == realvector.at(0));
     REQUIRE(*it == *std_it);
     REQUIRE(*myvector.begin()+3 == *realvector.begin()+3);
 }
