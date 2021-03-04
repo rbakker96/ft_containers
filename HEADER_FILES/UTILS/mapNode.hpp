@@ -31,7 +31,7 @@ namespace ft {
 
         explicit mapNode(const T &data) : _parent(NULL), _left(NULL), _right(NULL), _data(data) {};
 
-        mapNode(const mapNode<T> &x) : _parent(x._parent), _left(x._left), _right(x._right), _data(x._data) {};
+        mapNode(const mapNode &x) : _parent(x._parent), _left(x._left), _right(x._right), _data(x._data) {};
 
         ~mapNode() {};
 

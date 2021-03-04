@@ -30,14 +30,14 @@ namespace ft {
         typedef T                                       &reference;
 
     private:
-        iterator_type                               _ptr;
+        iterator_type   _ptr;
 
     public:
         // MEMBER FUNCTIONS
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         BidirectionalIterator() : _ptr(NULL) {};
         explicit BidirectionalIterator (iterator_type it) : _ptr(it) {};
-        BidirectionalIterator (const BidirectionalIterator<T, Node>& it) {*this = it;};
+        BidirectionalIterator (const BidirectionalIterator& it) {*this = it;};
         BidirectionalIterator & operator=(const BidirectionalIterator& rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -56,7 +56,7 @@ namespace ft {
         BidirectionalIterator& operator++() {_ptr = _ptr->getNext(); return (*this);};
 
         BidirectionalIterator  operator++(int) {
-            BidirectionalIterator<T, Node> temp(*this);
+            BidirectionalIterator temp(*this);
 
             _ptr = _ptr->getNext();
             return (temp);
@@ -66,7 +66,7 @@ namespace ft {
         BidirectionalIterator& operator--() {_ptr = _ptr->getPrev(); return (*this);};
 
         BidirectionalIterator  operator--(int) {
-            BidirectionalIterator<T, Node> temp(*this);
+            BidirectionalIterator temp(*this);
 
             _ptr = _ptr->getPrev();
             return (temp);
@@ -107,7 +107,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         ConstBidirectionalIterator() : _ptr(NULL) {};
         explicit ConstBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        ConstBidirectionalIterator (const ConstBidirectionalIterator<T, Node>& it) {*this = it;};
+        ConstBidirectionalIterator (const ConstBidirectionalIterator& it) {*this = it;};
         ConstBidirectionalIterator (const BidirectionalIterator<T, Node>& it) {_ptr = it.get_ptr();};
         const ConstBidirectionalIterator& operator=(const ConstBidirectionalIterator& rhs) {
             if (this != &rhs)
@@ -127,7 +127,7 @@ namespace ft {
         ConstBidirectionalIterator& operator++() {_ptr = _ptr->getNext(); return (*this);};
 
         ConstBidirectionalIterator  operator++(int) {
-            ConstBidirectionalIterator<T, Node> temp(*this);
+            ConstBidirectionalIterator temp(*this);
 
             _ptr = _ptr->getNext();
             return (temp);
@@ -137,7 +137,7 @@ namespace ft {
         ConstBidirectionalIterator& operator--() {_ptr = _ptr->getPrev(); return (*this);};
 
         ConstBidirectionalIterator  operator--(int) {
-            ConstBidirectionalIterator<T, Node> temp(*this);
+            ConstBidirectionalIterator temp(*this);
 
             _ptr = _ptr->getPrev();
             return (temp);
@@ -176,7 +176,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         RevBidirectionalIterator() : _ptr(NULL) {};
         explicit RevBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        RevBidirectionalIterator (const RevBidirectionalIterator<T, Node>& it) {*this = it;};
+        RevBidirectionalIterator (const RevBidirectionalIterator& it) {*this = it;};
         RevBidirectionalIterator & operator=(const RevBidirectionalIterator& rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -195,7 +195,7 @@ namespace ft {
         RevBidirectionalIterator& operator++() {_ptr = _ptr->getPrev(); return (*this);};
 
         RevBidirectionalIterator  operator++(int) {
-            RevBidirectionalIterator<T, Node> temp(*this);
+            RevBidirectionalIterator temp(*this);
 
             _ptr = _ptr->getPrev();
             return (temp);
@@ -205,7 +205,7 @@ namespace ft {
         RevBidirectionalIterator& operator--() {_ptr = _ptr->getNext(); return (*this);};
 
         RevBidirectionalIterator  operator--(int) {
-            RevBidirectionalIterator<T, Node> temp(*this);
+            RevBidirectionalIterator temp(*this);
 
             _ptr = _ptr->getNext();
             return (temp);
@@ -248,7 +248,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         ConstRevBidirectionalIterator() : _ptr(NULL) {};
         explicit ConstRevBidirectionalIterator (iterator_type it) : _ptr(it) {};
-        ConstRevBidirectionalIterator (const ConstRevBidirectionalIterator<T, Node>& it) {*this = it;};
+        ConstRevBidirectionalIterator (const ConstRevBidirectionalIterator& it) {*this = it;};
         ConstRevBidirectionalIterator (const RevBidirectionalIterator<T, Node>& it) {_ptr = it.get_ptr();};
         ConstRevBidirectionalIterator & operator=(const ConstRevBidirectionalIterator& rhs) {
             if (this != &rhs)
@@ -268,7 +268,7 @@ namespace ft {
         ConstRevBidirectionalIterator& operator++() {_ptr = _ptr->getPrev(); return (*this);};
 
         ConstRevBidirectionalIterator  operator++(int) {
-            ConstRevBidirectionalIterator<T, Node> temp(*this);
+            ConstRevBidirectionalIterator temp(*this);
 
             _ptr = _ptr->getPrev();
             return (temp);
@@ -278,7 +278,7 @@ namespace ft {
         ConstRevBidirectionalIterator& operator--() {_ptr = _ptr->getNext(); return (*this);};
 
         ConstRevBidirectionalIterator  operator--(int) {
-            ConstRevBidirectionalIterator<T, Node> temp(*this);
+            ConstRevBidirectionalIterator temp(*this);
 
             _ptr = _ptr->getNext();
             return (temp);

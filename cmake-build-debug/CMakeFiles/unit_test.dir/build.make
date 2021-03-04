@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/roybakker/Desktop/ft_containers
+CMAKE_SOURCE_DIR = /Users/rbakker/Desktop/containers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/roybakker/Desktop/ft_containers/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/rbakker/Desktop/containers/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/UNIT_TEST.dir/depend.make
@@ -79,120 +79,120 @@ include CMakeFiles/UNIT_TEST.dir/flags.make
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.o: ../UNIT_TEST/catch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/catch.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/catch.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/catch.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/catch.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/catch.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o: ../UNIT_TEST/1_Bidirectionaliterator_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/1_Bidirectionaliterator_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/1_Bidirectionaliterator_test.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o: ../UNIT_TEST/2_RandomAccessIterator_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/2_RandomAccessIterator_test.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/2_RandomAccessIterator_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/2_RandomAccessIterator_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/2_RandomAccessIterator_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/2_RandomAccessIterator_test.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.o: ../UNIT_TEST/3_list_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/3_list_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/3_list_test.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/3_list_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/3_list_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/3_list_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/3_list_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/3_list_test.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.o: ../UNIT_TEST/4_vector_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/4_vector_test.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/4_vector_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/4_vector_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/4_vector_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/4_vector_test.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.o: ../UNIT_TEST/5_queue_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/5_queue_test.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/5_queue_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/5_queue_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/5_queue_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/5_queue_test.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.o: ../UNIT_TEST/6_stack_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/6_stack_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/6_stack_test.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/6_stack_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/6_stack_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/6_stack_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/6_stack_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/6_stack_test.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.o: ../UNIT_TEST/7_map_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/7_map_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/7_map_test.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/7_map_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/7_map_test.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/7_map_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/7_map_test.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.s
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o: CMakeFiles/UNIT_TEST.dir/flags.make
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o: ../UNIT_TEST/0_main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o -c /Users/roybakker/Desktop/ft_containers/UNIT_TEST/0_main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o -c /Users/rbakker/Desktop/containers/UNIT_TEST/0_main.cpp
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roybakker/Desktop/ft_containers/UNIT_TEST/0_main.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rbakker/Desktop/containers/UNIT_TEST/0_main.cpp > CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.i
 
 CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roybakker/Desktop/ft_containers/UNIT_TEST/0_main.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rbakker/Desktop/containers/UNIT_TEST/0_main.cpp -o CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.s
 
 # Object files for target UNIT_TEST
 UNIT_TEST_OBJECTS = \
@@ -220,7 +220,7 @@ UNIT_TEST: CMakeFiles/UNIT_TEST.dir/UNIT_TEST/7_map_test.cpp.o
 UNIT_TEST: CMakeFiles/UNIT_TEST.dir/UNIT_TEST/0_main.cpp.o
 UNIT_TEST: CMakeFiles/UNIT_TEST.dir/build.make
 UNIT_TEST: CMakeFiles/UNIT_TEST.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable UNIT_TEST"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable UNIT_TEST"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UNIT_TEST.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -233,6 +233,6 @@ CMakeFiles/UNIT_TEST.dir/clean:
 .PHONY : CMakeFiles/UNIT_TEST.dir/clean
 
 CMakeFiles/UNIT_TEST.dir/depend:
-	cd /Users/roybakker/Desktop/ft_containers/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/roybakker/Desktop/ft_containers /Users/roybakker/Desktop/ft_containers /Users/roybakker/Desktop/ft_containers/cmake-build-debug /Users/roybakker/Desktop/ft_containers/cmake-build-debug /Users/roybakker/Desktop/ft_containers/cmake-build-debug/CMakeFiles/UNIT_TEST.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/rbakker/Desktop/containers/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/rbakker/Desktop/containers /Users/rbakker/Desktop/containers /Users/rbakker/Desktop/containers/cmake-build-debug /Users/rbakker/Desktop/containers/cmake-build-debug /Users/rbakker/Desktop/containers/cmake-build-debug/CMakeFiles/UNIT_TEST.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/UNIT_TEST.dir/depend
 

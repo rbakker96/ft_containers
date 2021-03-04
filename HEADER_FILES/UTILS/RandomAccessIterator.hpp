@@ -34,7 +34,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         RandomAccessIterator() : _ptr(NULL) {};
         explicit RandomAccessIterator(pointer it) : _ptr(it) {};
-        RandomAccessIterator(const RandomAccessIterator<T> &it) { *this = it; };
+        RandomAccessIterator(const RandomAccessIterator &it) { *this = it; };
         RandomAccessIterator &operator=(const RandomAccessIterator &rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -56,7 +56,7 @@ namespace ft {
         RandomAccessIterator &operator++() {_ptr++; return (*this);};
 
         RandomAccessIterator operator++(int) {
-            RandomAccessIterator<T> temp(*this);
+            RandomAccessIterator temp(*this);
 
             _ptr++;
             return (temp);
@@ -66,7 +66,7 @@ namespace ft {
         RandomAccessIterator &operator--() {_ptr--; return (*this);};
 
         RandomAccessIterator operator--(int) {
-            RandomAccessIterator<T> temp(*this);
+            RandomAccessIterator temp(*this);
 
             _ptr--;
             return (temp);
@@ -142,7 +142,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         ConstRandomAccesIterator() : _ptr(NULL) {};
         explicit ConstRandomAccesIterator(pointer it)  : _ptr(it) {};
-        ConstRandomAccesIterator(const ConstRandomAccesIterator<T> &it) {*this = it;};
+        ConstRandomAccesIterator(const ConstRandomAccesIterator &it) {*this = it;};
         ConstRandomAccesIterator(const RandomAccessIterator<T> &it) { _ptr = it.get_ptr();};
         ConstRandomAccesIterator &operator=(const ConstRandomAccesIterator &rhs) {
             if (this != &rhs)
@@ -165,7 +165,7 @@ namespace ft {
         ConstRandomAccesIterator &operator++() { _ptr++; return (*this);};
 
         ConstRandomAccesIterator operator++(int) {
-            ConstRandomAccesIterator<T> temp(*this);
+            ConstRandomAccesIterator temp(*this);
 
             _ptr++;
             return (temp);
@@ -175,7 +175,7 @@ namespace ft {
         ConstRandomAccesIterator &operator--() { _ptr--; return (*this);};
 
         ConstRandomAccesIterator operator--(int) {
-            ConstRandomAccesIterator<T> temp(*this);
+            ConstRandomAccesIterator temp(*this);
 
             _ptr--;
             return (temp);
@@ -243,7 +243,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         RevRandomAccesIterator() : _ptr(NULL) {};
         explicit RevRandomAccesIterator(pointer it) : _ptr(it) {};
-        RevRandomAccesIterator(const RevRandomAccesIterator<T> &it) { *this = it; };
+        RevRandomAccesIterator(const RevRandomAccesIterator &it) { *this = it; };
         RevRandomAccesIterator &operator=(const RevRandomAccesIterator &rhs) {
             if (this != &rhs)
                 _ptr = rhs._ptr;
@@ -265,7 +265,7 @@ namespace ft {
         RevRandomAccesIterator &operator++() {_ptr--; return (*this);};
 
         RevRandomAccesIterator operator++(int) {
-            RevRandomAccesIterator<T> temp(*this);
+            RevRandomAccesIterator temp(*this);
 
             _ptr--;
             return (temp);
@@ -275,7 +275,7 @@ namespace ft {
         RevRandomAccesIterator &operator--() {_ptr++; return (*this);};
 
         RevRandomAccesIterator operator--(int) {
-            RevRandomAccesIterator<T> temp(*this);
+            RevRandomAccesIterator temp(*this);
 
             _ptr++;
             return (temp);
@@ -351,7 +351,7 @@ namespace ft {
         // ----------------------------------------- CONSTRUCTOR / DESTRUCTOR -----------------------------------------
         ConstRevRandomAccesIterator() : _ptr(NULL) {};
         explicit ConstRevRandomAccesIterator(pointer it) : _ptr(it) {};
-        ConstRevRandomAccesIterator(const ConstRevRandomAccesIterator<T> &it) { *this = it; };
+        ConstRevRandomAccesIterator(const ConstRevRandomAccesIterator &it) { *this = it; };
         ConstRevRandomAccesIterator(const RevRandomAccesIterator<T> &it) {_ptr = it.get_ptr();};
         ConstRevRandomAccesIterator &operator=(const ConstRevRandomAccesIterator &rhs) {
             if (this != &rhs)
@@ -374,7 +374,7 @@ namespace ft {
         ConstRevRandomAccesIterator &operator++() {_ptr--; return (*this);};
 
         ConstRevRandomAccesIterator operator++(int) {
-            ConstRevRandomAccesIterator<T> temp(*this);
+            ConstRevRandomAccesIterator temp(*this);
 
             _ptr--;
             return (temp);
@@ -384,7 +384,7 @@ namespace ft {
         ConstRevRandomAccesIterator &operator--() {_ptr++; return (*this);};
 
         ConstRevRandomAccesIterator operator--(int) {
-            ConstRevRandomAccesIterator<T> temp(*this);
+            ConstRevRandomAccesIterator temp(*this);
 
             _ptr++;
             return (temp);
